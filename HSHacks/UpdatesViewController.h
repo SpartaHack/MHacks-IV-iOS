@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "BOZPongRefreshControl.h"
 
 
 @interface UpdatesViewController : PFQueryTableViewController
 
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 
 
 @end

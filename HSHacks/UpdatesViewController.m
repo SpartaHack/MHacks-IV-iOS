@@ -12,6 +12,8 @@
 
 @interface UpdatesViewController ()
 
+@property (nonatomic, strong) BOZPongRefreshControl *pongRefreshControl;
+
 @end
 
 @implementation UpdatesViewController
@@ -20,6 +22,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+		self.pullToRefreshEnabled = NO;
         // Custom initialization
     }
     return self;
@@ -32,6 +35,25 @@
     self.tableView.separatorInset = UIEdgeInsetsZero;
 
     
+}
+- (void)viewDidLayoutSubviews
+{
+    self.pongRefreshControl = [BOZPongRefreshControl attachToTableView:self.tableView
+                                                     withRefreshTarget:self
+                                                      andRefreshAction:@selector(refreshTriggered)];
+	[super viewDidLayoutSubviews];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.pongRefreshControl scrollViewDidScroll];
+	[super scrollViewDidScroll:scrollView];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self.pongRefreshControl scrollViewDidEndDragging];
+	[super scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -84,11 +106,11 @@
     self = [super initWithCoder:aCoder];
     if (self) {
         // The className to query on
-        self.parseClassName = @"Announcements";
+        self.parseClassName = @"Announcement";
         
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"createdAt";
-        self.pullToRefreshEnabled = YES;
+        self.pullToRefreshEnabled = NO;
         self.paginationEnabled = NO;
     
     
@@ -122,7 +144,7 @@
     //Get a reference to your string to base the cell size on.
     NSString *bodyString;
 
-    bodyString = [[self.objects objectAtIndex:indexPath.row]objectForKey:@"body"];
+    bodyString = [[self.objects objectAtIndex:indexPath.row]objectForKey:@"details"];
 
     //set the desired size of your textbox
     CGSize constraint = CGSizeMake(298, MAXFLOAT);
@@ -131,16 +153,20 @@
     CGRect textsize = [bodyString boundingRectWithSize:constraint options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
     //calculate your size
     float textHeight = textsize.size.height + 10;
-   
+
+
     return textHeight + 78;
+	
 }
 
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
+	
     
     static NSString *simpleTableIdentifier = @"UpdateCell";
+	
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil) {
@@ -154,7 +180,7 @@
     //Set bodytext, adjust size of label
     UILabel *bodyText = (UILabel*) [cell viewWithTag:104];
     
-    NSString *bodyString =[object objectForKey:@"body"];
+    NSString *bodyString =[object objectForKey:@"details"];
     
     CGSize constraint = CGSizeMake(298, MAXFLOAT);
     NSDictionary *attributes = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:13.0] forKey:NSFontAttributeName];
@@ -172,6 +198,29 @@
     
     
     return cell;
+}
+
+
+#pragma mark Refresh View
+
+- (void)refreshTriggered
+{
+    //Go and load some data
+	
+    //Finshed loading the data, reset the refresh control
+	
+	double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        NSLog(@"DONE");
+		
+        // When done requesting/reloading/processing invoke endRefreshing, to close the control
+		[self loadObjects];
+		[self.pongRefreshControl finishedLoading];
+        //
+		[self.refreshControl endRefreshing];
+    });
+	
 }
 
 

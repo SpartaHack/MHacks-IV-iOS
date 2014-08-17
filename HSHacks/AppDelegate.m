@@ -15,8 +15,8 @@
 {
     // Override point for customization after application launch.
     
-    [Parse setApplicationId:@"VkvrajZ0Hx1cVv74phD9EGEYi0B23EsAwkRl0lFn"
-                  clientKey:@"XosWClb6STkG4qOUjkpbhOpYwe3f5mLGMpRn5DUj"];
+    [Parse setApplicationId:@"RsI9Hn7jETLPOpYv20gfdN6MaIB1MkEsIs26zqih"
+                  clientKey:@"QzfyHMT5DjplnRLp8yGdLC4K7KL61yZuTbND5bzJ"];
     
     // Register for push notifications
     [application registerForRemoteNotificationTypes:

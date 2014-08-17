@@ -29,11 +29,11 @@
 {
     [super viewDidLoad];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"mentors"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Concierge"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for(int i = 0; i < objects.count; i++){
-                [objects[i] objectForKey:@"name"];
+                [objects[i] objectForKey:@"Name"];
             
             }
         } else {

@@ -225,6 +225,7 @@
 
 -(void)loginFacebook{
     //Login to Facebook to get name, photo
+	NSLog(@"Logging in to Facebook");
      [SVProgressHUD showWithStatus:@"Logging into Facebook..." maskType:SVProgressHUDMaskTypeGradient];
     NSArray *permissions = [[NSArray alloc] initWithObjects:
                             @"user_photos",
@@ -256,6 +257,8 @@
 }
 
 -(void)getFacebookData{
+	
+	NSLog(@"Getting FB Data");
     if (FBSession.activeSession.isOpen) {
         [[FBRequest requestForMe] startWithCompletionHandler:
          ^(FBRequestConnection *connection,
