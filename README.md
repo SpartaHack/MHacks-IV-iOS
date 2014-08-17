@@ -1,7 +1,9 @@
-hshacks-ios
+mhacks-ios
 ===========
 
-iOS App for HSHacks
+iOS App for MHacks
+
+Derived from HSHacks app
 
 (some parts are a little messy)
 
