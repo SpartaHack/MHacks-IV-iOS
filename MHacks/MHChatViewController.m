@@ -13,7 +13,7 @@
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "SVProgressHUD/SVProgressHUD.h"
 //Firebase chat server
-#define kFirechatNS @"https://hshacks.firebaseio.com/"
+#define kFirechatNS @"https://mhacks-f2014.firebaseio.com/"
 
 @interface MHChatViewController ()
 
