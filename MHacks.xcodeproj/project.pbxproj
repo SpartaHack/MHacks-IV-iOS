@@ -10,6 +10,11 @@
 		021FCF3619A12A6400988AED /* MHTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 021FCF3519A12A6400988AED /* MHTabBar.m */; };
 		021FCF3A19A150EA00988AED /* MHTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 021FCF3919A150EA00988AED /* MHTableView.m */; };
 		021FCF3D19A154A200988AED /* BOZPongRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 021FCF3C19A154A200988AED /* BOZPongRefreshControl.m */; };
+		0264427019A1BEC400810388 /* hshacks58.png in Resources */ = {isa = PBXBuildFile; fileRef = 0264426F19A1BEC400810388 /* hshacks58.png */; };
+		0264427219A1BEE800810388 /* hshacks80.png in Resources */ = {isa = PBXBuildFile; fileRef = 0264427119A1BEE800810388 /* hshacks80.png */; };
+		0264427519A1BFC200810388 /* Icons in Resources */ = {isa = PBXBuildFile; fileRef = 0264427419A1BFC200810388 /* Icons */; };
+		0264427719A1C15E00810388 /* MHacksLOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 0264427619A1C15E00810388 /* MHacksLOGO.png */; };
+		0264427919A1C1F000810388 /* MHacksLOGO-Borderless.png in Resources */ = {isa = PBXBuildFile; fileRef = 0264427819A1C1F000810388 /* MHacksLOGO-Borderless.png */; };
 		0759E22918B2198A00E67B23 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0759E22818B2198A00E67B23 /* Twitter.framework */; };
 		0759E34518B393F500E67B23 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0759E34418B393F500E67B23 /* Accounts.framework */; };
 		6C24A1AA18B95EDC00A91A69 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C24A1A918B95EDC00A91A69 /* Images-2.xcassets */; };
@@ -118,12 +123,17 @@
 		021FCF3919A150EA00988AED /* MHTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTableView.m; sourceTree = "<group>"; };
 		021FCF3B19A154A200988AED /* BOZPongRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOZPongRefreshControl.h; sourceTree = "<group>"; };
 		021FCF3C19A154A200988AED /* BOZPongRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOZPongRefreshControl.m; sourceTree = "<group>"; };
+		0264426F19A1BEC400810388 /* hshacks58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hshacks58.png; sourceTree = "<group>"; };
+		0264427119A1BEE800810388 /* hshacks80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hshacks80.png; sourceTree = "<group>"; };
+		0264427419A1BFC200810388 /* Icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Icons; sourceTree = "<group>"; };
+		0264427619A1C15E00810388 /* MHacksLOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MHacksLOGO.png; sourceTree = "<group>"; };
+		0264427819A1C1F000810388 /* MHacksLOGO-Borderless.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MHacksLOGO-Borderless.png"; sourceTree = "<group>"; };
 		0759E22818B2198A00E67B23 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		0759E34418B393F500E67B23 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		6C151EC418B954A700115516 /* Icon-120@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-120@2x.png"; path = "MHacks/Images.xcassets/AppIcon.appiconset/Icon-120@2x.png"; sourceTree = "<group>"; };
-		6C151EC518B9550200115516 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
-		6C151EC618B9555F00115516 /* hshacks80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hshacks80.png; sourceTree = "<group>"; };
-		6C151EC718B955A500115516 /* hshacks58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hshacks58.png; sourceTree = "<group>"; };
+		6C151EC418B954A700115516 /* Icon-120-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-120-2@2x.png"; path = "MHacks/Images.xcassets/AppIcon.appiconset/Icon-120-2@2x.png"; sourceTree = "<group>"; };
+		6C151EC518B9550200115516 /* Icon-76-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76-2@2x.png"; sourceTree = "<group>"; };
+		6C151EC618B9555F00115516 /* hshacks80-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hshacks80-2.png"; sourceTree = "<group>"; };
+		6C151EC718B955A500115516 /* hshacks58-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hshacks58-2.png"; sourceTree = "<group>"; };
 		6C24A1A918B95EDC00A91A69 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		6C9B489F18B75594008E81B7 /* btnRetake@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnRetake@2x.png"; sourceTree = "<group>"; };
 		6C9B48A118B7F090008E81B7 /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
@@ -316,6 +326,13 @@
 			name = PongToRefresh;
 			sourceTree = "<group>";
 		};
+		0264427319A1BF7200810388 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 		6C9B48A518B7FBBC008E81B7 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,9 +438,11 @@
 				6CECDFE918B96A4400421F80 /* HSHacksLaunch3.png */,
 				6CECDFEA18B96A4400421F80 /* HSHacksLaunch4.png */,
 				6CC6F0BD18B5FA7B0036ADD1 /* logout@2x.png */,
+				0264427819A1C1F000810388 /* MHacksLOGO-Borderless.png */,
 				6CC6F0BE18B5FA7B0036ADD1 /* share@2x.png */,
 				E73B8D1B18B541F300CEB072 /* clock.gif */,
 				6CCB63D618A621BF004E80B4 /* hshacksLOGO.png */,
+				0264427619A1C15E00810388 /* MHacksLOGO.png */,
 				6CE2CB0C18B02047007AC3AA /* placeholderIcon.png */,
 				6CC6F0CD18B74FB80036ADD1 /* btnCamera@2x.png */,
 				6CC6F0CF18B7520A0036ADD1 /* btnRestartSignature@2x.png */,
@@ -472,10 +491,14 @@
 		E770465418891A7700BE6FC4 = {
 			isa = PBXGroup;
 			children = (
-				6C151EC718B955A500115516 /* hshacks58.png */,
-				6C151EC618B9555F00115516 /* hshacks80.png */,
-				6C151EC518B9550200115516 /* Icon-76@2x.png */,
-				6C151EC418B954A700115516 /* Icon-120@2x.png */,
+				6C151EC718B955A500115516 /* hshacks58-2.png */,
+				0264426F19A1BEC400810388 /* hshacks58.png */,
+				6C151EC618B9555F00115516 /* hshacks80-2.png */,
+				0264427119A1BEE800810388 /* hshacks80.png */,
+				0264427419A1BFC200810388 /* Icons */,
+				6C151EC518B9550200115516 /* Icon-76-2@2x.png */,
+				0264427319A1BF7200810388 /* Icons */,
+				6C151EC418B954A700115516 /* Icon-120-2@2x.png */,
 				E770466618891A7700BE6FC4 /* MHacks */,
 				E770468818891A7700BE6FC4 /* MHacksTests */,
 				E770465F18891A7700BE6FC4 /* Frameworks */,
@@ -664,22 +687,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0264427519A1BFC200810388 /* Icons in Resources */,
 				6CCB63D718A621BF004E80B4 /* hshacksLOGO.png in Resources */,
 				6CC6F0BF18B5FA7B0036ADD1 /* logout@2x.png in Resources */,
 				6CECDFEB18B96A4400421F80 /* HSHacksLaunch3.png in Resources */,
 				6C24A1AA18B95EDC00A91A69 /* Images-2.xcassets in Resources */,
 				E770467C18891A7700BE6FC4 /* Images.xcassets in Resources */,
 				6C9B48A018B75594008E81B7 /* btnRetake@2x.png in Resources */,
+				0264427019A1BEC400810388 /* hshacks58.png in Resources */,
 				6CE2CB0D18B02047007AC3AA /* placeholderIcon.png in Resources */,
 				6C9B48A418B7F091008E81B7 /* twitter@2x.png in Resources */,
 				6CC6F0C018B5FA7B0036ADD1 /* share@2x.png in Resources */,
 				6C9B48AA18B7FBBC008E81B7 /* SVProgressHUD.bundle in Resources */,
 				6CC6F0CE18B74FB80036ADD1 /* btnCamera@2x.png in Resources */,
+				0264427719A1C15E00810388 /* MHacksLOGO.png in Resources */,
 				6CECDFEC18B96A4400421F80 /* HSHacksLaunch4.png in Resources */,
 				6C9B48AD18B80433008E81B7 /* twittercopy@2x.png in Resources */,
 				6CC6F0D018B7520A0036ADD1 /* btnRestartSignature@2x.png in Resources */,
+				0264427219A1BEE800810388 /* hshacks80.png in Resources */,
 				E73B8D1C18B541F300CEB072 /* clock.gif in Resources */,
 				E770466B18891A7700BE6FC4 /* InfoPlist.strings in Resources */,
+				0264427919A1C1F000810388 /* MHacksLOGO-Borderless.png in Resources */,
 				6C9B48A318B7F091008E81B7 /* facebook@2x.png in Resources */,
 				E770467418891A7700BE6FC4 /* Main.storyboard in Resources */,
 			);
@@ -875,13 +903,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"./**",
-					"/Users/spenceryen/Dropbox/Spencer/hshacks-ios",
-				);
+				FRAMEWORK_SEARCH_PATHS = "./**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHacks/MHacks-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/MHacks/MHacks-Info.plist";
@@ -896,13 +921,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-3";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"./**",
-					"/Users/spenceryen/Dropbox/Spencer/hshacks-ios",
-				);
+				FRAMEWORK_SEARCH_PATHS = "./**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHacks/MHacks-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/MHacks/MHacks-Info.plist";
