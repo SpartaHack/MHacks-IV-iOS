@@ -53,16 +53,19 @@
         
         [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
             // Add the chat message to the array.
-            [self.chatMessages addObject:snapshot.value];
-            // Reload the table view so the new message will show up.
-            [SVProgressHUD dismiss];
-            dispatch_async(dispatch_get_main_queue(), ^{
+            // TODO: take this out, we need to hook chat up to the different chat rooms and such
+            if (![snapshot.name isEqualToString:@"chat"]) {
+                [self.chatMessages addObject:snapshot.value];
                 
-                [self.chatTableView reloadData];
-                
-                self.chatTextField.userInteractionEnabled = TRUE;
-                [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-            });
+                // Reload the table view so the new message will show up.
+                [SVProgressHUD dismiss];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.chatTableView reloadData];
+                    
+                    self.chatTextField.userInteractionEnabled = TRUE;
+                    [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+                });
+            }
         }];
     }
 }
@@ -83,7 +86,7 @@
                                                        @"message": textField.text,
                                                        @"image" : self.photoURL }];
         }
-        
+        /*
         if([textField.text isEqualToString:@"hellyeah"]){
             UILabel *hellYeahLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 240, 300, 50)];
             hellYeahLabel.center = self.view.center;
@@ -107,7 +110,7 @@
                     hellYeahLabel.alpha = 0.0;
                 }];
             }];
-        }
+        } */
         
         [textField setText:@""];
     }
