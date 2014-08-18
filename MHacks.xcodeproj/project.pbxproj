@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		021FCF3619A12A6400988AED /* MHTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 021FCF3519A12A6400988AED /* MHTabBar.m */; };
-		021FCF3A19A150EA00988AED /* MHTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 021FCF3919A150EA00988AED /* MHTableView.m */; };
 		021FCF3D19A154A200988AED /* BOZPongRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 021FCF3C19A154A200988AED /* BOZPongRefreshControl.m */; };
 		0264427519A1BFC200810388 /* Icons in Resources */ = {isa = PBXBuildFile; fileRef = 0264427419A1BFC200810388 /* Icons */; };
 		0264427719A1C15E00810388 /* MHacksLOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 0264427619A1C15E00810388 /* MHacksLOGO.png */; };
@@ -114,10 +112,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		021FCF3419A12A6400988AED /* MHTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTabBar.h; sourceTree = "<group>"; };
-		021FCF3519A12A6400988AED /* MHTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTabBar.m; sourceTree = "<group>"; };
-		021FCF3819A150EA00988AED /* MHTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTableView.h; sourceTree = "<group>"; };
-		021FCF3919A150EA00988AED /* MHTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTableView.m; sourceTree = "<group>"; };
 		021FCF3B19A154A200988AED /* BOZPongRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOZPongRefreshControl.h; sourceTree = "<group>"; };
 		021FCF3C19A154A200988AED /* BOZPongRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOZPongRefreshControl.m; sourceTree = "<group>"; };
 		0264427419A1BFC200810388 /* Icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Icons; sourceTree = "<group>"; };
@@ -296,17 +290,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		021FCF3319A12A4700988AED /* Custom Classes */ = {
-			isa = PBXGroup;
-			children = (
-				021FCF3419A12A6400988AED /* MHTabBar.h */,
-				021FCF3819A150EA00988AED /* MHTableView.h */,
-				021FCF3919A150EA00988AED /* MHTableView.m */,
-				021FCF3519A12A6400988AED /* MHTabBar.m */,
-			);
-			name = "Custom Classes";
-			sourceTree = "<group>";
-		};
 		021FCF3719A14C2900988AED /* PongToRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,12 +507,11 @@
 		E770466618891A7700BE6FC4 /* MHacks */ = {
 			isa = PBXGroup;
 			children = (
-				6CC6F0A718B5714F0036ADD1 /* Categories */,
-				F51A6FC219A17D6A00DED799 /* ThirdPartyLibraries */,
-				021FCF3319A12A4700988AED /* Custom Classes */,
-				6CE2CB0E18B02053007AC3AA /* Images */,
 				E770466F18891A7700BE6FC4 /* MHAppDelegate.h */,
 				E770467018891A7700BE6FC4 /* MHAppDelegate.m */,
+				6CC6F0A718B5714F0036ADD1 /* Categories */,
+				F51A6FC219A17D6A00DED799 /* ThirdPartyLibraries */,
+				6CE2CB0E18B02053007AC3AA /* Images */,
 				6CF15AE018B1FE4300AE5A04 /* Login Views */,
 				E770467218891A7700BE6FC4 /* Main.storyboard */,
 				6CC6F0C118B5FAEF0036ADD1 /* Updates */,
@@ -706,7 +688,6 @@
 				6CF15AD618B1FACC00AE5A04 /* MHAwardsViewController.m in Sources */,
 				6CE2CB0518B01F17007AC3AA /* SDWebImageManager.m in Sources */,
 				6CC6F0A318B571470036ADD1 /* UIView+Positioning.m in Sources */,
-				021FCF3619A12A6400988AED /* MHTabBar.m in Sources */,
 				6CE2CAFF18B01F17007AC3AA /* NSData+ImageContentType.m in Sources */,
 				6CE2CB0118B01F17007AC3AA /* SDWebImageCompat.m in Sources */,
 				6CF15AE718B2309A00AE5A04 /* MHCountdownViewController.m in Sources */,
@@ -720,7 +701,6 @@
 				6CC6F0CC18B740D80036ADD1 /* MLIMGURUploader.m in Sources */,
 				6CE2CB0718B01F17007AC3AA /* UIButton+WebCache.m in Sources */,
 				6CC6F0A418B571470036ADD1 /* UIView+ShowAnimations.m in Sources */,
-				021FCF3A19A150EA00988AED /* MHTableView.m in Sources */,
 				6CE2CB0618B01F17007AC3AA /* SDWebImagePrefetcher.m in Sources */,
 				6CC6F0A618B571470036ADD1 /* UIViewController+EMAdditions.m in Sources */,
 				6CE2CB0418B01F17007AC3AA /* SDWebImageDownloaderOperation.m in Sources */,
