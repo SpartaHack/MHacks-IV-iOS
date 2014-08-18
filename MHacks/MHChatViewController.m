@@ -196,8 +196,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Oops." message: @"I don't think you are connected to the internet." delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         self.chatTextField.userInteractionEnabled = NO;
-    }
-    else{
+    } else {
         self.chatTextField.userInteractionEnabled = YES;
     }
     
@@ -219,7 +218,6 @@
     [[NSNotificationCenter defaultCenter]
      removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
-
 
 // Setup keyboard handlers to slide the view containing the table view and
 // text field upwards when the keyboard shows, and downwards when it hides.
