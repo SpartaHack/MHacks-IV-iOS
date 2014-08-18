@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GuideViewController : UIViewController
+@interface MHGuideViewController : UIViewController
 
 
 @property (strong, nonatomic) IBOutlet UIView *scheduleContainer;

@@ -7,13 +7,13 @@
 //  Alex Yeh too pro!!!!!!!!!
 //
 
-#import "CountdownViewController.h"
+#import "MHCountdownViewController.h"
 #import "UIImage+animatedGIF.h"
-@interface CountdownViewController ()
+@interface MHCountdownViewController ()
 
 @end
 
-@implementation CountdownViewController
+@implementation MHCountdownViewController
 @synthesize countdown, interval, timerImage;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

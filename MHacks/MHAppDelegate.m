@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "MHAppDelegate.h"
 #import <Parse/Parse.h>
 
-@implementation AppDelegate
+@implementation MHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

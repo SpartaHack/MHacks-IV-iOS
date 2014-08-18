@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UserData : NSObject{
+@interface MHUserData : NSObject{
     NSString *userName;
     NSString *userPhoto;
 

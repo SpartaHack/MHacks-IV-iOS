@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //
 
-#import "UserData.h"
+#import "MHUserData.h"
 
-@implementation UserData
+@implementation MHUserData
 
 @synthesize userName;
 @synthesize userPhoto;
@@ -21,7 +21,7 @@
 // userData.string = blah blah
 
 + (id)sharedManager {
-    static UserData *userData = nil;
+    static MHUserData *userData = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         userData = [[self alloc] init];

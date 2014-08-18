@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <FacebookSDK/FBSessionTokenCachingStrategy.h>
-#import "UserData.h"
+#import "MHUserData.h"
 #import <Twitter/Twitter.h> 
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface LoginViewController : UIViewController{
+@interface MHLoginViewController : UIViewController{
 
 NSString *username;
 

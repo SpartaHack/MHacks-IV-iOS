@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-@interface GuestLoginViewController : UIViewController <UITextFieldDelegate> {
+@interface MHGuestLoginViewController : UIViewController <UITextFieldDelegate> {
     BOOL FrontCamera;
     BOOL haveImage;
 }

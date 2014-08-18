@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CountdownViewController : UIViewController {
+@interface MHCountdownViewController : UIViewController {
     
     NSDate *today;
     NSDate *HShacksBegin;

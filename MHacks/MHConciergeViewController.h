@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface ConciergeViewController : PFQueryTableViewController
+@interface MHConciergeViewController : PFQueryTableViewController
 
 @property (nonatomic, retain) NSMutableDictionary *sections;
 @property (nonatomic, retain) NSMutableDictionary *sectionToCompanyMap;

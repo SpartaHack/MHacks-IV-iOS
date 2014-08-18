@@ -6,17 +6,17 @@
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //
 
-#import "UpdatesViewController.h"
-#import "LoginViewController.h"
+#import "MHUpdatesViewController.h"
+#import "MHLoginViewController.h"
 
 
-@interface UpdatesViewController ()
+@interface MHUpdatesViewController ()
 
 @property (nonatomic, strong) BOZPongRefreshControl *pongRefreshControl;
 
 @end
 
-@implementation UpdatesViewController
+@implementation MHUpdatesViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -67,7 +67,7 @@
     if(![self isLoggedIn]){
 
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        LoginViewController *loginVC = (LoginViewController*)[storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+        MHLoginViewController *loginVC = (MHLoginViewController*)[storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
         [self presentViewController:loginVC animated:NO completion:nil];
         
     }
@@ -85,7 +85,7 @@
  
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    UserData *userData = [UserData sharedManager];
+    MHUserData *userData = [MHUserData sharedManager];
 
     userData.userName = [defaults objectForKey:@"name"];
     userData.userPhoto = [defaults objectForKey:@"photo"];

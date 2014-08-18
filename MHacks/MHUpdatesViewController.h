@@ -11,7 +11,7 @@
 #import "BOZPongRefreshControl.h"
 
 
-@interface UpdatesViewController : PFQueryTableViewController
+@interface MHUpdatesViewController : PFQueryTableViewController
 
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

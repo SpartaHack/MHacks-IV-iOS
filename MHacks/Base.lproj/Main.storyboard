@@ -7,7 +7,7 @@
         <!--Updates Nav View Controller - Updates-->
         <scene sceneID="W3I-pn-N6e">
             <objects>
-                <viewController storyboardIdentifier="updatesVC" title="Updates" id="CZ4-MO-1fc" customClass="UpdatesNavViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updatesVC" title="Updates" id="CZ4-MO-1fc" customClass="MHUpdatesNavViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2VE-Yg-loa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,7 +58,7 @@
         <!--Login View Controller-->
         <scene sceneID="xlG-Ov-zm7">
             <objects>
-                <viewController storyboardIdentifier="loginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SiW-8W-CZh" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SiW-8W-CZh" customClass="MHLoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wDI-Kt-Op0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -105,7 +105,7 @@
         <!--Concierge Nav View Controller - Concierge-->
         <scene sceneID="ot8-2e-RuS">
             <objects>
-                <viewController title="Concierge" automaticallyAdjustsScrollViewInsets="NO" id="QUy-BD-bpt" customClass="ConciergeNavViewController" sceneMemberID="viewController">
+                <viewController title="Concierge" automaticallyAdjustsScrollViewInsets="NO" id="QUy-BD-bpt" customClass="MHConciergeNavViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gMD-aP-Fq6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,7 +151,7 @@
         <!--Guide View Controller - Guide-->
         <scene sceneID="N5T-2b-KD7">
             <objects>
-                <viewController id="BLW-Sc-5yt" customClass="GuideViewController" sceneMemberID="viewController">
+                <viewController id="BLW-Sc-5yt" customClass="MHGuideViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WiH-z9-hdm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -207,7 +207,7 @@
         <!--Chat View Controller - Chat-->
         <scene sceneID="cK4-GZ-wY9">
             <objects>
-                <viewController id="zZ2-Ja-P8W" customClass="ChatViewController" sceneMemberID="viewController">
+                <viewController id="zZ2-Ja-P8W" customClass="MHChatViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Kj-Mb-AvW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -809,7 +809,7 @@
         <!--Concierge View Controller-->
         <scene sceneID="CeL-xz-ogr">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qgO-01-ho1" customClass="ConciergeViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qgO-01-ho1" customClass="MHConciergeViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" id="Zat-fK-E1i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -877,7 +877,7 @@
         <!--Updates View Controller-->
         <scene sceneID="V4o-JL-aGR">
             <objects>
-                <viewController id="PfM-Go-FNe" customClass="UpdatesViewController" sceneMemberID="viewController">
+                <viewController id="PfM-Go-FNe" customClass="MHUpdatesViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7xx-wm-mI6" customClass="MHTableView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -954,7 +954,7 @@
         <!--Guest Login View Controller-->
         <scene sceneID="wAz-36-DsQ">
             <objects>
-                <viewController storyboardIdentifier="guestVC" id="J9F-kv-YAZ" customClass="GuestLoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="guestVC" id="J9F-kv-YAZ" customClass="MHGuestLoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nDS-xr-AKh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1024,7 +1024,7 @@
         <!--Awards View Controller-->
         <scene sceneID="kW2-bO-ujJ">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="EWr-b6-JiB" customClass="AwardsViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="EWr-b6-JiB" customClass="MHAwardsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qge-Hh-8vO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="453"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1100,7 +1100,7 @@
         <!--Schedule View Controller-->
         <scene sceneID="ocE-W1-pcp">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="VSQ-7G-hOa" customClass="ScheduleViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="VSQ-7G-hOa" customClass="MHScheduleViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="rss-nF-HlM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="403"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1146,7 +1146,7 @@
         <!--Countdown View Controller-->
         <scene sceneID="etL-Qs-KWd">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="euO-h5-0Ma" customClass="CountdownViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="euO-h5-0Ma" customClass="MHCountdownViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="h7H-xk-4eo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -1,5 +1,5 @@
 //
-//  UpdatesNavViewController.h
+//  ConciergeNavViewController.h
 //  HSHacks
 //
 //  Created by Spencer Yen on 2/19/14.
@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UpdatesNavViewController : UIViewController
-
-- (IBAction)shareFacebook:(id)sender;
+@interface MHConciergeNavViewController : UIViewController
 
 - (IBAction)shareTwitter:(id)sender;
+- (IBAction)shareFacebook:(id)sender;
 
 @end

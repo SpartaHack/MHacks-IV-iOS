@@ -6,20 +6,20 @@
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //
 
-#import "ChatViewController.h"
-#import "LoginViewController.h"
-#import "UserData.h"
+#import "MHChatViewController.h"
+#import "MHLoginViewController.h"
+#import "MHUserData.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "SVProgressHUD/SVProgressHUD.h"
 //Firebase chat server
 #define kFirechatNS @"https://hshacks.firebaseio.com/"
 
-@interface ChatViewController ()
+@interface MHChatViewController ()
 
 @end
 
-@implementation ChatViewController
+@implementation MHChatViewController
 
 @synthesize chatTableView;
 @synthesize chatTextField;
@@ -52,7 +52,7 @@
     
     self.chatTextField.enablesReturnKeyAutomatically = YES;
     
-    UserData *userData = [UserData sharedManager];
+    MHUserData *userData = [MHUserData sharedManager];
 
     // Initialize array that will store chat messages.
     self.chat = [[NSMutableArray alloc] init];
@@ -297,7 +297,7 @@
 - (IBAction)logoutPressed:(id)sender {
 	
     
-    UserData *userData = [UserData sharedManager];
+    MHUserData *userData = [MHUserData sharedManager];
     userData.userName = nil;
     userData.userPhoto = nil;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -309,7 +309,7 @@
     
    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-     LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+     MHLoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
     
     loginVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:loginVC animated:YES completion:nil];

@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //
 
-#import "ConciergeViewController.h"
+#import "MHConciergeViewController.h"
 #import <MessageUI/MessageUI.h>
 #import <Social/Social.h>
-@interface ConciergeViewController ()
+@interface MHConciergeViewController ()
 
 @end
 
-@implementation ConciergeViewController
+@implementation MHConciergeViewController
 @synthesize sections = _sections;
 @synthesize sectionToCompanyMap = _sectionToCompanyMap;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

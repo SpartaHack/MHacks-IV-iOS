@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //
 
-#import "AwardsViewController.h"
+#import "MHAwardsViewController.h"
 
-@interface AwardsViewController ()
+@interface MHAwardsViewController ()
 
 @end
 
-@implementation AwardsViewController
+@implementation MHAwardsViewController
 @synthesize detailsArray, trueContentSize;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

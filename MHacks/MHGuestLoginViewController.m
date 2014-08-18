@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //
 
-#import "GuestLoginViewController.h"
+#import "MHGuestLoginViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import "UpdatesViewController.h"
+#import "MHUpdatesViewController.h"
 #import "AVCamCaptureManager.h"
 #import "AVCamRecorder.h"
 #import "UIView+Utilities.h"
 #import "UIView+ShowAnimations.h"
 #import "UIImage+Dimensions.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UserData.h"
+#import "MHUserData.h"
 #import <ImageIO/CGImageProperties.h>
 #import "MLIMGURUploader.h"
 #import "SVProgressHUD/SVProgressHUD.h"
@@ -23,7 +23,7 @@
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
 
-@interface GuestLoginViewController ()  <AVCamCaptureManagerDelegate>
+@interface MHGuestLoginViewController ()  <AVCamCaptureManagerDelegate>
 
 @property (nonatomic,retain) AVCamCaptureManager *captureManager;
 @property (nonatomic,retain) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
@@ -31,7 +31,7 @@
 
 @end
 
-@implementation GuestLoginViewController
+@implementation MHGuestLoginViewController
 @synthesize stillImageOutput, imagePreview, captureImage, nameField, imageData, imgBtn, doneOutlet, statusLabel;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -212,7 +212,7 @@
                                //Upload to imgur
                                NSLog(@"result url for imgur : %@", result);
                                
-                               UserData *userData = [UserData sharedManager];
+                               MHUserData *userData = [MHUserData sharedManager];
                                userData.userPhoto = result;
                                
                                //now store data in nsuserdefault
@@ -298,7 +298,7 @@
 
 
 - (IBAction)doneTapped:(id)sender {
-    UserData *userData = [UserData sharedManager];
+    MHUserData *userData = [MHUserData sharedManager];
     
 
     if(userData.userName.length == 0){
@@ -321,7 +321,7 @@
     }
 }
 -(void) animateOut{
-    UserData *userData = [UserData sharedManager];
+    MHUserData *userData = [MHUserData sharedManager];
     
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -366,13 +366,13 @@
 }
 -(void)dismissView:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UpdatesViewController *updatesVC = (UpdatesViewController*)[storyboard instantiateViewControllerWithIdentifier:@"MainTabBar"];
+    MHUpdatesViewController *updatesVC = (MHUpdatesViewController*)[storyboard instantiateViewControllerWithIdentifier:@"MainTabBar"];
     updatesVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:updatesVC animated:YES completion:nil];
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    UserData *userData = [UserData sharedManager];
+    MHUserData *userData = [MHUserData sharedManager];
     userData.userName = textField.text;
    
     //now store data in nsuserdefault

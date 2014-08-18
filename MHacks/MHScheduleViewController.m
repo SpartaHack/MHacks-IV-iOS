@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //
 
-#import "ScheduleViewController.h"
+#import "MHScheduleViewController.h"
 
-@interface ScheduleViewController ()
+@interface MHScheduleViewController ()
 
 @end
 
-@implementation ScheduleViewController
+@implementation MHScheduleViewController
 
 @synthesize sections = _sections;
 @synthesize sectionToDayMap = _sectionToDayMap;

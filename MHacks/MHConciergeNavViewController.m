@@ -1,19 +1,19 @@
 //
-//  UpdatesNavViewController.m
+//  ConciergeNavViewController.m
 //  HSHacks
 //
 //  Created by Spencer Yen on 2/19/14.
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //
 
-#import "UpdatesNavViewController.h"
+#import "MHConciergeNavViewController.h"
 #import <Social/Social.h>
 
-@interface UpdatesNavViewController ()
+@interface MHConciergeNavViewController ()
 
 @end
 
-@implementation UpdatesNavViewController
+@implementation MHConciergeNavViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,14 +37,13 @@
 }
 
 
-
 - (IBAction)shareFacebook:(id)sender {
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
         SLComposeViewController *composeController = [SLComposeViewController
                                                       composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        [composeController setInitialText:@"Check out the Mhacks hackathon!"];
+        [composeController setInitialText:@"HighSchoolHacks is #stacked!"];
         //Post actual selfie?
         //[composeController addImage:postImage.image];
         [self presentViewController:composeController
@@ -64,7 +63,7 @@
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
-        NSString *message = [NSString stringWithFormat:@"Check out the @MHacks hackathon!"];
+        NSString *message = [NSString stringWithFormat:@"@highschoolhacks is #stacked!"];
         [tweetSheet setInitialText:message];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
@@ -74,5 +73,8 @@
         
         
     }
+
 }
+
+
 @end

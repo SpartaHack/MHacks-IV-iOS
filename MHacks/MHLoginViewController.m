@@ -6,18 +6,18 @@
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //
 
-#import "LoginViewController.h"
-#import "UpdatesViewController.h"
+#import "MHLoginViewController.h"
+#import "MHUpdatesViewController.h"
 #import "SVProgressHUD/SVProgressHUD.h"
 #import <float.h>
 
-@interface LoginViewController ()
+@interface MHLoginViewController ()
 
 
 
 @end
 
-@implementation LoginViewController
+@implementation MHLoginViewController
 
 @synthesize username, logo, statusLabel, twitterButton, facebookButton, guestButton;
 
@@ -187,7 +187,7 @@
                 NSString *profileImageUrl = [twitterData objectForKey:@"profile_image_url"];
                 
                 NSLog(@"got twitter image: %@", profileImageUrl);
-                UserData *userData = [UserData sharedManager];
+                MHUserData *userData = [MHUserData sharedManager];
                 userData.userName = name;
                 userData.userPhoto = profileImageUrl;
  
@@ -267,7 +267,7 @@
              if (!error) {
                
                  
-                 UserData *userData = [UserData sharedManager];
+                 MHUserData *userData = [MHUserData sharedManager];
                  userData.userName = user.name;
                    NSString *photo = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=square", user.username];
                 
@@ -318,7 +318,7 @@
 
 -(void)doneWithLogin{
     
-    UserData *userData = [UserData sharedManager];
+    MHUserData *userData = [MHUserData sharedManager];
    
        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -365,7 +365,7 @@
 
 -(void)dismissView:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UpdatesViewController *updatesVC = (UpdatesViewController*)[storyboard instantiateViewControllerWithIdentifier:@"MainTabBar"];
+    MHUpdatesViewController *updatesVC = (MHUpdatesViewController*)[storyboard instantiateViewControllerWithIdentifier:@"MainTabBar"];
     updatesVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:updatesVC animated:YES completion:nil];
 }

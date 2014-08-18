@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //
 
-#import "GuideViewController.h"
+#import "MHGuideViewController.h"
 
-@interface GuideViewController ()
+@interface MHGuideViewController ()
 
 @end
 
-@implementation GuideViewController
+@implementation MHGuideViewController
 @synthesize awardsContainer = _awardsContainer;
 @synthesize scheduleContainer = _scheduleContainer;
 @synthesize countdownContainer = _countdownContainer;

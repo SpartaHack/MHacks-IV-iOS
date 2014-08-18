@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface HSHacksTests : XCTestCase
+@interface MHacksTests : XCTestCase
 
 @end
 
-@implementation HSHacksTests
+@implementation MHacksTests
 
 - (void)setUp
 {

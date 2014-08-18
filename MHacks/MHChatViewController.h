@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
-@interface ChatViewController : UIViewController
+@interface MHChatViewController : UIViewController
 
 
 @property (nonatomic, strong) NSString* name;
