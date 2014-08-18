@@ -327,9 +327,11 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
-		6CC6F0A718B5714F0036ADD1 /* UIView */ = {
+		6CC6F0A718B5714F0036ADD1 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				6CE3039518B8735C00AA432A /* UIImage+animatedGIF.h */,
+				6CE3039618B8735C00AA432A /* UIImage+animatedGIF.m */,
 				6CC6F0A818B571940036ADD1 /* UIImage+Dimensions.h */,
 				6CC6F0A918B571940036ADD1 /* UIImage+Dimensions.m */,
 				6CC6F09818B571470036ADD1 /* UIView+NibLoading.h */,
@@ -343,7 +345,7 @@
 				6CC6F0A018B571470036ADD1 /* UIViewController+EMAdditions.h */,
 				6CC6F0A118B571470036ADD1 /* UIViewController+EMAdditions.m */,
 			);
-			name = UIView;
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		6CC6F0C118B5FAEF0036ADD1 /* Updates */ = {
@@ -455,8 +457,6 @@
 		6CF15AE118B1FE5A00AE5A04 /* Guide Views */ = {
 			isa = PBXGroup;
 			children = (
-				6CE3039518B8735C00AA432A /* UIImage+animatedGIF.h */,
-				6CE3039618B8735C00AA432A /* UIImage+animatedGIF.m */,
 				6CC2247D18A4771600262706 /* GuideViewController.h */,
 				6CC2247E18A4771600262706 /* GuideViewController.m */,
 				6CF15AE518B2309900AE5A04 /* CountdownViewController.h */,
@@ -525,12 +525,10 @@
 		E770466618891A7700BE6FC4 /* HSHacks */ = {
 			isa = PBXGroup;
 			children = (
-				021FCF3719A14C2900988AED /* PongToRefresh */,
+				6CC6F0A718B5714F0036ADD1 /* Categories */,
+				F51A6FC219A17D6A00DED799 /* ThirdPartyLibraries */,
 				021FCF3319A12A4700988AED /* Custom Classes */,
-				6CC6F0A718B5714F0036ADD1 /* UIView */,
 				6CE2CB0E18B02053007AC3AA /* Images */,
-				6C9B48A518B7FBBC008E81B7 /* SVProgressHUD */,
-				6CE2CAE018B01F17007AC3AA /* SDWebImage */,
 				E770466F18891A7700BE6FC4 /* AppDelegate.h */,
 				E770467018891A7700BE6FC4 /* AppDelegate.m */,
 				6CF15AE018B1FE4300AE5A04 /* Login Views */,
@@ -575,6 +573,16 @@
 				E770468B18891A7700BE6FC4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F51A6FC219A17D6A00DED799 /* ThirdPartyLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				6CE2CAE018B01F17007AC3AA /* SDWebImage */,
+				6C9B48A518B7FBBC008E81B7 /* SVProgressHUD */,
+				021FCF3719A14C2900988AED /* PongToRefresh */,
+			);
+			name = ThirdPartyLibraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
