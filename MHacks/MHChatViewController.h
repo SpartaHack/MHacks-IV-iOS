@@ -8,19 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
-@interface MHChatViewController : UIViewController
 
+@interface MHChatViewController : UIViewController
 
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSString* photoURL;
-@property (nonatomic, strong) NSMutableArray* chat;
+@property (nonatomic, strong) NSMutableArray* chatMessages;
 @property (nonatomic, strong) Firebase* firebase;
-
-- (IBAction)logoutPressed:(id)sender;
-
-
 
 @property (strong, nonatomic) IBOutlet UITableView *chatTableView;
 @property (strong, nonatomic) IBOutlet UITextField *chatTextField;
+
+- (IBAction)logoutPressed:(id)sender;
 
 @end
