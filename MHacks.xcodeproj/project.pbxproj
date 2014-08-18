@@ -401,6 +401,7 @@
 		6CE2CB0E18B02053007AC3AA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E770467B18891A7700BE6FC4 /* Images.xcassets */,
 				6CECDFE918B96A4400421F80 /* HSHacksLaunch3.png */,
 				6CECDFEA18B96A4400421F80 /* HSHacksLaunch4.png */,
 				6CC6F0BD18B5FA7B0036ADD1 /* logout@2x.png */,
@@ -420,7 +421,7 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		6CF15AE018B1FE4300AE5A04 /* Login Views */ = {
+		6CF15AE018B1FE4300AE5A04 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				6CCB63D118A613A7004E80B4 /* MHLoginViewController.h */,
@@ -436,10 +437,10 @@
 				6CC6F09418B56EDF0036ADD1 /* AVCamRecorder.h */,
 				6CC6F09518B56EDF0036ADD1 /* AVCamRecorder.m */,
 			);
-			name = "Login Views";
+			name = Login;
 			sourceTree = "<group>";
 		};
-		6CF15AE118B1FE5A00AE5A04 /* Guide Views */ = {
+		6CF15AE118B1FE5A00AE5A04 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
 				6CC2247D18A4771600262706 /* MHGuideViewController.h */,
@@ -451,7 +452,7 @@
 				6CF15AC618B1FA3800AE5A04 /* MHScheduleViewController.h */,
 				6CF15AC718B1FA3800AE5A04 /* MHScheduleViewController.m */,
 			);
-			name = "Guide Views";
+			name = Guide;
 			sourceTree = "<group>";
 		};
 		E770465418891A7700BE6FC4 = {
@@ -510,17 +511,15 @@
 				E770466F18891A7700BE6FC4 /* MHAppDelegate.h */,
 				E770467018891A7700BE6FC4 /* MHAppDelegate.m */,
 				E770467218891A7700BE6FC4 /* Main.storyboard */,
-				6CC6F0A718B5714F0036ADD1 /* Categories */,
-				F51A6FC219A17D6A00DED799 /* ThirdPartyLibraries */,
-				6CE2CB0E18B02053007AC3AA /* Images */,
-				6CF15AE018B1FE4300AE5A04 /* Login Views */,
+				6CF15AE018B1FE4300AE5A04 /* Login */,
 				6CC6F0C118B5FAEF0036ADD1 /* Updates */,
 				6CC6F0C218B5FB190036ADD1 /* Concierge */,
 				6CC6F0C318B5FB250036ADD1 /* Chat */,
-				6CF15AE118B1FE5A00AE5A04 /* Guide Views */,
-				6CCB63CC18A60324004E80B4 /* MHUserData.h */,
-				6CCB63CD18A60324004E80B4 /* MHUserData.m */,
-				E770467B18891A7700BE6FC4 /* Images.xcassets */,
+				6CF15AE118B1FE5A00AE5A04 /* Guide */,
+				6CC6F0A718B5714F0036ADD1 /* Categories */,
+				F51A6FC219A17D6A00DED799 /* ThirdPartyLibraries */,
+				6CE2CB0E18B02053007AC3AA /* Images */,
+				FB99CA0F19A1E1FE0099AF43 /* Data */,
 				E770466718891A7700BE6FC4 /* Supporting Files */,
 			);
 			path = MHacks;
@@ -563,6 +562,15 @@
 				021FCF3719A14C2900988AED /* PongToRefresh */,
 			);
 			name = ThirdPartyLibraries;
+			sourceTree = "<group>";
+		};
+		FB99CA0F19A1E1FE0099AF43 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6CCB63CC18A60324004E80B4 /* MHUserData.h */,
+				6CCB63CD18A60324004E80B4 /* MHUserData.m */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
