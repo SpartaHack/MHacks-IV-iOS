@@ -7,7 +7,6 @@
 //
 
 #import "MHChatViewController.h"
-#import "MHLoginViewController.h"
 #import "MHUserData.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SDWebImage/UIImageView+WebCache.h"
@@ -241,23 +240,6 @@
     
     CGRect chatTableViewFrame = CGRectMake(0,65,320,self.chatTableView.frame.size.height+170);
     [UIView animateWithDuration:0.0 animations:^{ self.chatTableView.frame = chatTableViewFrame;}];
-}
-
-- (IBAction)logoutPressed:(id)sender {
-    MHUserData *userData = [MHUserData sharedManager];
-    userData.userName = nil;
-    userData.userPhoto = nil;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setObject:nil forKey:@"name"];
-    [defaults setObject:nil forKey:@"photo"];
-    [defaults synchronize];
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    MHLoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
-    
-    loginVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:loginVC animated:YES completion:nil];
 }
 
 @end

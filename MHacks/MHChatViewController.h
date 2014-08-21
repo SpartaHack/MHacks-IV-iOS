@@ -21,6 +21,4 @@
 @property (strong, nonatomic) IBOutlet UITableView *chatTableView;
 @property (strong, nonatomic) IBOutlet UITextField *chatTextField;
 
-- (IBAction)logoutPressed:(id)sender;
-
 @end
