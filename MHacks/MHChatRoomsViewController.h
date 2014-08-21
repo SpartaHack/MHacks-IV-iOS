@@ -14,7 +14,7 @@
 @property (nonatomic, strong) Firebase* firebase;
 @property (nonatomic, strong) NSMutableArray* chatRooms;
 
-@property (nonatomic, strong) NSString* urlOfChatRoomToNavigateTo;
+@property (nonatomic, strong) NSString* chatRoomToEnter;
 
 @property (strong, nonatomic) IBOutlet UITableView *roomsTableView;
 

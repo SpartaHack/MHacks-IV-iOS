@@ -77,7 +77,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary* chatRoom = [self.chatRooms objectAtIndex:indexPath.row];
-    self.urlOfChatRoomToNavigateTo = [[NSURL URLWithString:chatRoom[@"title"] relativeToURL:[NSURL URLWithString:kFirechatMessagesBase]] absoluteString];
+    self.chatRoomToEnter = chatRoom[@"title"];
     
     [self performSegueWithIdentifier:@"ChatRoomsToChat" sender:self];
 }
@@ -85,7 +85,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"ChatRoomsToChat"]) {
-        ((MHChatViewController*)segue.destinationViewController).firechatUrl = self.urlOfChatRoomToNavigateTo;
+        ((MHChatViewController*)segue.destinationViewController).firechatUrl = [[NSURL URLWithString:self.chatRoomToEnter relativeToURL:[NSURL URLWithString:kFirechatMessagesBase]] absoluteString];
+        ((MHChatViewController*)segue.destinationViewController).navigationItem.title = self.chatRoomToEnter;
     }
 }
 
