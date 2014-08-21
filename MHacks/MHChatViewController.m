@@ -13,8 +13,6 @@
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "SVProgressHUD/SVProgressHUD.h"
 
-#define kFirechatNS @"https://mhacks-f2014.firebaseio.com/chat/messages/iOS"
-
 @implementation MHChatViewController
 
 - (void)viewDidLoad
@@ -23,7 +21,6 @@
     
     NSString *connected = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://twitter.com/getibox"] encoding:NSUTF8StringEncoding error:nil];
     if (connected != NULL) {
-        
         [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
         self.chatTextField.userInteractionEnabled = NO;
         
@@ -40,7 +37,7 @@
         self.chatMessages = [[NSMutableArray alloc] init];
         
         // Initialize the root of our Firebase namespace.
-        self.firebase = [[Firebase alloc] initWithUrl:kFirechatNS];
+        self.firebase = [[Firebase alloc] initWithUrl:self.firechatUrl];
         
         //Store name and photoURL in UserDefaults
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -152,15 +149,14 @@
 {
     static NSString *CellIdentifier = @"ChatCell";
     UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
     
     if(indexPath.row % 2 == 0) {
         cell.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:195.0/255.0 blue:199.0/255.0 alpha:0.02];
     } else {
         cell.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:195.0/255.0 blue:199.0/255.0 alpha:0.08];
-    }
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     NSDictionary* chatMessage = [self.chatMessages objectAtIndex:indexPath.row];

@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
 
-@interface MHChatViewController : UIViewController
+@interface MHChatViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSString* firechatUrl;
 
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSString* photoURL;
