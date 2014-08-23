@@ -44,6 +44,16 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSIndexPath *indexPath = self.roomsTableView.indexPathForSelectedRow;
+    if (indexPath) {
+        [self.roomsTableView deselectRowAtIndexPath:indexPath animated:animated];
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
@@ -63,7 +73,6 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSDictionary* chatRoom = [self.chatRooms objectAtIndex:indexPath.row];
     
