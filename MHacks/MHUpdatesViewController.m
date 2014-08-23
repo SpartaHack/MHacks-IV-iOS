@@ -1,16 +1,25 @@
 //
 //  UpdatesViewController.m
-//  HSHacks
+//  MHacks
 //
 //  Created by Spencer Yen on 2/6/14.
-//  Copyright (c) 2014 hshacks.com. All rights reserved.
+//
+//  Edited and fixed by Christopher McGrath (Mr.Amazing) on 8/2/14
+//  :D
+//
 //
 
 #import "MHUpdatesViewController.h"
 #import "MHLoginViewController.h"
 
+#define kDetailsObjectKey @"details"
+#define kTitleObjectKey @"title"
+
 
 @interface MHUpdatesViewController ()
+{
+    NSMutableArray *arrayOfAnnouncements;
+}
 
 @property (nonatomic, strong) BOZPongRefreshControl *pongRefreshControl;
 
@@ -18,12 +27,12 @@
 
 @implementation MHUpdatesViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+- (id)initWithCoder:(NSCoder *)aCoder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithCoder:aCoder];
     if (self) {
-		self.pullToRefreshEnabled = NO;
-        // Custom initialization
+        arrayOfAnnouncements = [NSMutableArray new];
     }
     return self;
 }
@@ -31,11 +40,56 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.tableView.separatorInset = UIEdgeInsetsZero;
 
-    
+    [self canIHazParseDatas:^{}];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    if(![self isLoggedIn]){
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        MHLoginViewController *loginVC = (MHLoginViewController*)[storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+        [self presentViewController:loginVC animated:NO completion:nil];
+    }
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+- (void)canIHazParseDatas:(void(^)())block
+{
+    //Step 1 remove old datas
+    [arrayOfAnnouncements removeAllObjects];
+    //Step 2 download all da data againz!!!!
+    PFQuery *query = [PFQuery queryWithClassName:@"Announcement"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for(int i = 0; i < objects.count; i++){
+                [objects[i] objectForKey:@"details"];
+                //Step 3 add new datas to arrYAY!! :D
+                [arrayOfAnnouncements addObject:objects[i]];
+                NSLog(@"Parse objs: %@",[objects[i] objectForKey:@"details"]);
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        //Step 4 tell the table view to redraw everything like the good little table it better be...... :P
+        [self.tableView reloadData];
+        block(nil,nil);
+    }];
+}
+
+
+#pragma mark PONG PONG PONG
+
 - (void)viewDidLayoutSubviews
 {
     self.pongRefreshControl = [BOZPongRefreshControl attachToTableView:self.tableView
@@ -47,37 +101,11 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self.pongRefreshControl scrollViewDidScroll];
-	[super scrollViewDidScroll:scrollView];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     [self.pongRefreshControl scrollViewDidEndDragging];
-	[super scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-   
-        [self loadObjects];
-    
-}
--(void)viewDidAppear:(BOOL)animated{
-    if(![self isLoggedIn]){
-
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        MHLoginViewController *loginVC = (MHLoginViewController*)[storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
-        [self presentViewController:loginVC animated:NO completion:nil];
-        
-    }
-
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    
 }
 
 
@@ -101,102 +129,69 @@
     }
 }
 
-- (id)initWithCoder:(NSCoder *)aCoder
+
+#pragma mark Table View Related Stuffs
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    self = [super initWithCoder:aCoder];
-    if (self) {
-        // The className to query on
-        self.parseClassName = @"Announcement";
-        
-        // The key of the PFObject to display in the label of the default cell style
-        self.textKey = @"createdAt";
-        self.pullToRefreshEnabled = NO;
-        self.paginationEnabled = NO;
-    
-    
-    }
-    return self;
+    return [arrayOfAnnouncements count];
 }
 
-- (PFQuery *)queryForTable
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    
-    [query orderByDescending:@"createdAt"];
-    
-   
-    
-    return query;
+    return 1;
 }
 
-
-- (void)objectsDidLoad:(NSError *)error {
-    [super objectsDidLoad:error];
-    
-
-    [self.tableView reloadData];
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"MHacks Staff";
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Get a reference to your string to base the cell size on.
-    NSString *bodyString;
+    static NSString *cellIdentifier = @"UpdateCell";
+    
 
-    bodyString = [[self.objects objectAtIndex:indexPath.row]objectForKey:@"details"];
+    UpdatesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[UpdatesTableViewCell alloc] init];
+    }
 
-    //set the desired size of your textbox
-    CGSize constraint = CGSizeMake(298, MAXFLOAT);
-
-    NSDictionary *attributes = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:13.0] forKey:NSFontAttributeName];
-    CGRect textsize = [bodyString boundingRectWithSize:constraint options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
-    //calculate your size
-    float textHeight = textsize.size.height + 10;
-
-
-    return textHeight + 78;
-	
+    cell.titleLabel.text = [[arrayOfAnnouncements objectAtIndex:indexPath.section] objectForKey:kTitleObjectKey];
+    cell.detailLabel.text = [[arrayOfAnnouncements objectAtIndex:indexPath.section] objectForKey:kDetailsObjectKey];
+    
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
+    cell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(cell.bounds));
+    
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    
+    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    
+    height += 1.0f;
+    
+    return height;
 }
 
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	
+    return UITableViewAutomaticDimension;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"UpdateCell";
+    UpdatesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    static NSString *simpleTableIdentifier = @"UpdateCell";
-	
+    cell.titleLabel.text = [[arrayOfAnnouncements objectAtIndex:indexPath.section] objectForKey:kTitleObjectKey];
+    cell.detailLabel.text = [[arrayOfAnnouncements objectAtIndex:indexPath.section] objectForKey:kDetailsObjectKey];
+
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    
-    
-    UILabel *titleLabel = (UILabel*) [cell viewWithTag:101];
-    titleLabel.text = [object objectForKey:@"title"];
-    
-    //Set bodytext, adjust size of label
-    UILabel *bodyText = (UILabel*) [cell viewWithTag:104];
-    
-    NSString *bodyString =[object objectForKey:@"details"];
-    
-    CGSize constraint = CGSizeMake(298, MAXFLOAT);
-    NSDictionary *attributes = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:13.0] forKey:NSFontAttributeName];
-    CGRect newFrame = [bodyString boundingRectWithSize:constraint options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
-    bodyText.frame = CGRectMake(10,79,newFrame.size.width, newFrame.size.height);
-    bodyText.text = bodyString;
-    [bodyText sizeToFit];
-    
-    //Set date label
-    UILabel *timeLabel = (UILabel*) [cell viewWithTag:103];
-    NSDate *time = object.createdAt;
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"M/dd hh:mm a"];
-    timeLabel.text = [dateFormatter stringFromDate:time];
-    
-    
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
     return cell;
 }
 
@@ -206,23 +201,52 @@
 - (void)refreshTriggered
 {
     //Go and load some data
-	
-    //Finshed loading the data, reset the refresh control
-	
-	double delayInSeconds = 2.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        NSLog(@"DONE");
-		
-        // When done requesting/reloading/processing invoke endRefreshing, to close the control
-		[self loadObjects];
-		[self.pongRefreshControl finishedLoading];
-        //
-		[self.refreshControl endRefreshing];
-    });
-	
+    [self canIHazParseDatas:^{
+        [self.pongRefreshControl finishedLoading];
+    }];
+
 }
 
+#pragma mark NavBar Buttons
 
+- (IBAction)postToFacebookTapped:(id)sender {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
+        SLComposeViewController *composeController = [SLComposeViewController
+                                                      composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [composeController setInitialText:@"Check out the Mhacks hackathon!"];
+        //Post actual selfie?
+        //[composeController addImage:postImage.image];
+        [self presentViewController:composeController
+                           animated:YES completion:nil];
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
+                                                        message:@"Looks like you don't have a Facebook account linked to this device."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (IBAction)postToTwitterTapped:(id)sender {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController
+                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
+        NSString *message = [NSString stringWithFormat:@"Check out the @MHacks hackathon!"];
+        [tweetSheet setInitialText:message];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+        
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
+                                                        message:@"Looks like you don't have a Twitter account linked to this device."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
 
 @end

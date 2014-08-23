@@ -9,13 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "BOZPongRefreshControl.h"
+#import "UpdatesTableViewCell.h"
 
 
-@interface MHUpdatesViewController : PFQueryTableViewController
+@interface MHUpdatesViewController : UIViewController
+
+- (IBAction)postToFacebookTapped:(id)sender;
+- (IBAction)postToTwitterTapped:(id)sender;
 
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
 @end

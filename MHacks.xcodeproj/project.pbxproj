@@ -39,7 +39,6 @@
 		6CC6F0A518B571470036ADD1 /* UIView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F09F18B571470036ADD1 /* UIView+Utilities.m */; };
 		6CC6F0A618B571470036ADD1 /* UIViewController+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F0A118B571470036ADD1 /* UIViewController+EMAdditions.m */; };
 		6CC6F0AA18B571940036ADD1 /* UIImage+Dimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F0A918B571940036ADD1 /* UIImage+Dimensions.m */; };
-		6CC6F0B518B5EAF60036ADD1 /* MHUpdatesNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F0B418B5EAF60036ADD1 /* MHUpdatesNavViewController.m */; };
 		6CC6F0B818B5EB860036ADD1 /* MHConciergeNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F0B718B5EB860036ADD1 /* MHConciergeNavViewController.m */; };
 		6CC6F0BF18B5FA7B0036ADD1 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC6F0BD18B5FA7B0036ADD1 /* logout@2x.png */; };
 		6CC6F0C018B5FA7B0036ADD1 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC6F0BE18B5FA7B0036ADD1 /* share@2x.png */; };
@@ -99,6 +98,7 @@
 		E783EC1218891CA500033983 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1118891CA500033983 /* libc++.dylib */; };
 		E783EC1418891CAA00033983 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1318891CAA00033983 /* CFNetwork.framework */; };
 		E783EC1818891CBB00033983 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1718891CBB00033983 /* SystemConfiguration.framework */; };
+		F523960F19A7F7FE00577B0A /* UpdatesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F523960E19A7F7FE00577B0A /* UpdatesTableViewCell.m */; };
 		FB99CA1219A66CE50099AF43 /* MHChatRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -156,8 +156,6 @@
 		6CC6F0A118B571470036ADD1 /* UIViewController+EMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+EMAdditions.m"; sourceTree = "<group>"; };
 		6CC6F0A818B571940036ADD1 /* UIImage+Dimensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Dimensions.h"; sourceTree = "<group>"; };
 		6CC6F0A918B571940036ADD1 /* UIImage+Dimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Dimensions.m"; sourceTree = "<group>"; };
-		6CC6F0B318B5EAF60036ADD1 /* MHUpdatesNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHUpdatesNavViewController.h; sourceTree = "<group>"; };
-		6CC6F0B418B5EAF60036ADD1 /* MHUpdatesNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHUpdatesNavViewController.m; sourceTree = "<group>"; };
 		6CC6F0B618B5EB860036ADD1 /* MHConciergeNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHConciergeNavViewController.h; sourceTree = "<group>"; };
 		6CC6F0B718B5EB860036ADD1 /* MHConciergeNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHConciergeNavViewController.m; sourceTree = "<group>"; };
 		6CC6F0BD18B5FA7B0036ADD1 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
@@ -246,6 +244,8 @@
 		E783EC1318891CAA00033983 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E783EC1518891CB100033983 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E783EC1718891CBB00033983 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F523960D19A7F7FE00577B0A /* UpdatesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatesTableViewCell.h; sourceTree = "<group>"; };
+		F523960E19A7F7FE00577B0A /* UpdatesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatesTableViewCell.m; sourceTree = "<group>"; };
 		FB99CA1019A66CE50099AF43 /* MHChatRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHChatRoomsViewController.h; sourceTree = "<group>"; };
 		FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHChatRoomsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -337,8 +337,6 @@
 		6CC6F0C118B5FAEF0036ADD1 /* Updates */ = {
 			isa = PBXGroup;
 			children = (
-				6CC6F0B318B5EAF60036ADD1 /* MHUpdatesNavViewController.h */,
-				6CC6F0B418B5EAF60036ADD1 /* MHUpdatesNavViewController.m */,
 				6CC2247118A476D000262706 /* MHUpdatesViewController.h */,
 				6CC2247218A476D000262706 /* MHUpdatesViewController.m */,
 			);
@@ -521,6 +519,7 @@
 				6CC6F0C218B5FB190036ADD1 /* Concierge */,
 				6CC6F0C318B5FB250036ADD1 /* Chat */,
 				6CF15AE118B1FE5A00AE5A04 /* Guide */,
+				F523961119A7F80E00577B0A /* Custom Cells */,
 				6CC6F0A718B5714F0036ADD1 /* Categories */,
 				F51A6FC219A17D6A00DED799 /* ThirdPartyLibraries */,
 				6CE2CB0E18B02053007AC3AA /* Images */,
@@ -567,6 +566,15 @@
 				021FCF3719A14C2900988AED /* PongToRefresh */,
 			);
 			name = ThirdPartyLibraries;
+			sourceTree = "<group>";
+		};
+		F523961119A7F80E00577B0A /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F523960D19A7F7FE00577B0A /* UpdatesTableViewCell.h */,
+				F523960E19A7F7FE00577B0A /* UpdatesTableViewCell.m */,
+			);
+			name = "Custom Cells";
 			sourceTree = "<group>";
 		};
 		FB99CA0F19A1E1FE0099AF43 /* Data */ = {
@@ -626,7 +634,7 @@
 				ORGANIZATIONNAME = hshacks.com;
 				TargetAttributes = {
 					E770465C18891A7700BE6FC4 = {
-						DevelopmentTeam = MRQT579S8E;
+						DevelopmentTeam = V6R9L68573;
 					};
 					E770468018891A7700BE6FC4 = {
 						TestTargetID = E770465C18891A7700BE6FC4;
@@ -717,11 +725,11 @@
 				6CE2CB0618B01F17007AC3AA /* SDWebImagePrefetcher.m in Sources */,
 				6CC6F0A618B571470036ADD1 /* UIViewController+EMAdditions.m in Sources */,
 				6CE2CB0418B01F17007AC3AA /* SDWebImageDownloaderOperation.m in Sources */,
+				F523960F19A7F7FE00577B0A /* UpdatesTableViewCell.m in Sources */,
 				6CC6F09618B56EDF0036ADD1 /* AVCamCaptureManager.m in Sources */,
 				6CCB63CE18A60324004E80B4 /* MHUserData.m in Sources */,
 				6CC2247B18A4770A00262706 /* MHChatViewController.m in Sources */,
 				021FCF3D19A154A200988AED /* BOZPongRefreshControl.m in Sources */,
-				6CC6F0B518B5EAF60036ADD1 /* MHUpdatesNavViewController.m in Sources */,
 				6CE2CB0918B01F17007AC3AA /* UIImage+MultiFormat.m in Sources */,
 				6CC2247718A476FA00262706 /* MHConciergeViewController.m in Sources */,
 				6CC6F0AA18B571940036ADD1 /* UIImage+Dimensions.m in Sources */,
@@ -870,15 +878,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
 				FRAMEWORK_SEARCH_PATHS = "./**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHacks/MHacks-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/MHacks/MHacks-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MHacks;
-				PROVISIONING_PROFILE = "a7c97509-f5af-452e-ac63-2e851958a659";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -888,15 +896,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
 				FRAMEWORK_SEARCH_PATHS = "./**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHacks/MHacks-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/MHacks/MHacks-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MHacks;
-				PROVISIONING_PROFILE = "a7c97509-f5af-452e-ac63-2e851958a659";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
