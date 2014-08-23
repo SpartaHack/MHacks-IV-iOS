@@ -63,6 +63,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSDictionary* chatRoom = [self.chatRooms objectAtIndex:indexPath.row];
     
