@@ -14,9 +14,9 @@
 
 @implementation MHChatViewController
 
-- (void)viewDidLoad
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewDidAppear:animated];
     
     NSString *connected = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://twitter.com/getibox"] encoding:NSUTF8StringEncoding error:nil];
     if (connected != NULL) {
@@ -68,45 +68,20 @@
 
 #pragma mark - Text field handling
 
-// This method is called when the user enters text in the text field.
-// We add the chat message to our Firebase.
 - (BOOL)textFieldShouldReturn:(UITextField*)textField
 {
     [textField resignFirstResponder];
     
-    // This will also add the message to our local array self.chat because
-    // the FEventTypeChildAdded event will be immediately fired.
     if(self.chatMessages.count > 0){
         if(self.name && self.photoURL){
-            [[self.firebase childByAutoId] setValue:@{ @"user" : self.name,
-                                                       @"message": textField.text,
-                                                       @"image" : self.photoURL }];
+            NSString* message = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            
+            if (message.length > 0) {
+                [[self.firebase childByAutoId] setValue:@{ @"user" : self.name,
+                                                           @"message": message,
+                                                           @"image" : self.photoURL }];
+            }
         }
-        /*
-        if([textField.text isEqualToString:@"hellyeah"]){
-            UILabel *hellYeahLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 240, 300, 50)];
-            hellYeahLabel.center = self.view.center;
-            hellYeahLabel.text = @"#HELLYEAHHH";
-            hellYeahLabel.font = [UIFont boldSystemFontOfSize:40.0];
-            
-            hellYeahLabel.textColor = [UIColor blueColor];
-            hellYeahLabel.textAlignment = UITextAlignmentCenter;
-            hellYeahLabel.alpha = 0;
-            [self.view addSubview:hellYeahLabel];
-            
-            hellYeahLabel.transform = CGAffineTransformMakeScale(0.01, 0.01);
-            hellYeahLabel.alpha = 1;
-            
-            [UIView animateWithDuration:0.7 delay:0.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                hellYeahLabel.transform = CGAffineTransformIdentity;
-            } completion:^(BOOL finished){
-                [UIView animateWithDuration:0.5 delay:0.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                    hellYeahLabel.transform = CGAffineTransformMakeScale(0.0, 0.0);
-                } completion:^(BOOL finished){
-                    hellYeahLabel.alpha = 0.0;
-                }];
-            }];
-        } */
         
         [textField setText:@""];
     }
@@ -128,20 +103,29 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Get a reference to your string to base the cell size on.
-    NSString *bodyString;
+    static UITableViewCell *cell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        cell = [self.chatTableView dequeueReusableCellWithIdentifier:@"ChatCell"];
+    });
     
-    bodyString = [self.chatMessages objectAtIndex:indexPath.row][@"message"];
+    NSDictionary* chatMessage = [self.chatMessages objectAtIndex:indexPath.row];
     
-    //set the desired size of your textbox
-    CGSize constraint = CGSizeMake(252, MAXFLOAT);
+    UIImageView *imageView = (UIImageView*) [cell viewWithTag:100];
+    imageView.layer.cornerRadius = imageView.frame.size.width / 2;
+    [imageView setImageWithURL:[NSURL URLWithString:chatMessage[@"image"]] placeholderImage:[UIImage imageNamed:@"placeholderIcon.png"]];
     
-    NSDictionary *attributes = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:14.0] forKey:NSFontAttributeName];
-    CGRect textsize = [bodyString boundingRectWithSize:constraint options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
-    //calculate your size
-    float textHeight = textsize.size.height + 5;
+    UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
+    nameLabel.text = chatMessage[@"user"];
     
-    return textHeight + 25;
+    UILabel *messageLabel = (UILabel*) [cell viewWithTag:102];
+    messageLabel.text = chatMessage[@"message"];
+    
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    
+    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)table cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -161,8 +145,6 @@
     NSDictionary* chatMessage = [self.chatMessages objectAtIndex:indexPath.row];
     
     UIImageView *imageView = (UIImageView*) [cell viewWithTag:100];
-    imageView.clipsToBounds = YES;
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.layer.cornerRadius = imageView.frame.size.width / 2;
     
     [imageView setImageWithURL:[NSURL URLWithString:chatMessage[@"image"]] placeholderImage:[UIImage imageNamed:@"placeholderIcon.png"]];
@@ -171,15 +153,7 @@
     nameLabel.text = chatMessage[@"user"];
     
     UILabel *messageLabel = (UILabel*) [cell viewWithTag:102];
-    
-    NSString *message = chatMessage[@"message"];
-    
-    CGSize constraint = CGSizeMake(252, MAXFLOAT);
-    NSDictionary *attributes = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:14.0] forKey:NSFontAttributeName];
-    CGRect newFrame = [message boundingRectWithSize:constraint options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
-    messageLabel.frame = CGRectMake(57,22,newFrame.size.width, newFrame.size.height);
-    messageLabel.text = message;
-    [messageLabel sizeToFit];
+    messageLabel.text = chatMessage[@"message"];
     
     return cell;
 }
