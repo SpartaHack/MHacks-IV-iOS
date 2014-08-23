@@ -135,7 +135,7 @@ typedef enum {
         state = BOZPongRefreshControlStateIdle;
         
         self.foregroundColor = DEFAULT_FOREGROUND_COLOR;
-        self.backgroundColor = DEFAULT_BACKGROUND_COLOR;
+        self.backgroundColor = [UIColor colorWithRed:0.996 green:0.82 blue:0.212 alpha:1] /*#fed136 mhacks-yellow*/;
         
         [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
         [[NSNotificationCenter defaultCenter] addObserver:self
