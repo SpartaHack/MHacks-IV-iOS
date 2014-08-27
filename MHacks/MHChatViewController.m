@@ -13,17 +13,11 @@
 
 @implementation MHChatViewController
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewDidLoad
 {
-    [super viewDidAppear:animated];
-
-    self.chatTextField.userInteractionEnabled = NO;
+    [super viewDidLoad];
     
     self.chatTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-    
-    //Remove separator
-    self.chatTableView.separatorColor = [UIColor clearColor];
-    
     self.chatTextField.enablesReturnKeyAutomatically = YES;
     
     MHUserData *userData = [MHUserData sharedManager];
