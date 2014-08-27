@@ -17,6 +17,96 @@
     [super viewDidLoad];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    CGRect logoF2;
+    CGRect tbuttonF;
+    CGRect fButtonF;
+    CGRect gButtonF;
+    
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+#warning what the poop
+    if (UI_USER_INTERFACE_IDIOM() == UI_USER_INTERFACE_IDIOM()) {
+        if (screenSize.height > 480.0f) {
+            logoF2 = CGRectMake(self.logo.frame.origin.x+30,
+                                self.logo.frame.origin.y-90+30,
+                                self.logo.frame.size.width-60,
+                                self.logo.frame.size.height-60);
+            tbuttonF = CGRectMake(self.twitterButton.frame.origin.x,
+                                  self.logo.frame.origin.y+160,
+                                  self.twitterButton.frame.size.width,
+                                  self.twitterButton.frame.size.height);
+            fButtonF = CGRectMake(self.facebookButton.frame.origin.x,
+                                  self.logo.frame.origin.y+240,
+                                  self.facebookButton.frame.size.width,
+                                  self.facebookButton.frame.size.height);
+            gButtonF = CGRectMake(self.guestButton.frame.origin.x,
+                                  self.logo.frame.origin.y+320,
+                                  self.guestButton.frame.size.width,
+                                  self.guestButton.frame.size.height);
+        } else {
+            logoF2 = CGRectMake(self.logo.frame.origin.x+30,
+                                self.logo.frame.origin.y-110+30,
+                                self.logo.frame.size.width-60,
+                                self.logo.frame.size.height-60);
+            tbuttonF = CGRectMake(self.twitterButton.frame.origin.x,
+                                  self.logo.frame.origin.y+115,
+                                  self.twitterButton.frame.size.width,
+                                  self.twitterButton.frame.size.height);
+            fButtonF = CGRectMake(self.facebookButton.frame.origin.x,
+                                  self.logo.frame.origin.y+195,
+                                  self.facebookButton.frame.size.width,
+                                  self.facebookButton.frame.size.height);
+            gButtonF = CGRectMake(self.guestButton.frame.origin.x,
+                                  self.logo.frame.origin.y+275,
+                                  self.guestButton.frame.size.width,
+                                  self.guestButton.frame.size.height);
+        }
+    }
+    
+    self.logo.alpha = 0.0;
+    self.statusLabel.alpha = 0.0;
+    
+    [UIView animateWithDuration: 1.0f
+                          delay: 0.0f
+                        options: UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         self.statusLabel.alpha = 1.0;
+                     }
+                     completion:^(BOOL finished){
+                         [UIView animateWithDuration: 0.5f
+                                               delay: 0.4f
+                                             options: UIViewAnimationOptionCurveEaseIn
+                                          animations:^{
+                                              self.statusLabel.alpha = 0.0;
+                                          }
+                                          completion:^(BOOL finished){
+                                              
+                                              
+                                              [UIView animateWithDuration: 0.5f
+                                                                    delay: 0.0f
+                                                                  options: UIViewAnimationOptionCurveEaseIn
+                                                               animations:^{
+                                                                   self.logo.alpha = 1.0;
+                                                               }
+                                                               completion:^(BOOL finished){
+                                                                   [UIView animateWithDuration:1 animations:^{
+                                                                       self.logo.frame = logoF2;
+                                                                       self.guestButton.frame = gButtonF;
+                                                                       self.facebookButton.frame = fButtonF;
+                                                                       self.twitterButton.frame = tbuttonF;
+                                                                   }];
+                                                                   
+                                                               }];
+                                              
+                                          }];
+                         
+                     }];
+    
+}
+
 - (void)loginTwitter
 {
     if ([TWTweetComposeViewController canSendTweet]) {
