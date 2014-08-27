@@ -42,7 +42,7 @@
     
     NSIndexPath *indexPath = self.roomsTableView.indexPathForSelectedRow;
     if (indexPath) {
-        [self.roomsTableView deselectRowAtIndexPath:indexPath animated:animated];
+        [self.roomsTableView deselectRowAtIndexPath:indexPath animated:YES];
     }
 }
 
