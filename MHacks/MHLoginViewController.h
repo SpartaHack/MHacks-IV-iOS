@@ -15,23 +15,19 @@
 #import <Social/Social.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface MHLoginViewController : UIViewController{
+@interface MHLoginViewController : UIViewController
 
-NSString *username;
-
-}
 - (IBAction)loginTwitter:(id)sender;
 - (IBAction)loginFacebook:(id)sender;
 - (IBAction)loginGuest:(id)sender;
 
-@property (nonatomic, retain) NSString *username;
+@property (strong, nonatomic) NSString *username;
 
-
-@property (retain, nonatomic) IBOutlet UIImageView *logo;
-@property (retain, nonatomic) IBOutlet UIButton *twitterButton;
-@property (retain, nonatomic) IBOutlet UIButton *facebookButton;
-@property (retain, nonatomic) IBOutlet UIButton *guestButton;
-@property (retain, nonatomic) IBOutlet UILabel *statusLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *logo;
+@property (strong, nonatomic) IBOutlet UIButton *twitterButton;
+@property (strong, nonatomic) IBOutlet UIButton *facebookButton;
+@property (strong, nonatomic) IBOutlet UIButton *guestButton;
+@property (strong, nonatomic) IBOutlet UILabel *statusLabel;
 
 
 @end
