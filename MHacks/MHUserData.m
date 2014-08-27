@@ -38,6 +38,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [self.userDefaults synchronize];
+}
+
 #pragma mark - isLoggedIn
 
 static NSString* kIsLoggedInKey = @"isLoggedIn";

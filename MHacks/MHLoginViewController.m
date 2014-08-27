@@ -12,58 +12,51 @@
 
 @implementation MHLoginViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
+#warning This could use a lot of work
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    CGRect logoF2;
-    CGRect tbuttonF;
-    CGRect fButtonF;
-    CGRect gButtonF;
+    
+    CGRect logoDestFrame;
+    CGRect twitterButtonDestFrame;
+    CGRect facebookButtonDestFrame;
+    CGRect guestButtonDestFrame;
     
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    
-#warning what the poop
-    if (UI_USER_INTERFACE_IDIOM() == UI_USER_INTERFACE_IDIOM()) {
-        if (screenSize.height > 480.0f) {
-            logoF2 = CGRectMake(self.logo.frame.origin.x+30,
-                                self.logo.frame.origin.y-90+30,
-                                self.logo.frame.size.width-60,
-                                self.logo.frame.size.height-60);
-            tbuttonF = CGRectMake(self.twitterButton.frame.origin.x,
-                                  self.logo.frame.origin.y+160,
-                                  self.twitterButton.frame.size.width,
-                                  self.twitterButton.frame.size.height);
-            fButtonF = CGRectMake(self.facebookButton.frame.origin.x,
-                                  self.logo.frame.origin.y+240,
-                                  self.facebookButton.frame.size.width,
-                                  self.facebookButton.frame.size.height);
-            gButtonF = CGRectMake(self.guestButton.frame.origin.x,
-                                  self.logo.frame.origin.y+320,
-                                  self.guestButton.frame.size.width,
-                                  self.guestButton.frame.size.height);
-        } else {
-            logoF2 = CGRectMake(self.logo.frame.origin.x+30,
-                                self.logo.frame.origin.y-110+30,
-                                self.logo.frame.size.width-60,
-                                self.logo.frame.size.height-60);
-            tbuttonF = CGRectMake(self.twitterButton.frame.origin.x,
-                                  self.logo.frame.origin.y+115,
-                                  self.twitterButton.frame.size.width,
-                                  self.twitterButton.frame.size.height);
-            fButtonF = CGRectMake(self.facebookButton.frame.origin.x,
-                                  self.logo.frame.origin.y+195,
-                                  self.facebookButton.frame.size.width,
-                                  self.facebookButton.frame.size.height);
-            gButtonF = CGRectMake(self.guestButton.frame.origin.x,
-                                  self.logo.frame.origin.y+275,
-                                  self.guestButton.frame.size.width,
-                                  self.guestButton.frame.size.height);
-        }
+    if (screenSize.height > 480.0f) {
+        logoDestFrame = CGRectMake(self.logo.frame.origin.x + 30,
+                                   self.logo.frame.origin.y - 90 + 30,
+                                   self.logo.frame.size.width - 60,
+                                   self.logo.frame.size.height - 60);
+        twitterButtonDestFrame = CGRectMake(self.twitterButton.frame.origin.x,
+                                            self.logo.frame.origin.y + 160,
+                                            self.twitterButton.frame.size.width,
+                                            self.twitterButton.frame.size.height);
+        facebookButtonDestFrame = CGRectMake(self.facebookButton.frame.origin.x,
+                                             self.logo.frame.origin.y + 240,
+                                             self.facebookButton.frame.size.width,
+                                             self.facebookButton.frame.size.height);
+        guestButtonDestFrame = CGRectMake(self.guestButton.frame.origin.x,
+                                          self.logo.frame.origin.y + 320,
+                                          self.guestButton.frame.size.width,
+                                          self.guestButton.frame.size.height);
+    } else {
+        logoDestFrame = CGRectMake(self.logo.frame.origin.x + 30,
+                                   self.logo.frame.origin.y - 110 + 30,
+                                   self.logo.frame.size.width - 60,
+                                   self.logo.frame.size.height - 60);
+        twitterButtonDestFrame = CGRectMake(self.twitterButton.frame.origin.x,
+                                            self.logo.frame.origin.y + 115,
+                                            self.twitterButton.frame.size.width,
+                                            self.twitterButton.frame.size.height);
+        facebookButtonDestFrame = CGRectMake(self.facebookButton.frame.origin.x,
+                                             self.logo.frame.origin.y + 195,
+                                             self.facebookButton.frame.size.width,
+                                             self.facebookButton.frame.size.height);
+        guestButtonDestFrame = CGRectMake(self.guestButton.frame.origin.x,
+                                          self.logo.frame.origin.y + 275,
+                                          self.guestButton.frame.size.width,
+                                          self.guestButton.frame.size.height);
     }
     
     self.logo.alpha = 0.0;
@@ -83,8 +76,6 @@
                                               self.statusLabel.alpha = 0.0;
                                           }
                                           completion:^(BOOL finished){
-                                              
-                                              
                                               [UIView animateWithDuration: 0.5f
                                                                     delay: 0.0f
                                                                   options: UIViewAnimationOptionCurveEaseIn
@@ -93,10 +84,10 @@
                                                                }
                                                                completion:^(BOOL finished){
                                                                    [UIView animateWithDuration:1 animations:^{
-                                                                       self.logo.frame = logoF2;
-                                                                       self.guestButton.frame = gButtonF;
-                                                                       self.facebookButton.frame = fButtonF;
-                                                                       self.twitterButton.frame = tbuttonF;
+                                                                       self.logo.frame = logoDestFrame;
+                                                                       self.guestButton.frame = guestButtonDestFrame;
+                                                                       self.facebookButton.frame = facebookButtonDestFrame;
+                                                                       self.twitterButton.frame = twitterButtonDestFrame;
                                                                    }];
                                                                    
                                                                }];
@@ -107,11 +98,11 @@
     
 }
 
-- (void)loginTwitter
+- (IBAction)loginTwitter:(id)sender
 {
     if ([TWTweetComposeViewController canSendTweet]) {
         [SVProgressHUD showWithStatus:@"Logging into Twitter..." maskType:SVProgressHUDMaskTypeGradient];
-        [self getTInfo];
+        [self getTwitterInfo];
     } else {
         //show tweeet login prompt to user to login
         TWTweetComposeViewController *viewController = [[TWTweetComposeViewController alloc] init];
@@ -132,16 +123,14 @@
     }
 }
 
-- (void) getTInfo
+- (void)getTwitterInfo
 {
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    
     [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
-        
         NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
-        
         ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
-        
         
         NSDictionary *tempDict = [[NSMutableDictionary alloc] initWithDictionary:
                                   [twitterAccount dictionaryWithValuesForKeys:[NSArray arrayWithObject:@"properties"]]];
@@ -162,32 +151,15 @@
         [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
             if (responseData) {
                 NSDictionary *twitterData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:NULL];
-                
-                // to do something useful with this data:
                 NSString *name = [twitterData objectForKey:@"name"];
-                
-                
                 NSString *profileImageUrl = [twitterData objectForKey:@"profile_image_url"];
                 
-                NSLog(@"got twitter image: %@", profileImageUrl);
                 MHUserData *userData = [MHUserData sharedManager];
                 userData.userName = name;
                 userData.userPhoto = profileImageUrl;
                 
-                NSLog(@"setting singleton");
-                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                
-                [defaults setObject:userData.userName forKey:@"name"];
-                [defaults setObject:userData.userPhoto forKey:@"photo"];
-                
-                [defaults synchronize];
-                
-                NSLog(@"setting defaults");
                 [SVProgressHUD dismiss];
-                NSLog(@"dismiss progreeHUd");
                 [self doneWithLogin];
-                
-                
             } else {
                 [SVProgressHUD dismiss];
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Oops." message: @"Something bad happened when trying to login to Twitter. Try again?" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -197,8 +169,10 @@
     }];
 }
 
-- (void)loginFacebook {
+- (IBAction)loginFacebook:(id)sender
+{
     [SVProgressHUD showWithStatus:@"Logging into Facebook..." maskType:SVProgressHUDMaskTypeGradient];
+    
     NSArray *permissions = [[NSArray alloc] initWithObjects:
                             @"user_photos",
                             @"user_status",
@@ -220,58 +194,40 @@
     
 }
 
-- (void)getFacebookData {
+- (void)getFacebookData
+{
     if (FBSession.activeSession.isOpen) {
         [[FBRequest requestForMe] startWithCompletionHandler:
          ^(FBRequestConnection *connection,
            NSDictionary<FBGraphUser> *user,
            NSError *error) {
              if (!error) {
-                 MHUserData *userData = [MHUserData sharedManager];
-                 userData.userName = user.name;
                  NSString *photo = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=square", user.username];
                  
+                 MHUserData *userData = [MHUserData sharedManager];
+                 userData.userName = user.name;
                  userData.userPhoto = photo;
                  
-                 //now store data in nsuserdefault
-                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                 
-                 [defaults setObject:userData.userName forKey:@"name"];
-                 [defaults setObject:userData.userPhoto forKey:@"photo"];
-                 
-                 [defaults synchronize];
                  [SVProgressHUD dismiss];
-                 
-                 //should show animations and user info
                  [self doneWithLogin];
              } else {
                  [SVProgressHUD dismiss];
                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Oops." message: @"Something went wrong with Facebook." delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                  [alert show];
-                 
              }
          }];
     }
 }
 
-- (IBAction)loginTwitter:(id)sender {
-    [self loginTwitter];
-}
-
-- (IBAction)loginFacebook:(id)sender {
-    [self loginFacebook];
-}
-
-- (IBAction)loginGuest:(id)sender {
+- (IBAction)loginGuest:(id)sender
+{
     
 }
 
-- (void)doneWithLogin {
+- (void)doneWithLogin
+{
     MHUserData *userData = [MHUserData sharedManager];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@"YES" forKey:@"loggedIn"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    userData.isLoggedIn = YES;
     
     dispatch_async(dispatch_get_main_queue(), ^{
         //make sure on main thread
@@ -283,8 +239,6 @@
                              self.facebookButton.alpha = 0.0;
                              self.twitterButton.alpha = 0.0;
                              self.guestButton.alpha = 0.0;
-                             
-                             
                          }
                          completion:^(BOOL finished){
                              self.statusLabel.numberOfLines = 2;
@@ -297,15 +251,15 @@
                                                   self.statusLabel.alpha = 1.0;
                                               }
                                               completion:^(BOOL finished){
-                                                  [self performSelector:@selector(dismissView:) withObject:self afterDelay:1];
-                                                  
+                                                  [self performSelector:@selector(dismissLoginView:) withObject:self afterDelay:1];
                                               }
                               ];
                          }];
     });
 }
 
-- (void)dismissView:(id)sender {
+- (void)dismissLoginView:(id)sender
+{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MHUpdatesViewController *updatesViewController = (MHUpdatesViewController*)[storyboard instantiateViewControllerWithIdentifier:@"MainTabBar"];
     
