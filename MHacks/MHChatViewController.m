@@ -66,19 +66,17 @@
 {
     [textField resignFirstResponder];
     
-    if(self.chatMessages.count > 0){
-        if(self.name && self.photoURL){
-            NSString* message = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            
-            if (message.length > 0) {
-                [[self.firebase childByAutoId] setValue:@{ @"user" : self.name,
-                                                           @"message": message,
-                                                           @"image" : self.photoURL }];
-            }
-        }
+    if(self.name && self.photoURL) {
+        NSString* message = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
-        [textField setText:@""];
+        if (message.length > 0) {
+            [[self.firebase childByAutoId] setValue:@{ @"user" : self.name,
+                                                       @"message": message,
+                                                       @"image" : self.photoURL }];
+        }
     }
+    
+    [textField setText:@""];
     
     return NO;
 }
@@ -151,7 +149,6 @@
 // text field upwards when the keyboard shows, and downwards when it hides.
 - (void)keyboardWillShow:(NSNotification*)notification
 {
-    
     CGRect chatTextFieldFrame = CGRectMake(self.chatTextField.frame.origin.x,self.chatTextField.frame.origin.y-170,self.chatTextField.frame.size.width,self.chatTextField.frame.size.height);
     [UIView animateWithDuration:0.3 animations:^{ self.chatTextField.frame = chatTextFieldFrame;}];
     
