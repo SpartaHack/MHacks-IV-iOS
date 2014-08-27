@@ -10,60 +10,54 @@
 #import "MHUserData.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SDWebImage/UIImageView+WebCache.h"
-#import "SVProgressHUD/SVProgressHUD.h"
 
 @implementation MHChatViewController
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+
+    self.chatTextField.userInteractionEnabled = NO;
     
-    NSString *connected = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://twitter.com/getibox"] encoding:NSUTF8StringEncoding error:nil];
-    if (connected != NULL) {
-        [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
-        self.chatTextField.userInteractionEnabled = NO;
-        
-        self.chatTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-        
-        //Remove separator
-        self.chatTableView.separatorColor = [UIColor clearColor];
-        
-        self.chatTextField.enablesReturnKeyAutomatically = YES;
-        
-        MHUserData *userData = [MHUserData sharedManager];
-        
-        // Initialize array that will store chat messages.
-        self.chatMessages = [[NSMutableArray alloc] init];
-        
-        // Initialize the root of our Firebase namespace.
-        self.firebase = [[Firebase alloc] initWithUrl:self.firechatUrl];
-        
-        //Store name and photoURL in UserDefaults
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        
-        userData.userName = [defaults objectForKey:@"name"];
-        userData.userPhoto = [defaults objectForKey:@"photo"];
-        
-        self.name = userData.userName;
-        self.photoURL = userData.userPhoto;
-        
-        [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-            // Add the chat message to the array.
-            // TODO: take this out, we need to hook chat up to the different chat rooms and such
-            if (![snapshot.name isEqualToString:@"chat"]) {
-                [self.chatMessages addObject:snapshot.value];
+    self.chatTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    
+    //Remove separator
+    self.chatTableView.separatorColor = [UIColor clearColor];
+    
+    self.chatTextField.enablesReturnKeyAutomatically = YES;
+    
+    MHUserData *userData = [MHUserData sharedManager];
+    
+    // Initialize array that will store chat messages.
+    self.chatMessages = [[NSMutableArray alloc] init];
+    
+    // Initialize the root of our Firebase namespace.
+    self.firebase = [[Firebase alloc] initWithUrl:self.firechatUrl];
+    
+    //Store name and photoURL in UserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    userData.userName = [defaults objectForKey:@"name"];
+    userData.userPhoto = [defaults objectForKey:@"photo"];
+    
+    self.name = userData.userName;
+    self.photoURL = userData.userPhoto;
+    
+    [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        // Add the chat message to the array.
+        // TODO: take this out, we need to hook chat up to the different chat rooms and such
+        if (![snapshot.name isEqualToString:@"chat"]) {
+            [self.chatMessages addObject:snapshot.value];
+            
+            // Reload the table view so the new message will show up.
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.chatTableView reloadData];
                 
-                // Reload the table view so the new message will show up.
-                [SVProgressHUD dismiss];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.chatTableView reloadData];
-                    
-                    self.chatTextField.userInteractionEnabled = TRUE;
-                    [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-                });
-            }
-        }];
-    }
+                self.chatTextField.userInteractionEnabled = TRUE;
+                [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+            });
+        }
+    }];
 }
 
 #pragma mark - Text field handling
