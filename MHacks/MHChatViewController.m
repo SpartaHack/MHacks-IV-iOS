@@ -10,7 +10,6 @@
 #import "MHChatMessageTableViewCell.h"
 #import "MHUserData.h"
 #import <QuartzCore/QuartzCore.h>
-#import "SDWebImage/UIImageView+WebCache.h"
 
 @implementation MHChatViewController
 
@@ -105,10 +104,7 @@
     });
     
     NSDictionary* chatMessage = [self.chatMessages objectAtIndex:indexPath.row];
-    
-    [cell.profilePic setImageWithURL:[NSURL URLWithString:chatMessage[@"image"]] placeholderImage:[UIImage imageNamed:@"placeholderIcon.png"]];
-    cell.nameLabel.text = chatMessage[@"user"];
-    cell.messageLabel.text = chatMessage[@"message"];;
+    [cell setWithChatMessage:chatMessage atIndex:indexPath.row];
     
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
@@ -119,20 +115,10 @@
 
 - (UITableViewCell*)tableView:(UITableView*)table cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ChatCell";
-    MHChatMessageTableViewCell *cell = [table dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if(indexPath.row % 2 == 0) {
-        cell.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:195.0/255.0 blue:199.0/255.0 alpha:0.02];
-    } else {
-        cell.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:195.0/255.0 blue:199.0/255.0 alpha:0.08];
-    }
+    MHChatMessageTableViewCell *cell = [table dequeueReusableCellWithIdentifier:[MHChatMessageTableViewCell cellIdentifier]];
     
     NSDictionary* chatMessage = [self.chatMessages objectAtIndex:indexPath.row];
-    
-    [cell.profilePic setImageWithURL:[NSURL URLWithString:chatMessage[@"image"]] placeholderImage:[UIImage imageNamed:@"placeholderIcon.png"]];
-    cell.nameLabel.text = chatMessage[@"user"];
-    cell.messageLabel.text = chatMessage[@"message"];
+    [cell setWithChatMessage:chatMessage atIndex:indexPath.row];
     
     return cell;
 }

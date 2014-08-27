@@ -100,6 +100,7 @@
 		E783EC1818891CBB00033983 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1718891CBB00033983 /* SystemConfiguration.framework */; };
 		F523960F19A7F7FE00577B0A /* UpdatesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F523960E19A7F7FE00577B0A /* UpdatesTableViewCell.m */; };
 		FB57458819ADA2BD009244CF /* MHChatMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458719ADA2BD009244CF /* MHChatMessageTableViewCell.m */; };
+		FB57458B19ADA5A3009244CF /* UIColor+MHacksColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458A19ADA5A3009244CF /* UIColor+MHacksColors.m */; };
 		FB99CA1219A66CE50099AF43 /* MHChatRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -249,6 +250,8 @@
 		F523960E19A7F7FE00577B0A /* UpdatesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatesTableViewCell.m; sourceTree = "<group>"; };
 		FB57458619ADA2BD009244CF /* MHChatMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHChatMessageTableViewCell.h; sourceTree = "<group>"; };
 		FB57458719ADA2BD009244CF /* MHChatMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHChatMessageTableViewCell.m; sourceTree = "<group>"; };
+		FB57458919ADA5A3009244CF /* UIColor+MHacksColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MHacksColors.h"; sourceTree = "<group>"; };
+		FB57458A19ADA5A3009244CF /* UIColor+MHacksColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MHacksColors.m"; sourceTree = "<group>"; };
 		FB99CA1019A66CE50099AF43 /* MHChatRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHChatRoomsViewController.h; sourceTree = "<group>"; };
 		FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHChatRoomsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -333,6 +336,8 @@
 				6CC6F09F18B571470036ADD1 /* UIView+Utilities.m */,
 				6CC6F0A018B571470036ADD1 /* UIViewController+EMAdditions.h */,
 				6CC6F0A118B571470036ADD1 /* UIViewController+EMAdditions.m */,
+				FB57458919ADA5A3009244CF /* UIColor+MHacksColors.h */,
+				FB57458A19ADA5A3009244CF /* UIColor+MHacksColors.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -722,6 +727,7 @@
 				6CCB63D318A613A7004E80B4 /* MHLoginViewController.m in Sources */,
 				6CC2247318A476D000262706 /* MHUpdatesViewController.m in Sources */,
 				6CE3039718B8735C00AA432A /* UIImage+animatedGIF.m in Sources */,
+				FB57458B19ADA5A3009244CF /* UIColor+MHacksColors.m in Sources */,
 				E770467118891A7700BE6FC4 /* MHAppDelegate.m in Sources */,
 				6CC6F0A518B571470036ADD1 /* UIView+Utilities.m in Sources */,
 				6CC6F0CC18B740D80036ADD1 /* MLIMGURUploader.m in Sources */,

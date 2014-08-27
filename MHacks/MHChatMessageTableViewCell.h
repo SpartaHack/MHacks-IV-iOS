@@ -14,4 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
++ (NSString*)cellIdentifier;
+
+- (void)setWithChatMessage:(NSDictionary*)chatMessage atIndex:(NSInteger)index;
+
 @end
