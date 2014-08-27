@@ -128,15 +128,6 @@
 // Subscribe to keyboard show/hide notifications.
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSString *connected = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://twitter.com/getibox"] encoding:NSUTF8StringEncoding error:nil];
-    if (connected == NULL) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Oops." message: @"I don't think you are connected to the internet." delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        self.chatTextField.userInteractionEnabled = NO;
-    } else {
-        self.chatTextField.userInteractionEnabled = YES;
-    }
-    
     [[NSNotificationCenter defaultCenter]
      addObserver:self selector:@selector(keyboardWillShow:)
      name:UIKeyboardWillShowNotification object:nil];
