@@ -7,6 +7,7 @@
 //
 
 #import "MHChatViewController.h"
+#import "MHChatMessageTableViewCell.h"
 #import "MHUserData.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SDWebImage/UIImageView+WebCache.h"
@@ -97,7 +98,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static UITableViewCell *cell = nil;
+    static MHChatMessageTableViewCell *cell = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         cell = [self.chatTableView dequeueReusableCellWithIdentifier:@"ChatCell"];
@@ -105,15 +106,9 @@
     
     NSDictionary* chatMessage = [self.chatMessages objectAtIndex:indexPath.row];
     
-    UIImageView *imageView = (UIImageView*) [cell viewWithTag:100];
-    imageView.layer.cornerRadius = imageView.frame.size.width / 2;
-    [imageView setImageWithURL:[NSURL URLWithString:chatMessage[@"image"]] placeholderImage:[UIImage imageNamed:@"placeholderIcon.png"]];
-    
-    UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
-    nameLabel.text = chatMessage[@"user"];
-    
-    UILabel *messageLabel = (UILabel*) [cell viewWithTag:102];
-    messageLabel.text = chatMessage[@"message"];
+    [cell.profilePic setImageWithURL:[NSURL URLWithString:chatMessage[@"image"]] placeholderImage:[UIImage imageNamed:@"placeholderIcon.png"]];
+    cell.nameLabel.text = chatMessage[@"user"];
+    cell.messageLabel.text = chatMessage[@"message"];;
     
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
@@ -125,10 +120,7 @@
 - (UITableViewCell*)tableView:(UITableView*)table cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ChatCell";
-    UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
+    MHChatMessageTableViewCell *cell = [table dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(indexPath.row % 2 == 0) {
         cell.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:195.0/255.0 blue:199.0/255.0 alpha:0.02];
@@ -138,16 +130,9 @@
     
     NSDictionary* chatMessage = [self.chatMessages objectAtIndex:indexPath.row];
     
-    UIImageView *imageView = (UIImageView*) [cell viewWithTag:100];
-    imageView.layer.cornerRadius = imageView.frame.size.width / 2;
-    
-    [imageView setImageWithURL:[NSURL URLWithString:chatMessage[@"image"]] placeholderImage:[UIImage imageNamed:@"placeholderIcon.png"]];
-    
-    UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
-    nameLabel.text = chatMessage[@"user"];
-    
-    UILabel *messageLabel = (UILabel*) [cell viewWithTag:102];
-    messageLabel.text = chatMessage[@"message"];
+    [cell.profilePic setImageWithURL:[NSURL URLWithString:chatMessage[@"image"]] placeholderImage:[UIImage imageNamed:@"placeholderIcon.png"]];
+    cell.nameLabel.text = chatMessage[@"user"];
+    cell.messageLabel.text = chatMessage[@"message"];
     
     return cell;
 }

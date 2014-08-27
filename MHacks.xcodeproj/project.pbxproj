@@ -99,6 +99,7 @@
 		E783EC1418891CAA00033983 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1318891CAA00033983 /* CFNetwork.framework */; };
 		E783EC1818891CBB00033983 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1718891CBB00033983 /* SystemConfiguration.framework */; };
 		F523960F19A7F7FE00577B0A /* UpdatesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F523960E19A7F7FE00577B0A /* UpdatesTableViewCell.m */; };
+		FB57458819ADA2BD009244CF /* MHChatMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458719ADA2BD009244CF /* MHChatMessageTableViewCell.m */; };
 		FB99CA1219A66CE50099AF43 /* MHChatRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -246,6 +247,8 @@
 		E783EC1718891CBB00033983 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F523960D19A7F7FE00577B0A /* UpdatesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatesTableViewCell.h; sourceTree = "<group>"; };
 		F523960E19A7F7FE00577B0A /* UpdatesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatesTableViewCell.m; sourceTree = "<group>"; };
+		FB57458619ADA2BD009244CF /* MHChatMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHChatMessageTableViewCell.h; sourceTree = "<group>"; };
+		FB57458719ADA2BD009244CF /* MHChatMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHChatMessageTableViewCell.m; sourceTree = "<group>"; };
 		FB99CA1019A66CE50099AF43 /* MHChatRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHChatRoomsViewController.h; sourceTree = "<group>"; };
 		FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHChatRoomsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -361,6 +364,8 @@
 				FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */,
 				6CC2247918A4770A00262706 /* MHChatViewController.h */,
 				6CC2247A18A4770A00262706 /* MHChatViewController.m */,
+				FB57458619ADA2BD009244CF /* MHChatMessageTableViewCell.h */,
+				FB57458719ADA2BD009244CF /* MHChatMessageTableViewCell.m */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -745,6 +750,7 @@
 				6CF15AC918B1FA3800AE5A04 /* MHScheduleViewController.m in Sources */,
 				6CE2CB0318B01F17007AC3AA /* SDWebImageDownloader.m in Sources */,
 				6CE2CAFE18B01F17007AC3AA /* MKAnnotationView+WebCache.m in Sources */,
+				FB57458819ADA2BD009244CF /* MHChatMessageTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
