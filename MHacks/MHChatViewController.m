@@ -39,18 +39,13 @@
     
     [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         // Add the chat message to the array.
-        // TODO: take this out, we need to hook chat up to the different chat rooms and such
-        if (![snapshot.name isEqualToString:@"chat"]) {
-            [self.chatMessages addObject:snapshot.value];
-            
-            // Reload the table view so the new message will show up.
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.chatTableView reloadData];
-                
-                self.chatTextField.userInteractionEnabled = TRUE;
-                [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-            });
-        }
+        [self.chatMessages addObject:snapshot.value];
+        
+        // Reload the table view so the new message will show up.
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.chatTableView reloadData];
+            [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+        });
     }];
 }
 
