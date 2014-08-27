@@ -1176,32 +1176,55 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="ChatCell" rowHeight="49" id="WjP-ag-AjU">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="49"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="ChatCell" id="WjP-ag-AjU" customClass="MHChatMessageTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WjP-ag-AjU" id="wJQ-gf-Hfn">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xR7-JK-gPZ">
-                                                    <rect key="frame" x="10" y="5" width="40" height="39"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="xR7-JK-gPZ">
+                                                    <rect key="frame" x="10" y="4" width="40" height="39"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="39" id="XSj-gr-K1k"/>
+                                                        <constraint firstAttribute="width" constant="40" id="YDF-VI-QK4"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is a sample message" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="SkT-Es-Wym">
-                                                    <rect key="frame" x="57" y="23" width="252" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="21" text="This is a sample message" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="SkT-Es-Wym">
+                                                    <rect key="frame" x="57" y="25" width="252" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spencer Yen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecG-mq-hwm">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Spencer Yen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecG-mq-hwm">
                                                     <rect key="frame" x="57" y="4" width="252" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="z49-MS-iml"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xR7-JK-gPZ" firstAttribute="top" secondItem="wJQ-gf-Hfn" secondAttribute="top" constant="4" id="3bg-a6-D1p"/>
+                                                <constraint firstItem="SkT-Es-Wym" firstAttribute="leading" secondItem="xR7-JK-gPZ" secondAttribute="trailing" constant="7" id="CUC-rz-AUM"/>
+                                                <constraint firstAttribute="trailing" secondItem="SkT-Es-Wym" secondAttribute="trailing" constant="11" id="Vmb-yB-5VG"/>
+                                                <constraint firstItem="ecG-mq-hwm" firstAttribute="leading" secondItem="xR7-JK-gPZ" secondAttribute="trailing" constant="7" id="W1e-6H-Gq4"/>
+                                                <constraint firstItem="SkT-Es-Wym" firstAttribute="top" secondItem="ecG-mq-hwm" secondAttribute="bottom" id="c6a-B7-wiJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="SkT-Es-Wym" secondAttribute="bottom" constant="5" id="h2V-F4-DyG"/>
+                                                <constraint firstAttribute="trailing" secondItem="ecG-mq-hwm" secondAttribute="trailing" constant="11" id="hYe-Mu-J9X"/>
+                                                <constraint firstItem="ecG-mq-hwm" firstAttribute="top" secondItem="wJQ-gf-Hfn" secondAttribute="top" constant="4" id="xKZ-5t-yIi"/>
+                                                <constraint firstItem="xR7-JK-gPZ" firstAttribute="leading" secondItem="wJQ-gf-Hfn" secondAttribute="leading" constant="10" id="yyd-kl-Nik"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="SkT-Es-Wym" id="gRc-aF-dYI"/>
+                                            <outlet property="nameLabel" destination="ecG-mq-hwm" id="QXS-f1-MVb"/>
+                                            <outlet property="profilePic" destination="xR7-JK-gPZ" id="NNI-WY-vMJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

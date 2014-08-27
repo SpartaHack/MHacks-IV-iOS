@@ -8,7 +8,6 @@
 
 #import "MHChatRoomsViewController.h"
 #import "MHChatViewController.h"
-#import "SVProgressHUD/SVProgressHUD.h"
 
 #define kFirechatMessagesBase @"https://mhacks-f2014.firebaseio.com/chat/messages/"
 #define kFirechatRooms @"https://mhacks-f2014.firebaseio.com/chat/rooms/"
@@ -18,29 +17,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        
+    // Initialize array that will store chat messages.
+    self.chatRooms = [[NSMutableArray alloc] init];
     
-    NSString *connected = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://twitter.com/getibox"] encoding:NSUTF8StringEncoding error:nil];
-    if (connected != NULL) {
+    // Initialize the root of our Firebase namespace.
+    self.firebase = [[Firebase alloc] initWithUrl:kFirechatRooms];
+    
+    [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        // Add the chat room to the array
+        [self.chatRooms addObject:snapshot.value];
         
-        [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
-        
-        // Initialize array that will store chat messages.
-        self.chatRooms = [[NSMutableArray alloc] init];
-        
-        // Initialize the root of our Firebase namespace.
-        self.firebase = [[Firebase alloc] initWithUrl:kFirechatRooms];
-        
-        [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-            // Add the chat room to the array
-            [self.chatRooms addObject:snapshot.value];
-            
-            // Reload the table view so the new message will show up.
-            [SVProgressHUD dismiss];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.roomsTableView reloadData];
-                [self.roomsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatRooms.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-            });
-        }];
+        // Reload the table view so the new message will show up.
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.roomsTableView reloadData];
+            [self.roomsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatRooms.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+        });
+    }];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSIndexPath *indexPath = self.roomsTableView.indexPathForSelectedRow;
+    if (indexPath) {
+        [self.roomsTableView deselectRowAtIndexPath:indexPath animated:YES];
     }
 }
 

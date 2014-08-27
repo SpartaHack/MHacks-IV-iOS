@@ -7,10 +7,9 @@
 //
 
 #import "MHChatViewController.h"
+#import "MHChatMessageTableViewCell.h"
 #import "MHUserData.h"
 #import <QuartzCore/QuartzCore.h>
-#import "SDWebImage/UIImageView+WebCache.h"
-#import "SVProgressHUD/SVProgressHUD.h"
 
 @implementation MHChatViewController
 
@@ -18,98 +17,55 @@
 {
     [super viewDidLoad];
     
-    NSString *connected = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://twitter.com/getibox"] encoding:NSUTF8StringEncoding error:nil];
-    if (connected != NULL) {
-        [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
-        self.chatTextField.userInteractionEnabled = NO;
+    self.chatTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    self.chatTextField.enablesReturnKeyAutomatically = YES;
+    
+    MHUserData *userData = [MHUserData sharedManager];
+    
+    // Initialize array that will store chat messages.
+    self.chatMessages = [[NSMutableArray alloc] init];
+    
+    // Initialize the root of our Firebase namespace.
+    self.firebase = [[Firebase alloc] initWithUrl:self.firechatUrl];
+    
+    //Store name and photoURL in UserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    userData.userName = [defaults objectForKey:@"name"];
+    userData.userPhoto = [defaults objectForKey:@"photo"];
+    
+    self.name = userData.userName;
+    self.photoURL = userData.userPhoto;
+    
+    [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        // Add the chat message to the array.
+        [self.chatMessages addObject:snapshot.value];
         
-        self.chatTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-        
-        //Remove separator
-        self.chatTableView.separatorColor = [UIColor clearColor];
-        
-        self.chatTextField.enablesReturnKeyAutomatically = YES;
-        
-        MHUserData *userData = [MHUserData sharedManager];
-        
-        // Initialize array that will store chat messages.
-        self.chatMessages = [[NSMutableArray alloc] init];
-        
-        // Initialize the root of our Firebase namespace.
-        self.firebase = [[Firebase alloc] initWithUrl:self.firechatUrl];
-        
-        //Store name and photoURL in UserDefaults
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        
-        userData.userName = [defaults objectForKey:@"name"];
-        userData.userPhoto = [defaults objectForKey:@"photo"];
-        
-        self.name = userData.userName;
-        self.photoURL = userData.userPhoto;
-        
-        [self.firebase observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-            // Add the chat message to the array.
-            // TODO: take this out, we need to hook chat up to the different chat rooms and such
-            if (![snapshot.name isEqualToString:@"chat"]) {
-                [self.chatMessages addObject:snapshot.value];
-                
-                // Reload the table view so the new message will show up.
-                [SVProgressHUD dismiss];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.chatTableView reloadData];
-                    
-                    self.chatTextField.userInteractionEnabled = TRUE;
-                    [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-                });
-            }
-        }];
-    }
+        // Reload the table view so the new message will show up.
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.chatTableView reloadData];
+            [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+        });
+    }];
 }
 
 #pragma mark - Text field handling
 
-// This method is called when the user enters text in the text field.
-// We add the chat message to our Firebase.
 - (BOOL)textFieldShouldReturn:(UITextField*)textField
 {
     [textField resignFirstResponder];
     
-    // This will also add the message to our local array self.chat because
-    // the FEventTypeChildAdded event will be immediately fired.
-    if(self.chatMessages.count > 0){
-        if(self.name && self.photoURL){
+    if(self.name && self.photoURL) {
+        NSString* message = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        if (message.length > 0) {
             [[self.firebase childByAutoId] setValue:@{ @"user" : self.name,
-                                                       @"message": textField.text,
+                                                       @"message": message,
                                                        @"image" : self.photoURL }];
         }
-        /*
-        if([textField.text isEqualToString:@"hellyeah"]){
-            UILabel *hellYeahLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 240, 300, 50)];
-            hellYeahLabel.center = self.view.center;
-            hellYeahLabel.text = @"#HELLYEAHHH";
-            hellYeahLabel.font = [UIFont boldSystemFontOfSize:40.0];
-            
-            hellYeahLabel.textColor = [UIColor blueColor];
-            hellYeahLabel.textAlignment = UITextAlignmentCenter;
-            hellYeahLabel.alpha = 0;
-            [self.view addSubview:hellYeahLabel];
-            
-            hellYeahLabel.transform = CGAffineTransformMakeScale(0.01, 0.01);
-            hellYeahLabel.alpha = 1;
-            
-            [UIView animateWithDuration:0.7 delay:0.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                hellYeahLabel.transform = CGAffineTransformIdentity;
-            } completion:^(BOOL finished){
-                [UIView animateWithDuration:0.5 delay:0.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                    hellYeahLabel.transform = CGAffineTransformMakeScale(0.0, 0.0);
-                } completion:^(BOOL finished){
-                    hellYeahLabel.alpha = 0.0;
-                }];
-            }];
-        } */
-        
-        [textField setText:@""];
     }
+    
+    [textField setText:@""];
     
     return NO;
 }
@@ -128,58 +84,28 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Get a reference to your string to base the cell size on.
-    NSString *bodyString;
+    static MHChatMessageTableViewCell *cell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        cell = [self.chatTableView dequeueReusableCellWithIdentifier:@"ChatCell"];
+    });
     
-    bodyString = [self.chatMessages objectAtIndex:indexPath.row][@"message"];
+    NSDictionary* chatMessage = [self.chatMessages objectAtIndex:indexPath.row];
+    [cell setWithChatMessage:chatMessage atIndex:indexPath.row];
     
-    //set the desired size of your textbox
-    CGSize constraint = CGSizeMake(252, MAXFLOAT);
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
     
-    NSDictionary *attributes = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:14.0] forKey:NSFontAttributeName];
-    CGRect textsize = [bodyString boundingRectWithSize:constraint options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
-    //calculate your size
-    float textHeight = textsize.size.height + 5;
-    
-    return textHeight + 25;
+    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)table cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ChatCell";
-    UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
-    
-    if(indexPath.row % 2 == 0) {
-        cell.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:195.0/255.0 blue:199.0/255.0 alpha:0.02];
-    } else {
-        cell.backgroundColor = [UIColor colorWithRed:189.0/255.0 green:195.0/255.0 blue:199.0/255.0 alpha:0.08];
-    }
+    MHChatMessageTableViewCell *cell = [table dequeueReusableCellWithIdentifier:[MHChatMessageTableViewCell cellIdentifier]];
     
     NSDictionary* chatMessage = [self.chatMessages objectAtIndex:indexPath.row];
-    
-    UIImageView *imageView = (UIImageView*) [cell viewWithTag:100];
-    imageView.clipsToBounds = YES;
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    imageView.layer.cornerRadius = imageView.frame.size.width / 2;
-    
-    [imageView setImageWithURL:[NSURL URLWithString:chatMessage[@"image"]] placeholderImage:[UIImage imageNamed:@"placeholderIcon.png"]];
-    
-    UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
-    nameLabel.text = chatMessage[@"user"];
-    
-    UILabel *messageLabel = (UILabel*) [cell viewWithTag:102];
-    
-    NSString *message = chatMessage[@"message"];
-    
-    CGSize constraint = CGSizeMake(252, MAXFLOAT);
-    NSDictionary *attributes = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:14.0] forKey:NSFontAttributeName];
-    CGRect newFrame = [message boundingRectWithSize:constraint options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
-    messageLabel.frame = CGRectMake(57,22,newFrame.size.width, newFrame.size.height);
-    messageLabel.text = message;
-    [messageLabel sizeToFit];
+    [cell setWithChatMessage:chatMessage atIndex:indexPath.row];
     
     return cell;
 }
@@ -189,15 +115,6 @@
 // Subscribe to keyboard show/hide notifications.
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSString *connected = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://twitter.com/getibox"] encoding:NSUTF8StringEncoding error:nil];
-    if (connected == NULL) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Oops." message: @"I don't think you are connected to the internet." delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        self.chatTextField.userInteractionEnabled = NO;
-    } else {
-        self.chatTextField.userInteractionEnabled = YES;
-    }
-    
     [[NSNotificationCenter defaultCenter]
      addObserver:self selector:@selector(keyboardWillShow:)
      name:UIKeyboardWillShowNotification object:nil];
@@ -221,7 +138,6 @@
 // text field upwards when the keyboard shows, and downwards when it hides.
 - (void)keyboardWillShow:(NSNotification*)notification
 {
-    
     CGRect chatTextFieldFrame = CGRectMake(self.chatTextField.frame.origin.x,self.chatTextField.frame.origin.y-170,self.chatTextField.frame.size.width,self.chatTextField.frame.size.height);
     [UIView animateWithDuration:0.3 animations:^{ self.chatTextField.frame = chatTextFieldFrame;}];
     
