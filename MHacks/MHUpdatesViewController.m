@@ -51,7 +51,6 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     if(![self isLoggedIn]){
-        
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         MHLoginViewController *loginVC = (MHLoginViewController*)[storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
         [self presentViewController:loginVC animated:NO completion:nil];
@@ -109,8 +108,7 @@
 }
 
 
--(BOOL)isLoggedIn{
- 
+- (BOOL)isLoggedIn {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     MHUserData *userData = [MHUserData sharedManager];
@@ -120,8 +118,8 @@
     if(userData.userPhoto == NULL || userData.userName == NULL){
         return NO;
     }
+    
     if([[defaults objectForKey:@"loggedIn"] isEqualToString:@"YES"]){
-
         return YES;
     }
     else{

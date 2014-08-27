@@ -8,20 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MHUserData : NSObject{
+@interface MHUserData : NSObject {
     NSString *userName;
     NSString *userPhoto;
-
-    
-    
 }
-
 
 + (id)sharedManager;
 
-
-@property (nonatomic,retain)NSString *userName;
-
-@property (nonatomic,retain)NSString *userPhoto;
+@property (nonatomic, retain) NSString *userName;
+@property (nonatomic, retain) NSString *userPhoto;
 
 @end

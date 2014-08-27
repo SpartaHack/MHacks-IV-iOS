@@ -14,11 +14,9 @@
 
 @interface MHUpdatesViewController : UIViewController
 
-- (IBAction)postToFacebookTapped:(id)sender;
-- (IBAction)postToTwitterTapped:(id)sender;
-
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+- (IBAction)postToFacebookTapped:(id)sender;
+- (IBAction)postToTwitterTapped:(id)sender;
 
 @end

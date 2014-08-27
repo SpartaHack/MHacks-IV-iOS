@@ -11,12 +11,12 @@
 
 @interface MHChatViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) NSString* firechatUrl;
+@property (strong, nonatomic) NSString* firechatUrl;
 
-@property (nonatomic, strong) NSString* name;
-@property (nonatomic, strong) NSString* photoURL;
-@property (nonatomic, strong) NSMutableArray* chatMessages;
-@property (nonatomic, strong) Firebase* firebase;
+@property (strong, nonatomic) NSString* name;
+@property (strong, nonatomic) NSString* photoURL;
+@property (strong, nonatomic) NSMutableArray* chatMessages;
+@property (strong, nonatomic) Firebase* firebase;
 
 @property (strong, nonatomic) IBOutlet UITableView *chatTableView;
 @property (strong, nonatomic) IBOutlet UITextField *chatTextField;
