@@ -43,7 +43,7 @@
         SLComposeViewController *composeController = [SLComposeViewController
                                                       composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        [composeController setInitialText:@"HighSchoolHacks is #stacked!"];
+        [composeController setInitialText:@"MHacks is #stacked!"];
         //Post actual selfie?
         //[composeController addImage:postImage.image];
         [self presentViewController:composeController
@@ -63,7 +63,7 @@
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
-        NSString *message = [NSString stringWithFormat:@"@highschoolhacks is #stacked!"];
+        NSString *message = [NSString stringWithFormat:@"@MHacks is #stacked!"];
         [tweetSheet setInitialText:message];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }

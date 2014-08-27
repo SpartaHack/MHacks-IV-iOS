@@ -16,11 +16,23 @@
 @implementation MHConciergeViewController
 @synthesize sections = _sections;
 @synthesize sectionToCompanyMap = _sectionToCompanyMap;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+- (id)initWithCoder:(NSCoder *)aCoder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithCoder:aCoder];
     if (self) {
-        // Custom initialization
+        //Parse class name
+//        self.parseClassName = @"Mentors";
+//        
+//        //Default display
+//        self.textKey = @"name";
+//        
+//        self.pullToRefreshEnabled = NO;
+//        self.paginationEnabled = NO;
+//        self.objectsPerPage = 150;
+//        self.sections = [NSMutableDictionary dictionary];
+//        self.sectionToCompanyMap = [NSMutableDictionary dictionary];
+        
     }
     return self;
 }
@@ -29,11 +41,11 @@
 {
     [super viewDidLoad];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Concierge"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Sponsor"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for(int i = 0; i < objects.count; i++){
-                [objects[i] objectForKey:@"Name"];
+                [objects[i] objectForKey:@"title"];
             
             }
         } else {
@@ -112,48 +124,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (id)initWithCoder:(NSCoder *)aCoder
-{
-    self = [super initWithCoder:aCoder];
-    if (self) {
-        //Parse class name
-        self.parseClassName = @"Mentors";
-        
-        //Default display
-        self.textKey = @"name";
-        
-        self.pullToRefreshEnabled = NO;
-        self.paginationEnabled = NO;
-        self.objectsPerPage = 150;
-        self.sections = [NSMutableDictionary dictionary];
-        self.sectionToCompanyMap = [NSMutableDictionary dictionary];
 
-    }
-    return self;
-}
 
-- (PFQuery *)queryForTable {
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    
-    // If Pull To Refresh is enabled, query against the network by default.
-    if (self.pullToRefreshEnabled) {
-        query.cachePolicy = kPFCachePolicyNetworkOnly;
-    }
-    
-    // If no objects are loaded in memory, we look to the cache first to fill the table
-    // and then subsequently do a query against the network.
-    if (self.objects.count == 0) {
-        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    }
-    
-    // Order by company
-    [query orderByAscending:@"companyID"];
-    
-    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-
-    return query;
-    
-}
+//- (PFQuery *)queryForTable {
+//    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+//    
+//    // If Pull To Refresh is enabled, query against the network by default.
+//    if (self.pullToRefreshEnabled) {
+//        query.cachePolicy = kPFCachePolicyNetworkOnly;
+//    }
+//    
+//    // If no objects are loaded in memory, we look to the cache first to fill the table
+//    // and then subsequently do a query against the network.
+//    if (self.objects.count == 0) {
+//        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+//    }
+//    
+//    // Order by company
+//    [query orderByAscending:@"companyID"];
+//    
+//    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+//
+//    return query;
+//    
+//}
 
 - (NSString *)companyForSection:(NSInteger)section {
     return [self.sectionToCompanyMap objectForKey:[NSNumber numberWithInt:section]];
@@ -187,13 +181,13 @@
 }
 
 
-- (PFObject *)objectAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *company = [self companyForSection:indexPath.section];
-    
-    NSArray *rowIndecesInSection = [self.sections objectForKey:company];
-    NSNumber *rowIndex = [rowIndecesInSection objectAtIndex:indexPath.row];
-    return [self.objects objectAtIndex:[rowIndex intValue]];
-}
+//- (PFObject *)objectAtIndexPath:(NSIndexPath *)indexPath {
+//    NSString *company = [self companyForSection:indexPath.section];
+//    
+//    NSArray *rowIndecesInSection = [self.sections objectForKey:company];
+//    NSNumber *rowIndex = [rowIndecesInSection objectAtIndex:indexPath.row];
+//    return [self.objects objectAtIndex:[rowIndex intValue]];
+//}
 
 #pragma mark - UITableViewDataSource
 
