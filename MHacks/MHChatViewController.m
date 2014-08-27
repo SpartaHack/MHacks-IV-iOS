@@ -28,12 +28,6 @@
     // Initialize the root of our Firebase namespace.
     self.firebase = [[Firebase alloc] initWithUrl:self.firechatUrl];
     
-    //Store name and photoURL in UserDefaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    userData.userName = [defaults objectForKey:@"name"];
-    userData.userPhoto = [defaults objectForKey:@"photo"];
-    
     self.name = userData.userName;
     self.photoURL = userData.userPhoto;
     

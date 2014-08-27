@@ -214,11 +214,7 @@
                                
                                MHUserData *userData = [MHUserData sharedManager];
                                userData.userPhoto = result;
-                               
-                               //now store data in nsuserdefault
-                               NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                               [defaults setObject:userData.userPhoto forKey:@"photo"];
-                               [defaults synchronize];
+
                                [SVProgressHUD dismiss];
                            if(!result){
                                
@@ -322,13 +318,7 @@
 }
 -(void) animateOut{
     MHUserData *userData = [MHUserData sharedManager];
-    
-
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    
-    [defaults setObject:@"YES" forKey:@"loggedIn"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    userData.isLoggedIn = YES;
     
     NSArray* sublayers = [NSArray arrayWithArray:self.view.layer.sublayers];
     
@@ -374,19 +364,8 @@
 {
     MHUserData *userData = [MHUserData sharedManager];
     userData.userName = textField.text;
-   
-    //now store data in nsuserdefault
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    
-    [defaults setObject:userData.userName forKey:@"name"];
-
-    
-    [defaults synchronize];
-    
     
     [textField resignFirstResponder];
-    
     
     if(self.imageData){
             doneOutlet.hidden = NO;

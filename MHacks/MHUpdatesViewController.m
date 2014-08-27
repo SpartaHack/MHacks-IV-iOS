@@ -50,7 +50,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    if(![self isLoggedIn]){
+    if(![[MHUserData sharedManager] isLoggedIn]){
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         MHLoginViewController *loginVC = (MHLoginViewController*)[storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
         [self presentViewController:loginVC animated:NO completion:nil];
@@ -106,27 +106,6 @@
 {
     [self.pongRefreshControl scrollViewDidEndDragging];
 }
-
-
-- (BOOL)isLoggedIn {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    MHUserData *userData = [MHUserData sharedManager];
-
-    userData.userName = [defaults objectForKey:@"name"];
-    userData.userPhoto = [defaults objectForKey:@"photo"];
-    if(userData.userPhoto == NULL || userData.userName == NULL){
-        return NO;
-    }
-    
-    if([[defaults objectForKey:@"loggedIn"] isEqualToString:@"YES"]){
-        return YES;
-    }
-    else{
-        return NO;
-    }
-}
-
 
 #pragma mark Table View Related Stuffs
 
