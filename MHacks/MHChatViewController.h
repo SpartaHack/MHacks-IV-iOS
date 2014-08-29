@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSString* name;
 @property (strong, nonatomic) NSString* photoURL;
 @property (strong, nonatomic) NSMutableArray* chatMessages;
+@property (strong, nonatomic) FQuery* chatMessagesQuery;
 @property (strong, nonatomic) Firebase* firebase;
 
 @property (strong, nonatomic) IBOutlet UITableView *chatTableView;
