@@ -30,6 +30,32 @@
                                     <action selector="loginFacebook:" destination="SiW-8W-CZh" eventType="touchUpInside" id="4NZ-Tt-LYK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avc-L3-8PM">
+                                <rect key="frame" x="18" y="586" width="283" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.33333333333333331" green="0.67450980392156867" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Login With Twitter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginTwitter:" destination="SiW-8W-CZh" eventType="touchUpInside" id="lxG-vs-b5Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljg-JR-iYI">
+                                <rect key="frame" x="18" y="586" width="283" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.53669593978102192" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Login as Guest">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginGuest:" destination="SiW-8W-CZh" eventType="touchUpInside" id="hlU-58-8gM"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MHacksLOGO-Borderless.png" translatesAutoresizingMaskIntoConstraints="NO" id="eIB-fE-HJs">
                                 <rect key="frame" x="55" y="135" width="210" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -44,12 +70,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oHA-QB-PhP"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="facebookButton" destination="QD3-8W-ehJ" id="kDv-oh-gso"/>
+                        <outlet property="guestButton" destination="ljg-JR-iYI" id="7jl-il-Xhj"/>
                         <outlet property="logo" destination="eIB-fE-HJs" id="Sg9-5t-g7Q"/>
                         <outlet property="statusLabel" destination="cs0-07-3g6" id="8GS-Ur-kIg"/>
+                        <outlet property="twitterButton" destination="avc-L3-8PM" id="PmG-9Q-MX0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLS-az-nil" userLabel="First Responder" sceneMemberID="firstResponder"/>

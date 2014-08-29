@@ -18,12 +18,12 @@
 
 #pragma mark - Init
 
-+ (id)sharedManager {
++ (MHUserData*)sharedManager {
     static MHUserData *userData = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        userData = [[self alloc] init];
+        userData = [[MHUserData alloc] init];
     });
     
     return userData;

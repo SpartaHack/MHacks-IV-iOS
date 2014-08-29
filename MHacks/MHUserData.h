@@ -14,6 +14,6 @@
 @property (strong, nonatomic) NSString *userName;
 @property (strong, nonatomic) NSString *userPhoto;
 
-+ (id)sharedManager;
++ (MHUserData*)sharedManager;
 
 @end

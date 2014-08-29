@@ -12,7 +12,6 @@
 
 @implementation MHLoginViewController
 
-#warning This could use a lot of work
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -100,98 +99,73 @@
 
 - (IBAction)loginTwitter:(id)sender
 {
-    if ([TWTweetComposeViewController canSendTweet]) {
-        [SVProgressHUD showWithStatus:@"Logging into Twitter..." maskType:SVProgressHUDMaskTypeGradient];
-        [self getTwitterInfo];
-    } else {
-        //show tweeet login prompt to user to login
-        TWTweetComposeViewController *viewController = [[TWTweetComposeViewController alloc] init];
-        
-        //hide the tweet screen
-        viewController.view.hidden = YES;
-        
-        //fire tweetComposeView to show "No Twitter Accounts" alert view on iOS5.1
-        viewController.completionHandler = ^(TWTweetComposeViewControllerResult result) {
-            if (result == TWTweetComposeViewControllerResultCancelled) {
-                [self dismissModalViewControllerAnimated:NO];
-            }
-        };
-        [self presentModalViewController:viewController animated:NO];
-        
-        //hide the keyboard
-        [viewController.view endEditing:YES];
-    }
-}
-
-- (void)getTwitterInfo
-{
-    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
-    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    MHKeysAccessor* keys = [MHKeysAccessor singleton];
+    [PFTwitterUtils initializeWithConsumerKey:[keys getTwitterConsumerKey] consumerSecret:[keys getTwitterConsumerSecret]];
     
-    [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
-        NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
-        ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
-        
-        NSDictionary *tempDict = [[NSMutableDictionary alloc] initWithDictionary:
-                                  [twitterAccount dictionaryWithValuesForKeys:[NSArray arrayWithObject:@"properties"]]];
-        NSString *tempUserID = [[tempDict objectForKey:@"properties"] objectForKey:@"user_id"];
-        
-        NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/users/show.json"];
-        NSMutableDictionary *params = [NSMutableDictionary new];
-        [params setObject:tempUserID forKey:@"user_id"];
-        [params setObject:@"0" forKey:@"include_rts"]; // don't include retweets
-        [params setObject:@"1" forKey:@"trim_user"]; // trim the user information
-        [params setObject:@"1" forKey:@"count"]; // i don't even know what this does but it does something useful
-        
-        TWRequest *request = [[TWRequest alloc] initWithURL:url parameters:params requestMethod:TWRequestMethodGET];
-        
-        //  Attach an account to the request
-        [request setAccount:twitterAccount]; // this can be any Twitter account obtained from the Account store
-        
-        [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
-            if (responseData) {
-                NSDictionary *twitterData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:NULL];
-                NSString *name = [twitterData objectForKey:@"name"];
-                NSString *profileImageUrl = [twitterData objectForKey:@"profile_image_url"];
+    [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+        if (!user) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error"
+                                                            message:@"Twitter login failed"
+                                                           delegate:nil
+                                                  cancelButtonTitle:nil
+                                                  otherButtonTitles:@"OK", nil];
+            [alert show];
+            return;
+        } else {
+            NSString *requestUrl = [NSString stringWithFormat:@"https://api.twitter.com/1.1/users/show.json?screen_name=%@", [PFTwitterUtils twitter].screenName];
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:requestUrl]];
+            [[PFTwitterUtils twitter] signRequest:request];
+            NSURLResponse *response = nil;
+            NSData *data = [NSURLConnection sendSynchronousRequest:request
+                                                 returningResponse:&response
+                                                             error:&error];
+            
+            if (error == nil) {
+                NSDictionary* twitterData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
                 
-                MHUserData *userData = [MHUserData sharedManager];
-                userData.userName = name;
-                userData.userPhoto = profileImageUrl;
-                
-                [SVProgressHUD dismiss];
-                [self doneWithLogin];
-            } else {
-                [SVProgressHUD dismiss];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Oops." message: @"Something bad happened when trying to login to Twitter. Try again?" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alert show];
+                if (error == nil) {
+                    MHUserData* userData = [MHUserData sharedManager];
+                    userData.isLoggedIn = YES;
+                    userData.userName = [PFTwitterUtils twitter].screenName;
+                    userData.userPhoto = twitterData[@"profile_image_url"];
+                    
+                    [self doneWithLogin];
+                    return;
+                }
             }
-        }];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error"
+                                                            message:@"Twitter login failed"
+                                                           delegate:nil
+                                                  cancelButtonTitle:nil
+                                                  otherButtonTitles:@"OK", nil];
+            [alert show];
+        }
     }];
 }
 
 - (IBAction)loginFacebook:(id)sender
 {
-    [SVProgressHUD showWithStatus:@"Logging into Facebook..." maskType:SVProgressHUDMaskTypeGradient];
+    [SVProgressHUD showWithStatus:@"Logging in with Facebook..."];
     
     NSArray *permissions = [[NSArray alloc] initWithObjects:
                             @"user_photos",
                             @"user_status",
                             nil];
     
-    [FBSession openActiveSessionWithReadPermissions:permissions
-                                       allowLoginUI:YES
-                                  completionHandler:^(FBSession *session,
-                                                      FBSessionState state,
-                                                      NSError *error) {
-                                      if(!error){
-                                          [self getFacebookData];
-                                      } else {
-                                          [SVProgressHUD dismiss];
-                                          UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Oops." message: @"Something went wrong with Facebook." delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                                          [alert show];
-                                      }
-                                  }];
-    
+    [PFFacebookUtils initializeFacebook];
+    [PFFacebookUtils logInWithPermissions:permissions block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error"
+                                                            message:@"Facebook login failed"
+                                                           delegate:nil
+                                                  cancelButtonTitle:nil
+                                                  otherButtonTitles:@"OK", nil];
+            [alert show];
+        } else {
+            [self getFacebookData];
+        }
+    }];
 }
 
 - (void)getFacebookData
@@ -202,17 +176,18 @@
            NSDictionary<FBGraphUser> *user,
            NSError *error) {
              if (!error) {
-                 NSString *photo = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=square", user.username];
-                 
                  MHUserData *userData = [MHUserData sharedManager];
+                 userData.isLoggedIn = YES;
                  userData.userName = user.name;
-                 userData.userPhoto = photo;
-                 
-                 [SVProgressHUD dismiss];
+                 userData.userPhoto = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=square", user.username];
+
                  [self doneWithLogin];
              } else {
-                 [SVProgressHUD dismiss];
-                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Oops." message: @"Something went wrong with Facebook." delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error"
+                                                                 message:@"Facebook login failed"
+                                                                delegate:nil
+                                                       cancelButtonTitle:nil
+                                                       otherButtonTitles:@"OK", nil];
                  [alert show];
              }
          }];
@@ -226,6 +201,8 @@
 
 - (void)doneWithLogin
 {
+    [SVProgressHUD dismiss];
+    
     MHUserData *userData = [MHUserData sharedManager];
     userData.isLoggedIn = YES;
     

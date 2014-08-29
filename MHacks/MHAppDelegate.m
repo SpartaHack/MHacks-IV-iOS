@@ -7,16 +7,17 @@
 //
 
 #import "MHAppDelegate.h"
+#import "MHKeysAccessor.h"
 #import <Parse/Parse.h>
 
 @implementation MHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    MHKeysAccessor* keys = [MHKeysAccessor singleton];
     
-    [Parse setApplicationId:@"RsI9Hn7jETLPOpYv20gfdN6MaIB1MkEsIs26zqih"
-                  clientKey:@"QzfyHMT5DjplnRLp8yGdLC4K7KL61yZuTbND5bzJ"];
+    [Parse setApplicationId:[keys getParseAppId]
+                  clientKey:[keys getParseConsumerKey]];
     
     // Register for push notifications
     [application registerForRemoteNotificationTypes:
@@ -24,12 +25,10 @@
      UIRemoteNotificationTypeAlert |
      UIRemoteNotificationTypeSound];
     
-    
     return YES;
 }
 
-- (void)application:(UIApplication *)application
-didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
     // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:newDeviceToken];
@@ -59,14 +58,24 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
+}
+
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[PFFacebookUtils session] close];
 }
 
 @end

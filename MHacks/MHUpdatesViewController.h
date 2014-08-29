@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "BOZPongRefreshControl.h"
 #import "UpdatesTableViewCell.h"
-
+#import <Twitter/Twitter.h>
 
 @interface MHUpdatesViewController : UIViewController
 

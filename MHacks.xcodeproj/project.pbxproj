@@ -101,6 +101,8 @@
 		F523960F19A7F7FE00577B0A /* UpdatesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F523960E19A7F7FE00577B0A /* UpdatesTableViewCell.m */; };
 		FB57458819ADA2BD009244CF /* MHChatMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458719ADA2BD009244CF /* MHChatMessageTableViewCell.m */; };
 		FB57458B19ADA5A3009244CF /* UIColor+MHacksColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458A19ADA5A3009244CF /* UIColor+MHacksColors.m */; };
+		FB57458E19AFC3D4009244CF /* MHKeysAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458D19AFC3D4009244CF /* MHKeysAccessor.m */; };
+		FB57459019AFFE7A009244CF /* appKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB57458F19AFFE7A009244CF /* appKeys.plist */; };
 		FB99CA1219A66CE50099AF43 /* MHChatRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -252,6 +254,9 @@
 		FB57458719ADA2BD009244CF /* MHChatMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHChatMessageTableViewCell.m; sourceTree = "<group>"; };
 		FB57458919ADA5A3009244CF /* UIColor+MHacksColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MHacksColors.h"; sourceTree = "<group>"; };
 		FB57458A19ADA5A3009244CF /* UIColor+MHacksColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MHacksColors.m"; sourceTree = "<group>"; };
+		FB57458C19AFC3D4009244CF /* MHKeysAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHKeysAccessor.h; sourceTree = "<group>"; };
+		FB57458D19AFC3D4009244CF /* MHKeysAccessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHKeysAccessor.m; sourceTree = "<group>"; };
+		FB57458F19AFFE7A009244CF /* appKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appKeys.plist; sourceTree = "<group>"; };
 		FB99CA1019A66CE50099AF43 /* MHChatRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHChatRoomsViewController.h; sourceTree = "<group>"; };
 		FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHChatRoomsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -524,6 +529,7 @@
 				E770466F18891A7700BE6FC4 /* MHAppDelegate.h */,
 				E770467018891A7700BE6FC4 /* MHAppDelegate.m */,
 				E770467218891A7700BE6FC4 /* Main.storyboard */,
+				FB57458F19AFFE7A009244CF /* appKeys.plist */,
 				6CF15AE018B1FE4300AE5A04 /* Login */,
 				6CC6F0C118B5FAEF0036ADD1 /* Updates */,
 				6CC6F0C218B5FB190036ADD1 /* Concierge */,
@@ -592,6 +598,8 @@
 			children = (
 				6CCB63CC18A60324004E80B4 /* MHUserData.h */,
 				6CCB63CD18A60324004E80B4 /* MHUserData.m */,
+				FB57458C19AFC3D4009244CF /* MHKeysAccessor.h */,
+				FB57458D19AFC3D4009244CF /* MHKeysAccessor.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -676,6 +684,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0264427519A1BFC200810388 /* Icons in Resources */,
+				FB57459019AFFE7A009244CF /* appKeys.plist in Resources */,
 				6CCB63D718A621BF004E80B4 /* hshacksLOGO.png in Resources */,
 				6CC6F0BF18B5FA7B0036ADD1 /* logout@2x.png in Resources */,
 				6CECDFEB18B96A4400421F80 /* HSHacksLaunch3.png in Resources */,
@@ -753,6 +762,7 @@
 				FB99CA1219A66CE50099AF43 /* MHChatRoomsViewController.m in Sources */,
 				6CE2CB0818B01F17007AC3AA /* UIImage+GIF.m in Sources */,
 				6C9B48AB18B7FBBC008E81B7 /* SVProgressHUD.m in Sources */,
+				FB57458E19AFC3D4009244CF /* MHKeysAccessor.m in Sources */,
 				6CF15AC918B1FA3800AE5A04 /* MHScheduleViewController.m in Sources */,
 				6CE2CB0318B01F17007AC3AA /* SDWebImageDownloader.m in Sources */,
 				6CE2CAFE18B01F17007AC3AA /* MKAnnotationView+WebCache.m in Sources */,
