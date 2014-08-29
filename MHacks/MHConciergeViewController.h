@@ -9,12 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface MHConciergeViewController : PFQueryTableViewController
+@interface MHConciergeViewController : UIViewController
 
-@property (nonatomic, retain) NSMutableDictionary *sections;
-@property (nonatomic, retain) NSMutableDictionary *sectionToCompanyMap;
 
-@property (nonatomic, retain) NSMutableDictionary *companies;
+- (IBAction)postToFacebookTapped:(id)sender;
+- (IBAction)postToTwitterTapped:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

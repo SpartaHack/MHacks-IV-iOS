@@ -39,7 +39,6 @@
 		6CC6F0A518B571470036ADD1 /* UIView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F09F18B571470036ADD1 /* UIView+Utilities.m */; };
 		6CC6F0A618B571470036ADD1 /* UIViewController+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F0A118B571470036ADD1 /* UIViewController+EMAdditions.m */; };
 		6CC6F0AA18B571940036ADD1 /* UIImage+Dimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F0A918B571940036ADD1 /* UIImage+Dimensions.m */; };
-		6CC6F0B818B5EB860036ADD1 /* MHConciergeNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F0B718B5EB860036ADD1 /* MHConciergeNavViewController.m */; };
 		6CC6F0BF18B5FA7B0036ADD1 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC6F0BD18B5FA7B0036ADD1 /* logout@2x.png */; };
 		6CC6F0C018B5FA7B0036ADD1 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC6F0BE18B5FA7B0036ADD1 /* share@2x.png */; };
 		6CC6F0C618B714DD0036ADD1 /* AVCamUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F0C518B714DD0036ADD1 /* AVCamUtilities.m */; };
@@ -160,8 +159,6 @@
 		6CC6F0A118B571470036ADD1 /* UIViewController+EMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+EMAdditions.m"; sourceTree = "<group>"; };
 		6CC6F0A818B571940036ADD1 /* UIImage+Dimensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Dimensions.h"; sourceTree = "<group>"; };
 		6CC6F0A918B571940036ADD1 /* UIImage+Dimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Dimensions.m"; sourceTree = "<group>"; };
-		6CC6F0B618B5EB860036ADD1 /* MHConciergeNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHConciergeNavViewController.h; sourceTree = "<group>"; };
-		6CC6F0B718B5EB860036ADD1 /* MHConciergeNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHConciergeNavViewController.m; sourceTree = "<group>"; };
 		6CC6F0BD18B5FA7B0036ADD1 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
 		6CC6F0BE18B5FA7B0036ADD1 /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
 		6CC6F0C418B714DD0036ADD1 /* AVCamUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamUtilities.h; sourceTree = "<group>"; };
@@ -359,8 +356,6 @@
 		6CC6F0C218B5FB190036ADD1 /* Concierge */ = {
 			isa = PBXGroup;
 			children = (
-				6CC6F0B618B5EB860036ADD1 /* MHConciergeNavViewController.h */,
-				6CC6F0B718B5EB860036ADD1 /* MHConciergeNavViewController.m */,
 				6CC2247518A476FA00262706 /* MHConciergeViewController.h */,
 				6CC2247618A476FA00262706 /* MHConciergeViewController.m */,
 			);
@@ -753,7 +748,6 @@
 				6CE2CB0918B01F17007AC3AA /* UIImage+MultiFormat.m in Sources */,
 				6CC2247718A476FA00262706 /* MHConciergeViewController.m in Sources */,
 				6CC6F0AA18B571940036ADD1 /* UIImage+Dimensions.m in Sources */,
-				6CC6F0B818B5EB860036ADD1 /* MHConciergeNavViewController.m in Sources */,
 				6CE2CB0018B01F17007AC3AA /* SDImageCache.m in Sources */,
 				6CC6F09718B56EDF0036ADD1 /* AVCamRecorder.m in Sources */,
 				E770466D18891A7700BE6FC4 /* main.m in Sources */,
@@ -900,8 +894,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ben Oztalay (M56A727BMP)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ben Oztalay (M56A727BMP)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
 				FRAMEWORK_SEARCH_PATHS = "./**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHacks/MHacks-Prefix.pch";
@@ -918,8 +912,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ben Oztalay (M56A727BMP)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ben Oztalay (M56A727BMP)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
 				FRAMEWORK_SEARCH_PATHS = "./**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHacks/MHacks-Prefix.pch";
