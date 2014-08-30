@@ -11,8 +11,8 @@
 @interface MHCountdownViewController : UIViewController {
     
     NSDate *today;
-    NSDate *HShacksBegin;
-    NSDate *HShacksEnd;
+    NSDate *MhacksBegin;
+    NSDate *MhacksEnd;
     NSDateFormatter *formatter;
     NSCalendar *gregorianCalendar;
     

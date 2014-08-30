@@ -36,7 +36,7 @@
     NSArray *itemArray = [NSArray arrayWithObjects: @"Schedule", @"Awards",  nil];
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
     segmentedControl.frame = CGRectMake(85,25,150,30);
-    segmentedControl.segmentedControlStyle = UISegmentedControlStylePlain;
+    segmentedControl.tintColor = [UIColor colorWithRed:245.0/255.0 green:196.0/255.0 blue:76.0/255.0 alpha:1.00];
     [segmentedControl addTarget:self action:@selector(changeView:)
                   forControlEvents:UIControlEventValueChanged];
 

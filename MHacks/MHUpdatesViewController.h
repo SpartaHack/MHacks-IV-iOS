@@ -15,6 +15,7 @@
 @interface MHUpdatesViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UINavigationBar *bar;
 
 - (IBAction)postToFacebookTapped:(id)sender;
 - (IBAction)postToTwitterTapped:(id)sender;

@@ -40,7 +40,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navigationBarDoubleTap:)];
+    tap.numberOfTapsRequired = 3;
+    [self.bar addGestureRecognizer:tap];
     [self canIHazParseDatas:^{}];
 }
 
@@ -226,4 +228,7 @@
     }
 }
 
+- (void)navigationBarDoubleTap:(UIGestureRecognizer*)recognizer {
+    [self.pongRefreshControl resetColors:self];
+}
 @end

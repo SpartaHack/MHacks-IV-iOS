@@ -10,6 +10,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MHUpdatesViewController.h"
 
 @interface BOZPongRefreshControl : UIView <UIScrollViewDelegate>
 
@@ -79,6 +80,7 @@
  */
 - (void)scrollViewDidEndDragging;
 
+- (void)resetColors:(UIViewController*)viewController;
 #pragma mark - Configurable properties
 
 /**

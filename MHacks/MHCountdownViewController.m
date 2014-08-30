@@ -36,8 +36,8 @@
     [formatter setDateFormat: @"MM/dd/yyyy HH:mm:ss"];
     
     today = [NSDate date];
-    HShacksBegin = [formatter dateFromString:@"03/08/2014 1:00:00"];
-    HShacksEnd = [formatter dateFromString:@"03/09/2014 13:00:00"];
+    MhacksBegin = [formatter dateFromString:@"09/05/2014 17:00:00"];
+    MhacksEnd = [formatter dateFromString:@"09/07/2014 16:00:00"];
 
    gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 
@@ -52,19 +52,19 @@
 }
 
 -(void)checkDate{
-    if([today compare: HShacksBegin] == NSOrderedAscending && [today compare: HShacksEnd] == NSOrderedAscending){
+    if([today compare: MhacksBegin] == NSOrderedAscending && [today compare: MhacksEnd] == NSOrderedAscending){
         interval.text = @"Hacking begins in:";
         isStarting = TRUE;
         hasEnded = FALSE;
         hasEnded = FALSE;
     }
-    else if ([today compare: HShacksBegin] == NSOrderedSame || ([today compare: HShacksEnd] == NSOrderedAscending && [today compare: HShacksBegin] == NSOrderedAscending)){
+    else if ([today compare: MhacksBegin] == NSOrderedSame || ([today compare: MhacksEnd] == NSOrderedAscending && [today compare: MhacksBegin] == NSOrderedAscending)){
         interval.text = @"Hacking ends in:";
         isStarting = FALSE;
         hasEnded = TRUE;
         hasEnded = FALSE;
     }
-    else if ([today compare: HShacksBegin] == NSOrderedDescending && [today compare: HShacksEnd] == NSOrderedDescending){
+    else if ([today compare: MhacksBegin] == NSOrderedDescending && [today compare: MhacksEnd] == NSOrderedDescending){
         interval.text = @"Hacking has ended!";
         isStarting = FALSE;
         hasEnded = FALSE;
@@ -78,7 +78,7 @@
     NSUInteger unitFlags = NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit;
     if(isStarting){
      
-        NSDateComponents *dateComponents = [gregorianCalendar components:unitFlags fromDate:today toDate:HShacksBegin options:0];
+        NSDateComponents *dateComponents = [gregorianCalendar components:unitFlags fromDate:today toDate:MhacksBegin options:0];
         
         NSNumber *days = [NSNumber numberWithInteger:[dateComponents day]];
         NSNumber *hours = [NSNumber numberWithInteger:[dateComponents hour]];
@@ -99,7 +99,7 @@
         
     }
     else if (hasStarted){
-        NSDateComponents *dateComponents = [gregorianCalendar components:unitFlags fromDate:HShacksBegin toDate:HShacksEnd options:0];
+        NSDateComponents *dateComponents = [gregorianCalendar components:unitFlags fromDate:MhacksBegin toDate:MhacksEnd options:0];
         
         NSNumber *days = [NSNumber numberWithInteger:[dateComponents day]];
         NSNumber *hours = [NSNumber numberWithInteger:[dateComponents hour]];
@@ -120,7 +120,7 @@
 
     }
     else if (hasEnded){
-        countdown.text = @"We hope you enjoyed HSHacks!";
+        countdown.text = @"We hope you enjoyed MHacks!";
     }
 }
 
@@ -130,7 +130,7 @@
     NSUInteger unitFlags = NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit;
     if(isStarting){
         
-        NSDateComponents *dateComponents = [gregorianCalendar components:unitFlags fromDate:today toDate:HShacksBegin options:0];
+        NSDateComponents *dateComponents = [gregorianCalendar components:unitFlags fromDate:today toDate:MhacksBegin options:0];
         
         NSNumber *days = [NSNumber numberWithInteger:[dateComponents day]];
         NSNumber *hours = [NSNumber numberWithInteger:[dateComponents hour]];
@@ -151,7 +151,7 @@
         
     }
     else if (hasStarted){
-        NSDateComponents *dateComponents = [gregorianCalendar components:unitFlags fromDate:HShacksBegin toDate:HShacksEnd options:0];
+        NSDateComponents *dateComponents = [gregorianCalendar components:unitFlags fromDate:MhacksBegin toDate:MhacksEnd options:0];
         
         NSNumber *days = [NSNumber numberWithInteger:[dateComponents day]];
         NSNumber *hours = [NSNumber numberWithInteger:[dateComponents hour]];
@@ -172,7 +172,7 @@
         
     }
     else if (hasEnded){
-        countdown.text = @"We hope you enjoyed HSHacks! Come back next year!";
+        countdown.text = @"We hope you enjoyed MHacks! Come back next year!";
     }
 
 
