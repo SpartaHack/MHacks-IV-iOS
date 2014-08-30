@@ -172,7 +172,7 @@
     //calculate your size
     float textHeight = textsize.size.height + 10;
     NSLog(@"%f", textHeight + 30);
-    return textHeight + 30 ;
+    return textHeight + 40 ;
 }
 
 #pragma mark - UITableViewDelegate
@@ -190,10 +190,10 @@
     // Configure the cell
   
     UILabel *nameLabel = (UILabel*) [cell viewWithTag:100];
-    nameLabel.text = [object objectForKey:@"name"];
+    nameLabel.text = [object objectForKey:@"title"];
     
     UILabel *detailsLabel = (UILabel*) [cell viewWithTag:104];
-    NSString *detailsString =[object objectForKey:@"description"];
+    NSString *detailsString =[object objectForKey:@"details"];
     
     CGSize constraint = CGSizeMake(295, MAXFLOAT);
     NSDictionary *attributes = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:13.0] forKey:NSFontAttributeName];

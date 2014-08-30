@@ -95,7 +95,9 @@
     //Set Prize label
     cell.prizeMoneyLabel.text = [object objectForKey:@"prize"];
     cell.detailLabel.text =[object objectForKey:@"details"];
-    cell.companyLabel.text = [object objectForKey:@"company"];
+    PFObject *spon = object[@"sponsor"];
+//    NSLog(@"YO %@",spon);
+//    cell.companyLabel.text = [[object objectForKey:@"sponsor"] objectForKey:@"title"];
     
     return cell;
 }
