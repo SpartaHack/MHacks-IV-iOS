@@ -14,19 +14,6 @@
 @end
 
 @implementation MHConciergeViewController
-{
-    NSMutableArray *arrayOfCompanies;
-}
-
-- (id)initWithCoder:(NSCoder *)aCoder
-{
-    self = [super initWithCoder:aCoder];
-    if (self) {
-        arrayOfCompanies = [NSMutableArray new];
-        
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -36,21 +23,43 @@
 
 - (void)canIHazParseDatas:(void(^)())block
 {
-    PFQuery *query = [PFQuery queryWithClassName:@"Sponsor"];
+    PFQuery *query = [PFUser query];
+    [query whereKeyExists:@"sponsor"];
+    [query includeKey:@"sponsor"];
+    query.limit = 1000;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            for(int i = 0; i < objects.count; i++){
-                [objects[i] objectForKey:@"title"];
-                [arrayOfCompanies addObject:[[objects objectAtIndex:i] objectForKey:@"title"]];
+            NSMutableArray* unsortedSponsors = [[NSMutableArray alloc] init];
+            self.sponsorUsers = [[NSMutableDictionary alloc] init];
+            
+            for (PFObject* sponsorUser in objects) {
+                PFObject* sponsor = sponsorUser[@"sponsor"];
+                
+                NSMutableArray* usersInSponsor = [self.sponsorUsers objectForKey:sponsor[@"title"]];
+                if (usersInSponsor == nil) {
+                    usersInSponsor = [[NSMutableArray alloc] init];
+                    [self.sponsorUsers setObject:usersInSponsor forKey:sponsor[@"title"]];
+                    [unsortedSponsors addObject:sponsor];
+                }
+                
+                [usersInSponsor addObject:sponsorUser];
             }
+            
+            self.sponsors = [unsortedSponsors sortedArrayUsingComparator:^NSComparisonResult(PFObject* a, PFObject* b) {
+                return [a[@"ordering"] integerValue] > [b[@"ordering"] integerValue];
+            }];
         } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:@"Oops!"
+                                  message:@"Couldn't load sponsor data."
+                                  delegate:nil
+                                  cancelButtonTitle:@"Dismiss"
+                                  otherButtonTitles:nil];
+            [alert show];
         }
+
         [self.tableView reloadData];
     }];
-    
-	// Do any additional setup after loading the view.
 }
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
@@ -109,48 +118,42 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - UITableViewDataSource
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [arrayOfCompanies count];
+    return self.sponsors.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return 1;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:section][@"title"]] count];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-
-    return [arrayOfCompanies objectAtIndex:section];
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [self.sponsors objectAtIndex:section][@"title"];
 }
 
 #pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    // Email Subject
-    NSString *emailTitle = @"Test Email";
-    // Email Content
-    NSString *messageBody = [NSString stringWithFormat:@"Hey %@,", [arrayOfCompanies objectAtIndex:indexPath.section]];
-    NSArray *sendArray = [NSArray arrayWithObject:[arrayOfCompanies objectAtIndex:indexPath.section]];
-    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    mc.mailComposeDelegate = self;
-    [mc setSubject:emailTitle];
-    [mc setSubject:@"MHacks Help"];
-    [mc setMessageBody:messageBody isHTML:NO];
-    [mc setToRecipients:sendArray];
-    
-    // Present mail view controller on screen
-    [self presentViewController:mc animated:YES completion:NULL];
+//    // Email Subject
+//    NSString *emailTitle = @"Test Email";
+//    // Email Content
+//    NSString *messageBody = [NSString stringWithFormat:@"Hey %@,", [arrayOfCompanies objectAtIndex:indexPath.section]];
+//    NSArray *sendArray = [NSArray arrayWithObject:[arrayOfCompanies objectAtIndex:indexPath.section]];
+//    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+//    mc.mailComposeDelegate = self;
+//    [mc setSubject:emailTitle];
+//    [mc setSubject:@"MHacks Help"];
+//    [mc setMessageBody:messageBody isHTML:NO];
+//    [mc setToRecipients:sendArray];
+//    
+//    // Present mail view controller on screen
+//    [self presentViewController:mc animated:YES completion:NULL];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -160,6 +163,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
+    
+    cell.textLabel.text = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"title"]] objectAtIndex:indexPath.row][@"name"];
     
     return cell;
 }
