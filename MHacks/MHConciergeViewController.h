@@ -11,11 +11,13 @@
 
 @interface MHConciergeViewController : UIViewController
 
+@property (strong, nonatomic) NSMutableDictionary* sponsorUsers;
+@property (strong, nonatomic) NSArray* sponsors;
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)postToFacebookTapped:(id)sender;
 - (IBAction)postToTwitterTapped:(id)sender;
-
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
