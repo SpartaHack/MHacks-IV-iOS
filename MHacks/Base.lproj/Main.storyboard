@@ -824,6 +824,13 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pinned" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJH-eJ-2WM">
+                                                    <rect key="frame" x="282" y="3" width="36" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="15" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="BU0-4w-4Z9">
                                                     <rect key="frame" x="20" y="41" width="280" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -844,6 +851,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="detailLabel" destination="BU0-4w-4Z9" id="ZB1-2O-29m"/>
+                                            <outlet property="pinnedLabel" destination="SJH-eJ-2WM" id="KGu-CT-OSG"/>
                                             <outlet property="titleLabel" destination="wxT-99-SMK" id="0kX-aL-uag"/>
                                         </connections>
                                     </tableViewCell>
@@ -899,7 +907,7 @@
                     </items>
                 </navigationBar>
             </objects>
-            <point key="canvasLocation" x="675" y="-587"/>
+            <point key="canvasLocation" x="675" y="-586"/>
         </scene>
         <!--Guest Login View Controller-->
         <scene sceneID="wAz-36-DsQ">
@@ -1039,7 +1047,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3t6-Nk-jj8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="2018"/>
+            <point key="canvasLocation" x="1214" y="2061"/>
         </scene>
         <!--Schedule View Controller-->
         <scene sceneID="ocE-W1-pcp">

@@ -70,24 +70,24 @@
     [arrayOfAnnouncements removeAllObjects];
     //Step 2 download all da data againz!!!!
     PFQuery *query = [PFQuery queryWithClassName:@"Announcement"];
+    [query orderByDescending:@"pinned"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            for(int i = 0; i < objects.count; i++){
-                [objects[i] objectForKey:@"details"];
-                //Step 3 add new datas to arrYAY!! :D
-                [arrayOfAnnouncements addObject:objects[i]];
-                NSLog(@"Parse objs: %@",[objects[i] objectForKey:@"details"]);
-            }
+            [arrayOfAnnouncements addObjectsFromArray:objects];
         } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:@"Whoops"
+                                  message:@"Couldn't get the latest news!"
+                                  delegate:nil
+                                  cancelButtonTitle:@"Fine"
+                                  otherButtonTitles:nil];
+            [alert show];
         }
         //Step 4 tell the table view to redraw everything like the good little table it better be...... :P
         [self.tableView reloadData];
         block(nil,nil);
     }];
 }
-
 
 #pragma mark PONG PONG PONG
 
@@ -123,6 +123,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
+#warning nuh uh
     return @"MHacks Staff";
 }
 
@@ -130,7 +131,6 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"UpdateCell";
-    
 
     UpdatesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
@@ -165,15 +165,20 @@
     static NSString *cellIdentifier = @"UpdateCell";
     UpdatesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    cell.titleLabel.text = [[arrayOfAnnouncements objectAtIndex:indexPath.section] objectForKey:kTitleObjectKey];
-    cell.detailLabel.text = [[arrayOfAnnouncements objectAtIndex:indexPath.section] objectForKey:kDetailsObjectKey];
-
+    PFObject* announcement = [arrayOfAnnouncements objectAtIndex:indexPath.section];
+    cell.titleLabel.text = [announcement objectForKey:kTitleObjectKey];
+    cell.detailLabel.text = [announcement objectForKey:kDetailsObjectKey];
+    
+    if ([announcement[@"pinned"] boolValue]) {
+        cell.pinnedLabel.hidden = NO;
+    } else {
+        cell.pinnedLabel.hidden = YES;
+    }
     
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
     return cell;
 }
-
 
 #pragma mark Refresh View
 
