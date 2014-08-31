@@ -10,6 +10,8 @@
 
 @interface UIColor (MHacksColors)
 
++ (UIColor*)datOrangeColor;
+
 + (UIColor*)chatMessageCellEvenBackgroundColor;
 + (UIColor*)chatMessageCellOddBackgroundColor;
 

@@ -10,6 +10,18 @@
 
 @implementation UIColor (MHacksColors)
 
++ (UIColor*)datOrangeColor
+{
+    static UIColor* datOrange = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        datOrange = [UIColor colorWithRed:254.0/255.0 green:209.0/255.0 blue:54.0/255.0 alpha:1.0];
+    });
+    
+    return datOrange;
+}
+
 + (UIColor*)chatMessageCellEvenBackgroundColor
 {
     static UIColor* chatMessageCellEvenBackground = nil;

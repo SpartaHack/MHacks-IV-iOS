@@ -11,6 +11,7 @@
 
 #import "MHUpdatesViewController.h"
 #import "MHLoginViewController.h"
+#import "UIColor+MHacksColors.h"
 
 #define kDetailsObjectKey @"details"
 #define kTitleObjectKey @"title"
@@ -95,6 +96,7 @@
     self.pongRefreshControl = [BOZPongRefreshControl attachToTableView:self.tableView
                                                      withRefreshTarget:self
                                                       andRefreshAction:@selector(refreshTriggered)];
+    self.pongRefreshControl.backgroundColor = [UIColor datOrangeColor];
 	[super viewDidLayoutSubviews];
 }
 
