@@ -987,51 +987,62 @@
         <scene sceneID="kW2-bO-ujJ">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="EWr-b6-JiB" customClass="MHAwardsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="70" sectionHeaderHeight="10" sectionFooterHeight="10" id="qge-Hh-8vO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="58" sectionHeaderHeight="10" sectionFooterHeight="10" id="qge-Hh-8vO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="AwardsCell" rowHeight="70" id="qNN-hi-Jdt" customClass="AwardsTableViewCell">
-                                <rect key="frame" x="0.0" y="55" width="320" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="102" contentMode="center" tableViewCell="qNN-hi-Jdt" id="BP7-3I-cUX">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AwardCell" id="elv-Hz-h7e" customClass="AwardsTableViewCell">
+                                <rect key="frame" x="0.0" y="55" width="320" height="58"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="71" tableViewCell="elv-Hz-h7e" id="z14-3u-Qmc">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sponsor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LBU-hm-gvE">
-                                            <rect key="frame" x="11" y="25" width="298" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Prize" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="175" translatesAutoresizingMaskIntoConstraints="NO" id="cmD-96-YU9">
+                                            <rect key="frame" x="20" y="10" width="175" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="AL9-4Z-pPd"/>
+                                                <constraint firstAttribute="width" constant="175" id="L6E-q7-dOH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="298" translatesAutoresizingMaskIntoConstraints="NO" id="mqc-Yy-OeV">
-                                            <rect key="frame" x="11" y="45" width="298" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Sponsor" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gXC-Vf-wWM">
+                                            <rect key="frame" x="210" y="14" width="90" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="Ews-Zx-mxf"/>
+                                                <constraint firstAttribute="width" constant="90" id="hJ4-Gh-OoN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="15" text="Details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="geW-GX-NX5">
+                                            <rect key="frame" x="20" y="33" width="280" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prize" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihY-Xg-WoE">
-                                            <rect key="frame" x="199" y="6" width="110" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DcC-15-1jN">
-                                            <rect key="frame" x="11" y="6" width="180" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="geW-GX-NX5" firstAttribute="top" secondItem="cmD-96-YU9" secondAttribute="bottom" constant="2" id="FSI-cm-VPQ"/>
+                                        <constraint firstItem="gXC-Vf-wWM" firstAttribute="top" secondItem="z14-3u-Qmc" secondAttribute="top" constant="14" id="GPY-Yd-coS"/>
+                                        <constraint firstItem="cmD-96-YU9" firstAttribute="top" secondItem="z14-3u-Qmc" secondAttribute="top" constant="10" id="Wim-po-qAC"/>
+                                        <constraint firstAttribute="bottom" secondItem="geW-GX-NX5" secondAttribute="bottom" constant="9" id="h4L-fZ-ZFq"/>
+                                        <constraint firstItem="geW-GX-NX5" firstAttribute="leading" secondItem="z14-3u-Qmc" secondAttribute="leading" constant="20" id="mba-15-vW4"/>
+                                        <constraint firstAttribute="trailing" secondItem="geW-GX-NX5" secondAttribute="trailing" constant="20" id="p5f-sM-x4I"/>
+                                        <constraint firstItem="cmD-96-YU9" firstAttribute="leading" secondItem="z14-3u-Qmc" secondAttribute="leading" constant="20" id="wRw-d7-aee"/>
+                                        <constraint firstItem="gXC-Vf-wWM" firstAttribute="leading" secondItem="cmD-96-YU9" secondAttribute="trailing" constant="15" id="yy4-IR-sCO"/>
+                                        <constraint firstAttribute="trailing" secondItem="gXC-Vf-wWM" secondAttribute="trailing" constant="20" id="z9b-ux-bCf"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="companyLabel" destination="LBU-hm-gvE" id="k1l-Bz-ZZw"/>
-                                    <outlet property="detailLabel" destination="mqc-Yy-OeV" id="6gF-S7-5pP"/>
-                                    <outlet property="prizeMoneyLabel" destination="ihY-Xg-WoE" id="QL2-aH-etz"/>
-                                    <outlet property="titleLabel" destination="DcC-15-1jN" id="qbN-yG-9hV"/>
+                                    <outlet property="companyLabel" destination="gXC-Vf-wWM" id="4GY-Aa-VK3"/>
+                                    <outlet property="detailLabel" destination="geW-GX-NX5" id="cuW-ry-KUT"/>
+                                    <outlet property="prizeMoneyLabel" destination="cmD-96-YU9" id="oFh-qL-Ofd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -9,66 +9,105 @@
 #import "MHAwardsViewController.h"
 #import "AwardsTableViewCell.h"
 
+@interface MHAwardsViewController ()
+{
+    NSMutableArray *arrayOfAwards;
+}
+@end
+
 @implementation MHAwardsViewController
-
-@synthesize detailsArray, trueContentSize;
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.tableView.separatorInset = UIEdgeInsetsZero;
-}
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    self.tableView.userInteractionEnabled = YES;
-    [self loadObjects];
-}
 
 - (id)initWithCoder:(NSCoder *)aCoder
 {
     self = [super initWithCoder:aCoder];
     if (self) {
-        // The className to query on
-        self.parseClassName = @"Award";
-        
-        // The key of the PFObject to display in the label of the default cell style
-        self.pullToRefreshEnabled = NO;
-        self.paginationEnabled = NO;
+        arrayOfAwards = [NSMutableArray new];
     }
     return self;
 }
 
-- (PFQuery *)queryForTable
+- (void)viewDidLoad
 {
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    [super viewDidLoad];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Award"];
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query includeKey:@"sponsor"];
-    [query orderByAscending:@"ID"];
-    
-    return query;
+    [query orderByDescending:@"value"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            [arrayOfAwards removeAllObjects];
+            [arrayOfAwards addObjectsFromArray:objects];
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:@"D'oh!"
+                                  message:@"Couldn't get the awards!"
+                                  delegate:nil
+                                  cancelButtonTitle:@"Ugh"
+                                  otherButtonTitles:nil];
+            [alert show];
+        }
+
+        [self.tableView reloadData];
+    }];
 }
 
-- (void)objectsDidLoad:(NSError *)error {
-    [super objectsDidLoad:error];
-    [self.tableView reloadData];
-}
+# pragma mark Table view funtimes
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
+#pragma mark Table View Related Stuffs
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    static NSString *simpleTableIdentifier = @"AwardsCell";
+    return [arrayOfAwards count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    PFObject* award = [arrayOfAwards objectAtIndex:section];
+    return award[@"title"];
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"AwardCell";
     
-    AwardsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if (cell == nil) {
+    AwardsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
         cell = [[AwardsTableViewCell alloc] init];
     }
+    
+    PFObject* award = [arrayOfAwards objectAtIndex:indexPath.section];
+    [cell setWithAward:award];
+    
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    
+    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height;
+}
 
-    cell.titleLabel.text = object[@"title"];
-    cell.prizeMoneyLabel.text = object[@"prize"];
-    cell.detailLabel.text = object[@"details"];
-    cell.companyLabel.text = object[@"sponsor"][@"title"];
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewAutomaticDimension;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"AwardCell";
+    
+    AwardsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[AwardsTableViewCell alloc] init];
+    }
+    
+    PFObject* award = [arrayOfAwards objectAtIndex:indexPath.section];
+    [cell setWithAward:award];
     
     return cell;
 }

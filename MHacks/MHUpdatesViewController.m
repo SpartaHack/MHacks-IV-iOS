@@ -27,7 +27,6 @@
 
 @implementation MHUpdatesViewController
 
-
 - (id)initWithCoder:(NSCoder *)aCoder
 {
     self = [super initWithCoder:aCoder];

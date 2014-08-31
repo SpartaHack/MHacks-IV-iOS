@@ -12,7 +12,7 @@
 #import "UpdatesTableViewCell.h"
 #import <Twitter/Twitter.h>
 
-@interface MHUpdatesViewController : UIViewController
+@interface MHUpdatesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *bar;
