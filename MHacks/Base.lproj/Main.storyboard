@@ -118,6 +118,14 @@
                                     <segue destination="EWr-b6-JiB" kind="embed" id="k4x-cm-17Y"/>
                                 </connections>
                             </containerView>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8A0-4p-qC5">
+                                <rect key="frame" x="0.0" y="65" width="320" height="454"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="WVv-y7-7Td" kind="embed" id="WOV-Si-z13"/>
+                                </connections>
+                            </containerView>
                             <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDU-jI-5Ks">
                                 <rect key="frame" x="0.0" y="65" width="320" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -136,6 +144,7 @@
                     <connections>
                         <outlet property="awardsContainer" destination="ClZ-vn-Bxx" id="vh3-lm-EfL"/>
                         <outlet property="countdownContainer" destination="IDU-jI-5Ks" id="5FZ-bg-fMz"/>
+                        <outlet property="mapContainer" destination="8A0-4p-qC5" id="G8v-Xd-05A"/>
                         <outlet property="scheduleContainer" destination="U9g-Ry-AF7" id="XAM-Uv-APN"/>
                     </connections>
                 </viewController>
@@ -987,6 +996,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FbR-Cr-gKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1214" y="-551"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="zkg-NQ-fLh">
+            <objects>
+                <viewController id="WVv-y7-7Td" customClass="MHMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GwL-Nd-y5z"/>
+                        <viewControllerLayoutGuide type="bottom" id="sMR-hx-WVO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PdJ-IW-Cgh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="hybrid" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QfL-7P-e0c">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="QfL-7P-e0c" id="ccj-ff-34L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1QQ-sI-T6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="763" y="2165"/>
         </scene>
         <!--Awards View Controller-->
         <scene sceneID="kW2-bO-ujJ">
