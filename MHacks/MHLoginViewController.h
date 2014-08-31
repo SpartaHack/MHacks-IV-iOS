@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 #import "MHUserData.h"
 #import "MHKeysAccessor.h"
 #import <QuartzCore/QuartzCore.h>

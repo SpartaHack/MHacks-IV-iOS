@@ -9,6 +9,7 @@
 #import "MHAppDelegate.h"
 #import "MHKeysAccessor.h"
 #import <Parse/Parse.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @implementation MHAppDelegate
 

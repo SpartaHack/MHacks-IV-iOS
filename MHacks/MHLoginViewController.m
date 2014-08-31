@@ -16,6 +16,10 @@
 {
     [super viewDidAppear:animated];
     
+    self.facebookButton.layer.cornerRadius = 5.0f;
+    self.twitterButton.layer.cornerRadius = 5.0f;
+    self.guestButton.layer.cornerRadius = 5.0f;
+    
     CGRect logoDestFrame;
     CGRect twitterButtonDestFrame;
     CGRect facebookButtonDestFrame;
