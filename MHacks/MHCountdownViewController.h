@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MHCountdownViewController : UIViewController {
-    
     NSDate *today;
     NSDate *MhacksBegin;
     NSDate *MhacksEnd;
@@ -20,17 +19,16 @@
     BOOL hasStarted;
     BOOL hasEnded;
     
-    IBOutlet UILabel *interval;
-    IBOutlet UILabel *countdown;
     NSDateComponents *daysComponent;
     NSDateComponents *hoursComponent;
     NSDateComponents *minsComponent;
     NSDateComponents *secsComponent;
-    
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *interval;
 @property (nonatomic, retain) IBOutlet UILabel *countdown;
-@property (weak, nonatomic) IBOutlet UIImageView *timerImage;
+@property (weak, nonatomic) IBOutlet UIImageView *clockOutline;
+@property (weak, nonatomic) IBOutlet UIImageView *clockHour;
+@property (weak, nonatomic) IBOutlet UIImageView *clockMinute;
 
 @end

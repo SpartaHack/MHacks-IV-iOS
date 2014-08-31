@@ -11,19 +11,20 @@
 #import "UIImage+animatedGIF.h"
 
 @implementation MHCountdownViewController
-@synthesize countdown, interval, timerImage;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    timerImage.image = [UIImage animatedImageWithAnimatedGIFURL:[NSURL URLWithString:@"http://i.imgur.com/bA6o3mj.gif"]];
-    interval.text = [NSString stringWithFormat:@""];
+    self.clockOutline.image = [self.clockOutline.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.clockHour.image = [self.clockHour.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.clockHour.translatesAutoresizingMaskIntoConstraints = YES;
+    self.clockMinute.image = [self.clockMinute.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.clockMinute.translatesAutoresizingMaskIntoConstraints = YES;
     
     formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat: @"MM/dd/yyyy HH:mm:ss"];
     
-    today = [NSDate date];
     MhacksBegin = [formatter dateFromString:@"09/05/2014 17:00:00"];
     MhacksEnd = [formatter dateFromString:@"09/07/2014 16:00:00"];
     
@@ -39,19 +40,19 @@
 
 - (void)checkDate{
     if([today compare: MhacksBegin] == NSOrderedAscending && [today compare: MhacksEnd] == NSOrderedAscending){
-        interval.text = @"Hacking begins in:";
+        self.interval.text = @"Hacking begins in:";
         isStarting = TRUE;
         hasStarted = FALSE;
         hasEnded = FALSE;
     }
     else if ([today compare: MhacksBegin] == NSOrderedSame || ([today compare: MhacksEnd] == NSOrderedAscending && [today compare: MhacksBegin] == NSOrderedAscending)){
-        interval.text = @"Hacking ends in:";
+        self.interval.text = @"Hacking ends in:";
         isStarting = FALSE;
         hasStarted = TRUE;
         hasEnded = FALSE;
     }
     else if ([today compare: MhacksBegin] == NSOrderedDescending && [today compare: MhacksEnd] == NSOrderedDescending){
-        interval.text = @"Hacking has ended!";
+        self.interval.text = @"Hacking has ended!";
         isStarting = FALSE;
         hasStarted = FALSE;
         hasEnded = TRUE;
@@ -64,44 +65,38 @@
     [self checkDate];
     NSUInteger unitFlags = NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit;
     
-    if (isStarting) {
-        NSDateComponents *dateComponents = [gregorianCalendar components:unitFlags fromDate:today toDate:MhacksBegin options:0];
+    if (hasEnded) {
+        self.countdown.text = @"We hope you enjoyed MHacks!";
+    } else {
+        NSDateComponents *dateComponents = nil;
+        
+        if (isStarting) {
+            dateComponents = [gregorianCalendar components:unitFlags fromDate:today toDate:MhacksBegin options:0];
+        } else if (hasStarted) {
+            dateComponents = [gregorianCalendar components:unitFlags fromDate:today toDate:MhacksEnd options:0];
+        }
         
         NSNumber *days = [NSNumber numberWithInteger:[dateComponents day]];
         NSNumber *hours = [NSNumber numberWithInteger:[dateComponents hour]];
         NSNumber *mins = [NSNumber numberWithInteger:[dateComponents minute]];
         NSNumber *secs = [NSNumber numberWithInteger:[dateComponents second]];
         
-        NSString *s = [days stringValue];
-        s = [s stringByAppendingString:@" days  "];
-        s = [s stringByAppendingString:[hours stringValue]];
-        s = [s stringByAppendingString:@" hours  "];
-        s = [s stringByAppendingString:[mins stringValue]];
-        s = [s stringByAppendingString:@" minutes  "];
-        s = [s stringByAppendingString:[secs stringValue]];
-        s = [s stringByAppendingString:@" seconds  "];
+        NSString* countdownText = [NSString stringWithFormat:@"%@ days %@ hours %@ minutes %@ seconds", days, hours, mins, secs];
+        self.countdown.text = countdownText;
         
-        countdown.text = s;
-    } else if (hasStarted) {
-        NSDateComponents *dateComponents = [gregorianCalendar components:unitFlags fromDate:MhacksBegin toDate:MhacksEnd options:0];
+        NSDateComponents* todayComponents = [gregorianCalendar components:unitFlags fromDate:today];
         
-        NSNumber *days = [NSNumber numberWithInteger:[dateComponents day]];
-        NSNumber *hours = [NSNumber numberWithInteger:[dateComponents hour]];
-        NSNumber *mins = [NSNumber numberWithInteger:[dateComponents minute]];
-        NSNumber *secs = [NSNumber numberWithInteger:[dateComponents second]];
-        
-        NSString *s = [days stringValue];
-        s = [s stringByAppendingString:@" days "];
-        s = [s stringByAppendingString:[hours stringValue]];
-        s = [s stringByAppendingString:@" hours "];
-        s = [s stringByAppendingString:[mins stringValue]];
-        s = [s stringByAppendingString:@" minutes "];
-        s = [s stringByAppendingString:[secs stringValue]];
-        s = [s stringByAppendingString:@" seconds "];
-        
-        countdown.text = s;
-    } else if (hasEnded) {
-        countdown.text = @"We hope you enjoyed MHacks!";
+        [UIView animateWithDuration:0.1f animations:^{
+            CGFloat hoursValueToUse = (float)[todayComponents hour];
+            if (hoursValueToUse > 12.0f) {
+                hoursValueToUse -= 12.0f;
+            }
+            CGFloat hoursAngle = (hoursValueToUse / 12.0f) * (2.0f * M_PI);
+            self.clockHour.transform = CGAffineTransformMakeRotation(hoursAngle);
+            
+            CGFloat minutesAngle = ((float)[todayComponents minute] / 60.0f) * (2.0f * M_PI);
+            self.clockMinute.transform = CGAffineTransformMakeRotation(minutesAngle);
+        } completion:nil];
     }
 }
 

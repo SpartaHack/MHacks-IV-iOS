@@ -808,13 +808,13 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Concierge" id="f8I-g2-piu">
-                                        <barButtonItem key="leftBarButtonItem" image="facebook.png" id="KCz-Fi-lw4">
+                                        <barButtonItem key="leftBarButtonItem" image="soda.png" id="KCz-Fi-lw4">
                                             <color key="tintColor" red="0.9803922176361084" green="0.79607850313186646" blue="0.27058824896812439" alpha="1" colorSpace="deviceRGB"/>
                                             <connections>
                                                 <action selector="postToFacebookTapped:" destination="qgO-01-ho1" id="cOA-jc-L9t"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="twittercopy.png" id="xKN-ax-aZO">
+                                        <barButtonItem key="rightBarButtonItem" image="burger.png" id="xKN-ax-aZO">
                                             <color key="tintColor" red="0.97647064924240112" green="0.80000007152557373" blue="0.31764706969261169" alpha="1" colorSpace="deviceRGB"/>
                                             <connections>
                                                 <action selector="postToTwitterTapped:" destination="qgO-01-ho1" id="D4c-Us-hCH"/>
@@ -923,7 +923,7 @@
                                                 <action selector="postToFacebookTapped:" destination="PfM-Go-FNe" id="Xbg-vY-lsH"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="twittercopy.png" id="GZ5-3e-YMF">
+                                        <barButtonItem key="rightBarButtonItem" image="twitter-img.png" id="GZ5-3e-YMF">
                                             <connections>
                                                 <action selector="postToTwitterTapped:" destination="PfM-Go-FNe" id="Es1-ap-KhO"/>
                                             </connections>
@@ -1207,11 +1207,20 @@
                                 <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" image="clock.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Ec2-h2-4i1">
+                            <imageView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" image="circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ec2-h2-4i1">
                                 <rect key="frame" x="13" y="9" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <color key="backgroundColor" red="0.95294123888015747" green="0.76078438758850098" blue="0.37647062540054321" alpha="1" colorSpace="deviceRGB"/>
-                                <color key="tintColor" red="0.96078437566757202" green="0.76862752437591553" blue="0.29803922772407532" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.95294123888015747" green="0.76078438758850098" blue="0.37647062540054321" alpha="0.0" colorSpace="deviceRGB"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" image="hour.png" translatesAutoresizingMaskIntoConstraints="NO" id="9hg-9P-OEm">
+                                <rect key="frame" x="13" y="9" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" red="0.95294123890000004" green="0.7607843876" blue="0.37647062539999998" alpha="0.0" colorSpace="deviceRGB"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" image="minute.png" translatesAutoresizingMaskIntoConstraints="NO" id="t3s-C7-FWu">
+                                <rect key="frame" x="13" y="9" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" red="0.95294123890000004" green="0.7607843876" blue="0.37647062539999998" alpha="0.0" colorSpace="deviceRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1219,9 +1228,11 @@
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="clockHour" destination="9hg-9P-OEm" id="jXX-sQ-O7H"/>
+                        <outlet property="clockMinute" destination="t3s-C7-FWu" id="Zaj-9r-MHr"/>
+                        <outlet property="clockOutline" destination="Ec2-h2-4i1" id="MlS-o2-JeO"/>
                         <outlet property="countdown" destination="x1n-W3-YmI" id="0wr-Uh-T81"/>
                         <outlet property="interval" destination="XTC-zK-wd7" id="uuu-Jq-jpV"/>
-                        <outlet property="timerImage" destination="Ec2-h2-4i1" id="fm9-mG-MXM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYg-Ey-MP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1331,13 +1342,17 @@
     <resources>
         <image name="MHacksLOGO-Borderless.png" width="302" height="302"/>
         <image name="btnCamera.png" width="77" height="77"/>
+        <image name="burger.png" width="30" height="25"/>
         <image name="calendar" width="30" height="30"/>
         <image name="chat" width="30" height="29"/>
         <image name="chat.png" width="30" height="30"/>
-        <image name="clock.gif" width="200" height="200"/>
+        <image name="circle.png" width="100" height="100"/>
         <image name="facebook.png" width="32" height="32"/>
+        <image name="hour.png" width="100" height="100"/>
         <image name="mentors" width="30" height="30"/>
-        <image name="twittercopy.png" width="32" height="32"/>
+        <image name="minute.png" width="100" height="100"/>
+        <image name="soda.png" width="23" height="37"/>
+        <image name="twitter-img.png" width="32" height="32"/>
         <image name="updates" width="30" height="30"/>
     </resources>
     <color key="tintColor" red="0.94117653369903564" green="0.74901962280273438" blue="0.458823561668396" alpha="1" colorSpace="deviceRGB"/>
