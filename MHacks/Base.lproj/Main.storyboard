@@ -1336,7 +1336,7 @@
         <image name="circle.png" width="100" height="100"/>
         <image name="facebook.png" width="32" height="32"/>
         <image name="mentors" width="30" height="30"/>
-        <image name="soda.png" width="23" height="37"/>
+        <image name="soda.png" width="128" height="128"/>
         <image name="twitter-img.png" width="32" height="32"/>
         <image name="updates" width="30" height="30"/>
     </resources>

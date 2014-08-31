@@ -30,12 +30,12 @@
     formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat: @"MM/dd/yyyy HH:mm:ss"];
     
-    MhacksBegin = [formatter dateFromString:@"09/05/2014 17:00:00"];
+    MhacksBegin = [formatter dateFromString:@"09/05/2014 19:00:00"];
     MhacksEnd = [formatter dateFromString:@"09/07/2014 16:00:00"];
     
     gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
-    [self countdownDisplay:@"firstRun"];
+    [self countdownDisplay:nil];
     [NSTimer scheduledTimerWithTimeInterval:1.0
                                      target:self
                                    selector:@selector(countdownDisplay:)
@@ -91,11 +91,7 @@
     
     NSDateComponents* todayComponents = [gregorianCalendar components:unitFlags fromDate:today];
     
-    CGFloat duration = 0.25f;
-    if (sender != nil) {
-        duration = 0.0f;
-    }
-    [UIView animateWithDuration:duration animations:^{
+    [UIView animateWithDuration:0.25f animations:^{
         CGFloat hoursValueToUse = (float)[todayComponents hour];
         if (hoursValueToUse > 12.0f) {
             hoursValueToUse -= 12.0f;
