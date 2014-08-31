@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <MessageUI/MessageUI.h>
 
-@interface MHConciergeViewController : UIViewController
+@interface MHConciergeViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) NSMutableDictionary* sponsorUsers;
 @property (strong, nonatomic) NSArray* sponsors;
