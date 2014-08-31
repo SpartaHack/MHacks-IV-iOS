@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //
 
-#import "AwardsTableViewCell.h"
+#import "MHAwardsTableViewCell.h"
 
-@implementation AwardsTableViewCell
+@implementation MHAwardsTableViewCell
 
 - (void)setWithAward:(PFObject*)award
 {

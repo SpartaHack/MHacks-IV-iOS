@@ -7,7 +7,7 @@
 //
 
 #import "MHAwardsViewController.h"
-#import "AwardsTableViewCell.h"
+#import "MHAwardsTableViewCell.h"
 
 @interface MHAwardsViewController ()
 {
@@ -77,9 +77,9 @@
 {
     static NSString *cellIdentifier = @"AwardCell";
     
-    AwardsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    MHAwardsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[AwardsTableViewCell alloc] init];
+        cell = [[MHAwardsTableViewCell alloc] init];
     }
     
     PFObject* award = [arrayOfAwards objectAtIndex:indexPath.section];
@@ -101,9 +101,9 @@
 {
     static NSString *cellIdentifier = @"AwardCell";
     
-    AwardsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    MHAwardsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[AwardsTableViewCell alloc] init];
+        cell = [[MHAwardsTableViewCell alloc] init];
     }
     
     PFObject* award = [arrayOfAwards objectAtIndex:indexPath.section];

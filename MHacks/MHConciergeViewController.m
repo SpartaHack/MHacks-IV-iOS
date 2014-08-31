@@ -7,11 +7,9 @@
 //
 
 #import "MHConciergeViewController.h"
+#import "MHConciergeTableViewCell.h"
 #import <MessageUI/MessageUI.h>
 #import <Social/Social.h>
-@interface MHConciergeViewController () <MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate>
-
-@end
 
 @implementation MHConciergeViewController
 
@@ -159,12 +157,13 @@
 {
     static NSString *simpleTableIdentifier = @"ConciergeCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    MHConciergeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[MHConciergeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"title"]] objectAtIndex:indexPath.row][@"name"];
+    PFObject* sponsorUser = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"title"]] objectAtIndex:indexPath.row];
+    [cell setWithUser:sponsorUser];
     
     return cell;
 }

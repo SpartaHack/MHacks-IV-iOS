@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "BOZPongRefreshControl.h"
-#import "UpdatesTableViewCell.h"
+#import "MHUpdatesTableViewCell.h"
 #import <Twitter/Twitter.h>
 
 @interface MHUpdatesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>

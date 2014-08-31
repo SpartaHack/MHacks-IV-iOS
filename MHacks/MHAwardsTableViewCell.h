@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface AwardsTableViewCell : UITableViewCell
+@interface MHAwardsTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *prizeMoneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *companyLabel;

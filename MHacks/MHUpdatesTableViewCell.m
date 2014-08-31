@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //
 
-#import "UpdatesTableViewCell.h"
+#import "MHUpdatesTableViewCell.h"
 
-@implementation UpdatesTableViewCell
+@implementation MHUpdatesTableViewCell
 
 - (void)setWithAnnouncement:(PFObject*)announcement
 {

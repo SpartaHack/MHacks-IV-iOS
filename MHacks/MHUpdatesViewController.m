@@ -133,9 +133,9 @@
 {
     static NSString *cellIdentifier = @"UpdateCell";
 
-    UpdatesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    MHUpdatesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[UpdatesTableViewCell alloc] init];
+        cell = [[MHUpdatesTableViewCell alloc] init];
     }
 
     PFObject* announcement = [arrayOfAnnouncements objectAtIndex:indexPath.section];
@@ -164,7 +164,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"UpdateCell";
-    UpdatesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    MHUpdatesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     PFObject* announcement = [arrayOfAnnouncements objectAtIndex:indexPath.section];
     [cell setWithAnnouncement:announcement];
