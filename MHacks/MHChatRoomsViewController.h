@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) Firebase* firebase;
 @property (nonatomic, strong) NSMutableArray* chatRooms;
+@property (nonatomic) BOOL hasInitialDataBeenLoaded;
 
 @property (nonatomic, strong) NSString* chatRoomToEnter;
 
