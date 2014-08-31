@@ -1241,7 +1241,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MHacksLOGO-Borderless.png" width="1024" height="1024"/>
+        <image name="MHacksLOGO-Borderless.png" width="120" height="120"/>
         <image name="btnCamera.png" width="77" height="77"/>
         <image name="calendar" width="30" height="30"/>
         <image name="chat" width="30" height="29"/>
