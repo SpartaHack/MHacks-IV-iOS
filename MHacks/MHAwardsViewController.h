@@ -9,10 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface MHAwardsViewController : PFQueryTableViewController{
-
-
-}
+@interface MHAwardsViewController : PFQueryTableViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) CGSize trueContentSize;

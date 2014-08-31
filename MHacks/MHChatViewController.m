@@ -31,7 +31,7 @@
     self.name = userData.userName;
     self.photoURL = userData.userPhoto;
     
-    self.chatMessagesQuery = [self.firebase queryLimitedToNumberOfChildren:50];
+    self.chatMessagesQuery = [self.firebase queryLimitedToNumberOfChildren:25];
     [self.chatMessagesQuery observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         // Add the chat message to the array.
         [self.chatMessages addObject:snapshot.value];
