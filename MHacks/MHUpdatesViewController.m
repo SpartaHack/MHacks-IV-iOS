@@ -65,14 +65,13 @@
 
 - (void)canIHazParseDatas:(void(^)())block
 {
-    //Step 1 remove old datas
-    [arrayOfAnnouncements removeAllObjects];
     //Step 2 download all da data againz!!!!
     PFQuery *query = [PFQuery queryWithClassName:@"Announcement"];
     [query orderByDescending:@"pinned"];
     [query includeKey:@"poster"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
+            [arrayOfAnnouncements removeAllObjects];
             [arrayOfAnnouncements addObjectsFromArray:objects];
         } else {
             UIAlertView *alert = [[UIAlertView alloc]
