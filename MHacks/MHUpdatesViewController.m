@@ -71,6 +71,7 @@
     //Step 2 download all da data againz!!!!
     PFQuery *query = [PFQuery queryWithClassName:@"Announcement"];
     [query orderByDescending:@"pinned"];
+    [query includeKey:@"poster"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             [arrayOfAnnouncements addObjectsFromArray:objects];
@@ -123,8 +124,8 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-#warning nuh uh
-    return @"MHacks Staff";
+    PFObject* announcement = [arrayOfAnnouncements objectAtIndex:section];
+    return announcement[@"poster"][@"title"];
 }
 
 
