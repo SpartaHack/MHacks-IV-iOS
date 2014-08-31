@@ -9,20 +9,9 @@
 
 #import "MHCountdownViewController.h"
 #import "UIImage+animatedGIF.h"
-@interface MHCountdownViewController ()
-
-@end
 
 @implementation MHCountdownViewController
 @synthesize countdown, interval, timerImage;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -31,7 +20,7 @@
     timerImage.image = [UIImage animatedImageWithAnimatedGIFURL:[NSURL URLWithString:@"http://i.imgur.com/bA6o3mj.gif"]];
     interval.text = [NSString stringWithFormat:@""];
    
-    [self setStuff];
+    [self countdownDisplay:nil];
     formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat: @"MM/dd/yyyy HH:mm:ss"];
     
@@ -55,19 +44,19 @@
     if([today compare: MhacksBegin] == NSOrderedAscending && [today compare: MhacksEnd] == NSOrderedAscending){
         interval.text = @"Hacking begins in:";
         isStarting = TRUE;
-        hasEnded = FALSE;
+        hasStarted = FALSE;
         hasEnded = FALSE;
     }
     else if ([today compare: MhacksBegin] == NSOrderedSame || ([today compare: MhacksEnd] == NSOrderedAscending && [today compare: MhacksBegin] == NSOrderedAscending)){
         interval.text = @"Hacking ends in:";
         isStarting = FALSE;
-        hasEnded = TRUE;
+        hasStarted = TRUE;
         hasEnded = FALSE;
     }
     else if ([today compare: MhacksBegin] == NSOrderedDescending && [today compare: MhacksEnd] == NSOrderedDescending){
         interval.text = @"Hacking has ended!";
         isStarting = FALSE;
-        hasEnded = FALSE;
+        hasStarted = FALSE;
         hasEnded = TRUE;
     }
 }
@@ -122,65 +111,6 @@
     else if (hasEnded){
         countdown.text = @"We hope you enjoyed MHacks!";
     }
-}
-
--(void)setStuff{
-    today = [NSDate date];
-    [self checkDate];
-    NSUInteger unitFlags = NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit;
-    if(isStarting){
-        
-        NSDateComponents *dateComponents = [gregorianCalendar components:unitFlags fromDate:today toDate:MhacksBegin options:0];
-        
-        NSNumber *days = [NSNumber numberWithInteger:[dateComponents day]];
-        NSNumber *hours = [NSNumber numberWithInteger:[dateComponents hour]];
-        NSNumber *mins = [NSNumber numberWithInteger:[dateComponents minute]];
-        NSNumber *secs = [NSNumber numberWithInteger:[dateComponents second]];
-        
-        NSString *s = [days stringValue];
-        s = [s stringByAppendingString:@" days  "];
-        s = [s stringByAppendingString:[hours stringValue]];
-        s = [s stringByAppendingString:@" hours  "];
-        s = [s stringByAppendingString:[mins stringValue]];
-        s = [s stringByAppendingString:@" minutes  "];
-        s = [s stringByAppendingString:[secs stringValue]];
-        s = [s stringByAppendingString:@" seconds  "];
-        
-        countdown.text = s;
-        
-        
-    }
-    else if (hasStarted){
-        NSDateComponents *dateComponents = [gregorianCalendar components:unitFlags fromDate:MhacksBegin toDate:MhacksEnd options:0];
-        
-        NSNumber *days = [NSNumber numberWithInteger:[dateComponents day]];
-        NSNumber *hours = [NSNumber numberWithInteger:[dateComponents hour]];
-        NSNumber *mins = [NSNumber numberWithInteger:[dateComponents minute]];
-        NSNumber *secs = [NSNumber numberWithInteger:[dateComponents second]];
-        
-        NSString *s = [days stringValue];
-        s = [s stringByAppendingString:@" days "];
-        s = [s stringByAppendingString:[hours stringValue]];
-        s = [s stringByAppendingString:@" hours "];
-        s = [s stringByAppendingString:[mins stringValue]];
-        s = [s stringByAppendingString:@" minutes "];
-        s = [s stringByAppendingString:[secs stringValue]];
-        s = [s stringByAppendingString:@" seconds "];
-        
-        countdown.text = s;
-        
-        
-    }
-    else if (hasEnded){
-        countdown.text = @"We hope you enjoyed MHacks! Come back next year!";
-    }
-
-
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
