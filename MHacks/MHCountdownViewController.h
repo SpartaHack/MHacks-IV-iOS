@@ -28,7 +28,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *interval;
 @property (nonatomic, retain) IBOutlet UILabel *countdown;
 @property (weak, nonatomic) IBOutlet UIImageView *clockOutline;
-@property (weak, nonatomic) IBOutlet UIImageView *clockHour;
-@property (weak, nonatomic) IBOutlet UIImageView *clockMinute;
+@property (strong, nonatomic) UIImageView* clockHour;
+@property (strong, nonatomic) UIImageView* clockMinute;
 
 @end

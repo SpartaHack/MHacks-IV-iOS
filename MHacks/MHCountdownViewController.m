@@ -8,7 +8,6 @@
 //
 
 #import "MHCountdownViewController.h"
-#import "UIImage+animatedGIF.h"
 
 @implementation MHCountdownViewController
 
@@ -17,10 +16,16 @@
     [super viewDidLoad];
     
     self.clockOutline.image = [self.clockOutline.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.clockHour.image = [self.clockHour.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.clockHour.translatesAutoresizingMaskIntoConstraints = YES;
-    self.clockMinute.image = [self.clockMinute.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.clockMinute.translatesAutoresizingMaskIntoConstraints = YES;
+    
+    self.clockHour = [[UIImageView alloc] initWithFrame:self.clockOutline.frame];
+    self.clockHour.tintColor = self.clockOutline.tintColor;
+    self.clockHour.image = [[UIImage imageNamed:@"hour"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.view addSubview:self.clockHour];
+    
+    self.clockMinute = [[UIImageView alloc] initWithFrame:self.clockOutline.frame];
+    self.clockMinute.tintColor = self.clockOutline.tintColor;
+    self.clockMinute.image = [[UIImage imageNamed:@"minute"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.view addSubview:self.clockMinute];
     
     formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat: @"MM/dd/yyyy HH:mm:ss"];
@@ -30,7 +35,7 @@
     
     gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
-    [self countdownDisplay:nil];
+    [self countdownDisplay:@"firstRun"];
     [NSTimer scheduledTimerWithTimeInterval:1.0
                                      target:self
                                    selector:@selector(countdownDisplay:)
@@ -38,20 +43,19 @@
                                     repeats:YES];
 }
 
-- (void)checkDate{
-    if([today compare: MhacksBegin] == NSOrderedAscending && [today compare: MhacksEnd] == NSOrderedAscending){
+- (void)checkDate
+{
+    if([today compare: MhacksBegin] == NSOrderedAscending) {
         self.interval.text = @"Hacking begins in:";
         isStarting = TRUE;
         hasStarted = FALSE;
         hasEnded = FALSE;
-    }
-    else if ([today compare: MhacksBegin] == NSOrderedSame || ([today compare: MhacksEnd] == NSOrderedAscending && [today compare: MhacksBegin] == NSOrderedAscending)){
+    } else if ([today compare: MhacksBegin] == NSOrderedDescending && [today compare: MhacksEnd] == NSOrderedAscending) {
         self.interval.text = @"Hacking ends in:";
         isStarting = FALSE;
         hasStarted = TRUE;
         hasEnded = FALSE;
-    }
-    else if ([today compare: MhacksBegin] == NSOrderedDescending && [today compare: MhacksEnd] == NSOrderedDescending){
+    } else if ([today compare: MhacksEnd] == NSOrderedDescending) {
         self.interval.text = @"Hacking has ended!";
         isStarting = FALSE;
         hasStarted = FALSE;
@@ -83,21 +87,25 @@
         
         NSString* countdownText = [NSString stringWithFormat:@"%@ days %@ hours %@ minutes %@ seconds", days, hours, mins, secs];
         self.countdown.text = countdownText;
-        
-        NSDateComponents* todayComponents = [gregorianCalendar components:unitFlags fromDate:today];
-        
-        [UIView animateWithDuration:0.1f animations:^{
-            CGFloat hoursValueToUse = (float)[todayComponents hour];
-            if (hoursValueToUse > 12.0f) {
-                hoursValueToUse -= 12.0f;
-            }
-            CGFloat hoursAngle = (hoursValueToUse / 12.0f) * (2.0f * M_PI);
-            self.clockHour.transform = CGAffineTransformMakeRotation(hoursAngle);
-            
-            CGFloat minutesAngle = ((float)[todayComponents minute] / 60.0f) * (2.0f * M_PI);
-            self.clockMinute.transform = CGAffineTransformMakeRotation(minutesAngle);
-        } completion:nil];
     }
+    
+    NSDateComponents* todayComponents = [gregorianCalendar components:unitFlags fromDate:today];
+    
+    CGFloat duration = 0.25f;
+    if (sender != nil) {
+        duration = 0.0f;
+    }
+    [UIView animateWithDuration:duration animations:^{
+        CGFloat hoursValueToUse = (float)[todayComponents hour];
+        if (hoursValueToUse > 12.0f) {
+            hoursValueToUse -= 12.0f;
+        }
+        CGFloat hoursAngle = (hoursValueToUse / 12.0f) * (2.0f * M_PI);
+        self.clockHour.transform = CGAffineTransformMakeRotation(hoursAngle);
+        
+        CGFloat minutesAngle = ((float)[todayComponents minute] / 60.0f) * (2.0f * M_PI);
+        self.clockMinute.transform = CGAffineTransformMakeRotation(minutesAngle);
+    } completion:nil];
 }
 
 @end

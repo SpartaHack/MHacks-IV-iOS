@@ -1207,20 +1207,9 @@
                                 <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" image="circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ec2-h2-4i1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="hQy-VO-Xkx">
                                 <rect key="frame" x="13" y="9" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <color key="backgroundColor" red="0.95294123888015747" green="0.76078438758850098" blue="0.37647062540054321" alpha="0.0" colorSpace="deviceRGB"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" image="hour.png" translatesAutoresizingMaskIntoConstraints="NO" id="9hg-9P-OEm">
-                                <rect key="frame" x="13" y="9" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <color key="backgroundColor" red="0.95294123890000004" green="0.7607843876" blue="0.37647062539999998" alpha="0.0" colorSpace="deviceRGB"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" image="minute.png" translatesAutoresizingMaskIntoConstraints="NO" id="t3s-C7-FWu">
-                                <rect key="frame" x="13" y="9" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <color key="backgroundColor" red="0.95294123890000004" green="0.7607843876" blue="0.37647062539999998" alpha="0.0" colorSpace="deviceRGB"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1228,9 +1217,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="clockHour" destination="9hg-9P-OEm" id="jXX-sQ-O7H"/>
-                        <outlet property="clockMinute" destination="t3s-C7-FWu" id="Zaj-9r-MHr"/>
-                        <outlet property="clockOutline" destination="Ec2-h2-4i1" id="MlS-o2-JeO"/>
+                        <outlet property="clockOutline" destination="hQy-VO-Xkx" id="FM8-AU-nvI"/>
                         <outlet property="countdown" destination="x1n-W3-YmI" id="0wr-Uh-T81"/>
                         <outlet property="interval" destination="XTC-zK-wd7" id="uuu-Jq-jpV"/>
                     </connections>
@@ -1348,9 +1335,7 @@
         <image name="chat.png" width="30" height="30"/>
         <image name="circle.png" width="100" height="100"/>
         <image name="facebook.png" width="32" height="32"/>
-        <image name="hour.png" width="100" height="100"/>
         <image name="mentors" width="30" height="30"/>
-        <image name="minute.png" width="100" height="100"/>
         <image name="soda.png" width="23" height="37"/>
         <image name="twitter-img.png" width="32" height="32"/>
         <image name="updates" width="30" height="30"/>
