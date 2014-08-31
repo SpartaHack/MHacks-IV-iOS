@@ -13,7 +13,7 @@
 - (void)setWithUser:(PFObject*)user
 {
     self.nameLabel.text = user[@"name"];
-    self.positionLabel.text = user[@"position"];
+    self.positionLabel.hidden = YES;
     self.specialtyLabel.text = user[@"specialty"];
 }
 
