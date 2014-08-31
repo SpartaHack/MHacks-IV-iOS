@@ -103,6 +103,8 @@
 		FB57458819ADA2BD009244CF /* MHChatMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458719ADA2BD009244CF /* MHChatMessageTableViewCell.m */; };
 		FB57458B19ADA5A3009244CF /* UIColor+MHacksColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458A19ADA5A3009244CF /* UIColor+MHacksColors.m */; };
 		FB57458E19AFC3D4009244CF /* MHKeysAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458D19AFC3D4009244CF /* MHKeysAccessor.m */; };
+		FB57459319B38C79009244CF /* MHMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57459219B38C79009244CF /* MHMapViewController.m */; };
+		FB57459519B38D73009244CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB57459419B38D73009244CF /* MapKit.framework */; };
 		FB99CA1219A66CE50099AF43 /* MHChatRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -257,6 +259,9 @@
 		FB57458A19ADA5A3009244CF /* UIColor+MHacksColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MHacksColors.m"; sourceTree = "<group>"; };
 		FB57458C19AFC3D4009244CF /* MHKeysAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHKeysAccessor.h; sourceTree = "<group>"; };
 		FB57458D19AFC3D4009244CF /* MHKeysAccessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHKeysAccessor.m; sourceTree = "<group>"; };
+		FB57459119B38C79009244CF /* MHMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHMapViewController.h; sourceTree = "<group>"; };
+		FB57459219B38C79009244CF /* MHMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHMapViewController.m; sourceTree = "<group>"; };
+		FB57459419B38D73009244CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FB99CA1019A66CE50099AF43 /* MHChatRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHChatRoomsViewController.h; sourceTree = "<group>"; };
 		FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHChatRoomsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -266,6 +271,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB57459519B38D73009244CF /* MapKit.framework in Frameworks */,
 				6CE3039918B8739200AA432A /* ImageIO.framework in Frameworks */,
 				0759E34518B393F500E67B23 /* Accounts.framework in Frameworks */,
 				0759E22918B2198A00E67B23 /* Twitter.framework in Frameworks */,
@@ -467,6 +473,8 @@
 				6CF15AD518B1FACC00AE5A04 /* MHAwardsViewController.m */,
 				6CF15AC618B1FA3800AE5A04 /* MHScheduleViewController.h */,
 				6CF15AC718B1FA3800AE5A04 /* MHScheduleViewController.m */,
+				FB57459119B38C79009244CF /* MHMapViewController.h */,
+				FB57459219B38C79009244CF /* MHMapViewController.m */,
 			);
 			name = Guide;
 			sourceTree = "<group>";
@@ -494,6 +502,7 @@
 		E770465F18891A7700BE6FC4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB57459419B38D73009244CF /* MapKit.framework */,
 				6CB10F2E18C6CD68009082EA /* Firebase.framework */,
 				6CE3039818B8739200AA432A /* ImageIO.framework */,
 				0759E34418B393F500E67B23 /* Accounts.framework */,
@@ -746,6 +755,7 @@
 				6CE2CB0618B01F17007AC3AA /* SDWebImagePrefetcher.m in Sources */,
 				6CC6F0A618B571470036ADD1 /* UIViewController+EMAdditions.m in Sources */,
 				6CE2CB0418B01F17007AC3AA /* SDWebImageDownloaderOperation.m in Sources */,
+				FB57459319B38C79009244CF /* MHMapViewController.m in Sources */,
 				F523960F19A7F7FE00577B0A /* UpdatesTableViewCell.m in Sources */,
 				6CC6F09618B56EDF0036ADD1 /* AVCamCaptureManager.m in Sources */,
 				6CCB63CE18A60324004E80B4 /* MHUserData.m in Sources */,

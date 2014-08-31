@@ -8,83 +8,69 @@
 
 #import "MHGuideViewController.h"
 
-@interface MHGuideViewController ()
-
-@end
-
 @implementation MHGuideViewController
-@synthesize awardsContainer = _awardsContainer;
-@synthesize scheduleContainer = _scheduleContainer;
-@synthesize countdownContainer = _countdownContainer;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    //Wat.
     UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
     scroll.contentSize = CGSizeMake(320, 44);
     scroll.showsHorizontalScrollIndicator = NO;
     
-    NSArray *itemArray = [NSArray arrayWithObjects: @"Schedule", @"Awards",  nil];
+    NSArray *itemArray = [NSArray arrayWithObjects: @"Schedule", @"Map", @"Awards",  nil];
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
-    segmentedControl.frame = CGRectMake(85,25,150,30);
+    segmentedControl.frame = CGRectMake(55,25,210,30); //WAt
     segmentedControl.tintColor = [UIColor colorWithRed:245.0/255.0 green:196.0/255.0 blue:76.0/255.0 alpha:1.00];
     [segmentedControl addTarget:self action:@selector(changeView:)
                   forControlEvents:UIControlEventValueChanged];
 
     segmentedControl.selectedSegmentIndex = 0;
-
-
     [scroll addSubview:segmentedControl];
-    
     
     [self.view addSubview:scroll];
     
-    _awardsContainer.hidden = YES;
-    _scheduleContainer.hidden = NO;
-    _countdownContainer.hidden = NO;
+    self.awardsContainer.hidden = YES;
+    self.scheduleContainer.hidden = NO;
+    self.countdownContainer.hidden = NO;
+    self.mapContainer.hidden = YES;
+    
     [self.view bringSubviewToFront:_scheduleContainer];
     [self.view bringSubviewToFront:_countdownContainer];
- 
-    
 }
 
--(void)changeView: (id)sender{
+- (void)changeView:(id)sender
+{
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
     NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
-
+    
     if (selectedSegment == 0) {
         //Show schedule
-        _awardsContainer.hidden = YES;
-        _scheduleContainer.hidden = NO;
-        _countdownContainer.hidden = NO;
-        [self.view bringSubviewToFront:_scheduleContainer];
-          [self.view bringSubviewToFront:_countdownContainer];
+        self.awardsContainer.hidden = YES;
+        self.scheduleContainer.hidden = NO;
+        self.countdownContainer.hidden = NO;
+        self.mapContainer.hidden = YES;
+        
+        [self.view bringSubviewToFront:self.scheduleContainer];
+        [self.view bringSubviewToFront:self.countdownContainer];
+    } else if (selectedSegment == 1) {
+        self.awardsContainer.hidden = YES;
+        self.scheduleContainer.hidden = YES;
+        self.countdownContainer.hidden = YES;
+        self.mapContainer.hidden = NO;
+        
+        [self.view bringSubviewToFront:self.mapContainer];
+    } else if (selectedSegment == 2) {
+        //Show Awards
+        self.awardsContainer.hidden = NO;
+        self.scheduleContainer.hidden = YES;
+        self.countdownContainer.hidden = YES;
+        self.mapContainer.hidden = YES;
+        
+        [self.view bringSubviewToFront:self.awardsContainer];
         
     }
-    if (selectedSegment == 1) {
-        //Show Awards
-        _awardsContainer.hidden = NO;
-        _scheduleContainer.hidden = YES;
-        _countdownContainer.hidden = YES;
-         [self.view bringSubviewToFront:_awardsContainer];
-
-    }
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

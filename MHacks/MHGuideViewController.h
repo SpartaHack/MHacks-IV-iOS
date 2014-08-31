@@ -10,8 +10,8 @@
 
 @interface MHGuideViewController : UIViewController
 
-
 @property (strong, nonatomic) IBOutlet UIView *scheduleContainer;
+@property (weak, nonatomic) IBOutlet UIView *mapContainer;
 @property (strong, nonatomic) IBOutlet UIView *awardsContainer;
 @property (strong, nonatomic) IBOutlet UIView *countdownContainer;
 
