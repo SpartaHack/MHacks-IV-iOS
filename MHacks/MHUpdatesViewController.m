@@ -137,8 +137,8 @@
         cell = [[UpdatesTableViewCell alloc] init];
     }
 
-    cell.titleLabel.text = [[arrayOfAnnouncements objectAtIndex:indexPath.section] objectForKey:kTitleObjectKey];
-    cell.detailLabel.text = [[arrayOfAnnouncements objectAtIndex:indexPath.section] objectForKey:kDetailsObjectKey];
+    PFObject* announcement = [arrayOfAnnouncements objectAtIndex:indexPath.section];
+    [cell setWithAnnouncement:announcement];
     
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
@@ -166,17 +166,8 @@
     UpdatesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     PFObject* announcement = [arrayOfAnnouncements objectAtIndex:indexPath.section];
-    cell.titleLabel.text = [announcement objectForKey:kTitleObjectKey];
-    cell.detailLabel.text = [announcement objectForKey:kDetailsObjectKey];
+    [cell setWithAnnouncement:announcement];
     
-    if ([announcement[@"pinned"] boolValue]) {
-        cell.pinnedLabel.hidden = NO;
-    } else {
-        cell.pinnedLabel.hidden = YES;
-    }
-    
-    [cell setNeedsUpdateConstraints];
-    [cell updateConstraintsIfNeeded];
     return cell;
 }
 
@@ -188,7 +179,6 @@
     [self canIHazParseDatas:^{
         [self.pongRefreshControl finishedLoading];
     }];
-
 }
 
 #pragma mark NavBar Buttons

@@ -10,25 +10,11 @@
 
 @implementation UpdatesTableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)setWithAnnouncement:(PFObject*)announcement
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)awakeFromNib
-{
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    self.titleLabel.text = announcement[@"title"];
+    self.detailLabel.text = announcement[@"details"];
+    self.pinnedLabel.hidden = ![announcement[@"pinned"] boolValue];
 }
 
 @end
