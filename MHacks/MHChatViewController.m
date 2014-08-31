@@ -21,6 +21,8 @@
     self.chatTextField.enablesReturnKeyAutomatically = YES;
     
     MHUserData *userData = [MHUserData sharedManager];
+    self.name = userData.userName;
+    self.photoURL = userData.userPhoto;
     
     // Initialize array that will store chat messages.
     self.chatMessages = [[NSMutableArray alloc] init];
@@ -28,19 +30,27 @@
     // Initialize the root of our Firebase namespace.
     self.firebase = [[Firebase alloc] initWithUrl:self.firechatUrl];
     
-    self.name = userData.userName;
-    self.photoURL = userData.userPhoto;
+    self.hasInitialDataBeenLoaded = NO;
     
-    self.chatMessagesQuery = [self.firebase queryLimitedToNumberOfChildren:25];
+    self.chatMessagesQuery = [self.firebase queryLimitedToNumberOfChildren:50];
     [self.chatMessagesQuery observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         // Add the chat message to the array.
         [self.chatMessages addObject:snapshot.value];
         
         // Reload the table view so the new message will show up.
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.chatTableView reloadData];
-            [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-        });
+        if (self.hasInitialDataBeenLoaded) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.chatTableView reloadData];
+                [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+            });
+        }
+    }];
+    
+    [self.chatMessagesQuery observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        self.hasInitialDataBeenLoaded = YES;
+        
+        [self.chatTableView reloadData];
+        [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
     }];
 }
 

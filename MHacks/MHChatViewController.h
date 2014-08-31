@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSMutableArray* chatMessages;
 @property (strong, nonatomic) FQuery* chatMessagesQuery;
 @property (strong, nonatomic) Firebase* firebase;
+@property (nonatomic) BOOL hasInitialDataBeenLoaded;
 
 @property (strong, nonatomic) IBOutlet UITableView *chatTableView;
 @property (strong, nonatomic) IBOutlet UITextField *chatTextField;

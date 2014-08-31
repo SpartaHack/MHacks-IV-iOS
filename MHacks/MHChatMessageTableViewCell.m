@@ -25,8 +25,7 @@
 
 - (void)setWithChatMessage:(NSDictionary*)chatMessage atIndex:(NSInteger)index
 {
-//    [self.profilePic setImageWithURL:[NSURL URLWithString:chatMessage[@"image"]] placeholderImage:[UIImage imageNamed:@"placeholderIcon.png"]];
-    self.profilePic.image = [UIImage imageNamed:@"placeholderIcon.png"];
+    [self.profilePic setImageWithURL:[NSURL URLWithString:chatMessage[@"image"]] placeholderImage:[UIImage imageNamed:@"placeholderIcon.png"]];
     self.nameLabel.text = chatMessage[@"user"];
     self.messageLabel.text = chatMessage[@"message"];
     
