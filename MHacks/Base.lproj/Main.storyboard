@@ -881,7 +881,7 @@
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.99215692281723022" green="0.82352948188781738" blue="0.27058824896812439" alpha="1" colorSpace="deviceRGB"/>
                                 <items>
-                                    <navigationItem title="Announcements" id="w3J-22-7qw">
+                                    <navigationItem title="Updates" id="w3J-22-7qw">
                                         <barButtonItem key="leftBarButtonItem" image="facebook.png" id="hb8-W7-D3W">
                                             <connections>
                                                 <action selector="postToFacebookTapped:" destination="PfM-Go-FNe" id="Xbg-vY-lsH"/>
