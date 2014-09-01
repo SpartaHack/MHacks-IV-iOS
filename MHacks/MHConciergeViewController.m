@@ -10,6 +10,12 @@
 #import "MHConciergeTableViewCell.h"
 #import <Social/Social.h>
 
+@interface MHConciergeViewController ()
+{
+    PFUser* sponsorUserToContact;
+}
+@end
+
 @implementation MHConciergeViewController
 
 - (void)viewDidLoad
@@ -77,21 +83,61 @@
 
 #pragma mark - UITableViewDelegate
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"ConciergeCell";
+    
+    MHConciergeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil) {
+        cell = [[MHConciergeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    PFObject* sponsorUser = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"title"]] objectAtIndex:indexPath.row];
+    [cell setWithUser:sponsorUser];
+    
+    return cell;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    PFObject* sponsorUser = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"title"]] objectAtIndex:indexPath.row];
-    if (sponsorUser[@"email"] == nil) {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"No Email"
-                              message:@"Looks like this person hasn't listed their email!"
-                              delegate:nil
-                              cancelButtonTitle:@"Aw come on"
-                              otherButtonTitles:nil];
-        [alert show];
-        return;
-    } else if (![MFMailComposeViewController canSendMail]) {
+    PFUser* sponsorUser = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"title"]] objectAtIndex:indexPath.row];
+    BOOL canEmail = (sponsorUser[@"email"] != nil);
+    BOOL canTwitter = (sponsorUser[@"twitterHandle"] != nil);
+    
+    if (canEmail && canTwitter) {
+        [self showContactActionSheetForUser:sponsorUser];
+    } else if (canEmail) {
+        [self emailUser:sponsorUser];
+    } else if (canTwitter) {
+        [self tweetUser:sponsorUser];
+    }
+}
+
+- (void)showContactActionSheetForUser:(PFUser*)sponsorUser
+{
+    sponsorUserToContact = sponsorUser;
+    UIActionSheet* contactSheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Contact %@", sponsorUser[@"name"]]
+                                                              delegate:self
+                                                     cancelButtonTitle:@"Nevermind"
+                                                destructiveButtonTitle:nil
+                                                     otherButtonTitles:@"Email", @"Tweet", nil];
+    [contactSheet showInView:[UIApplication sharedApplication].keyWindow];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [self emailUser:sponsorUserToContact];
+    } else if (buttonIndex == 1) {
+        [self tweetUser:sponsorUserToContact];
+    }
+}
+
+- (void)emailUser:(PFUser*)sponsorUser
+{
+    if (![MFMailComposeViewController canSendMail]) {
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle:@"Mail Not Set Up"
                               message:[NSString stringWithFormat:@"You can email %@ at %@", sponsorUser[@"name"], sponsorUser[@"email"]]
@@ -125,32 +171,19 @@
                               otherButtonTitles:nil];
         [alert show];
     }
-
+    
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tweetUser:(PFUser*)sponsorUser
 {
-    static NSString *simpleTableIdentifier = @"ConciergeCell";
-    
-    MHConciergeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if (cell == nil) {
-        cell = [[MHConciergeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    NSString* twitterHandle = sponsorUser[@"twitterHandle"];
+    if ([twitterHandle characterAtIndex:0] == '@') {
+        twitterHandle = [twitterHandle substringFromIndex:1];
     }
     
-    PFObject* sponsorUser = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"title"]] objectAtIndex:indexPath.row];
-    [cell setWithUser:sponsorUser];
-    
-    return cell;
-}
-
-- (IBAction)drinkButtonTapped:(id)sender {
-    [self showTweetSheetWithMessage:@"Hey @mhacks, send beverages! I'm at "];
-}
-
-- (IBAction)foodButtonTapped:(id)sender {
-    
-    [self showTweetSheetWithMessage:@"Hey @mhacks, send food! I'm at "];
+    NSString* tweetMessage = [NSString stringWithFormat:@"Hey @%@, ", twitterHandle];
+    [self showTweetSheetWithMessage:tweetMessage];
 }
 
 - (void)showTweetSheetWithMessage:(NSString*)message
@@ -168,6 +201,17 @@
                                               otherButtonTitles:nil];
         [alert show];
     }
+}
+
+# pragma mark - Food
+
+- (IBAction)drinkButtonTapped:(id)sender {
+    [self showTweetSheetWithMessage:@"Hey @mhacks, send beverages! I'm at "];
+}
+
+- (IBAction)foodButtonTapped:(id)sender {
+    
+    [self showTweetSheetWithMessage:@"Hey @mhacks, send food! I'm at "];
 }
 
 @end

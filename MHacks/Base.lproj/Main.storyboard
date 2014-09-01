@@ -191,12 +191,13 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.99607843160629272" green="0.75686275959014893" blue="0.054901961237192154" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Chat" image="chat.png" id="Asx-aT-ge9">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Chat Rooms" id="EF8-H5-MlB">
-                        <barButtonItem key="rightBarButtonItem" image="logout.png" id="DTM-7e-CTt">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="DTM-7e-CTt">
                             <connections>
                                 <action selector="logoutPressed:" destination="zZ2-Ja-P8W" id="m6x-VQ-Blx"/>
                             </connections>
@@ -1366,13 +1367,12 @@
     <resources>
         <image name="MHacksLOGO-Borderless.png" width="302" height="302"/>
         <image name="btnCamera.png" width="77" height="77"/>
-        <image name="burger.png" width="30" height="33"/>
+        <image name="burger.png" width="34" height="34"/>
         <image name="calendar" width="30" height="30"/>
         <image name="chat" width="30" height="29"/>
         <image name="chat.png" width="30" height="30"/>
         <image name="circle.png" width="100" height="100"/>
         <image name="facebook.png" width="32" height="32"/>
-        <image name="logout.png" width="32" height="32"/>
         <image name="mentors" width="30" height="30"/>
         <image name="soda.png" width="34" height="34"/>
         <image name="twitter-img.png" width="32" height="32"/>

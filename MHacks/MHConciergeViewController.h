@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import <MessageUI/MessageUI.h>
 
-@interface MHConciergeViewController : UIViewController <MFMailComposeViewControllerDelegate>
+@interface MHConciergeViewController : UIViewController <MFMailComposeViewControllerDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) NSMutableDictionary* sponsorUsers;
 @property (strong, nonatomic) NSArray* sponsors;
