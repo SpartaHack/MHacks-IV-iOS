@@ -175,11 +175,14 @@
             </objects>
             <point key="canvasLocation" x="675" y="1473"/>
         </scene>
-        <!--Navigation Controller - Chat-->
+        <!--Navigation Controller - Lounge-->
         <scene sceneID="Yrk-4E-alm">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Ae4-dT-ihJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" image="chat" id="BeI-g3-1gE"/>
+                    <tabBarItem key="tabBarItem" title="Lounge" image="sofa" id="BeI-g3-1gE">
+                        <inset key="imageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="1"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-1"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LaZ-Yr-Wof">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99607843159999998" green="0.75686275960000005" blue="0.054901961239999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1488,7 +1491,6 @@
         <image name="MHacksLOGO-Borderless.png" width="302" height="302"/>
         <image name="btnCamera.png" width="77" height="77"/>
         <image name="burger.png" width="34" height="34"/>
-        <image name="chat" width="30" height="29"/>
         <image name="chat.png" width="30" height="30"/>
         <image name="circle.png" width="100" height="100"/>
         <image name="facebook.png" width="32" height="32"/>
@@ -1496,6 +1498,7 @@
         <image name="mentors" width="30" height="30"/>
         <image name="microphone" width="30" height="30"/>
         <image name="soda.png" width="34" height="34"/>
+        <image name="sofa" width="30" height="30"/>
         <image name="twitter-img.png" width="39" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

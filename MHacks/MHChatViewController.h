@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
+#import "MHKeyboardHelperViewController.h"
 
-@interface MHChatViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MHChatViewController : MHKeyboardHelperViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSString* firechatUrl;
 
@@ -19,6 +20,8 @@
 @property (strong, nonatomic) FQuery* chatMessagesQuery;
 @property (strong, nonatomic) Firebase* firebase;
 @property (nonatomic) BOOL hasInitialDataBeenLoaded;
+@property (nonatomic) CGRect originalChatTableFrame;
+@property (nonatomic) CGRect originalTextFieldFrame;
 
 @property (strong, nonatomic) IBOutlet UITableView *chatTableView;
 @property (strong, nonatomic) IBOutlet UITextField *chatTextField;

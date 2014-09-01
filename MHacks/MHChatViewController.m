@@ -10,6 +10,7 @@
 #import "MHChatMessageTableViewCell.h"
 #import "MHUserData.h"
 #import <QuartzCore/QuartzCore.h>
+#import "DAKeyboardControl.h"
 
 @implementation MHChatViewController
 
@@ -52,13 +53,16 @@
         [self.chatTableView reloadData];
         [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
     }];
+    
+    [self registerViewToMoveWithKeyboard:self.chatTableView];
+    [self registerViewToMoveWithKeyboard:self.chatTextField];
 }
 
 #pragma mark - Text field handling
 
 - (BOOL)textFieldShouldReturn:(UITextField*)textField
 {
-    [textField resignFirstResponder];
+    [self dismissKeyboard];
     
     if(self.name && self.photoURL) {
         NSString* message = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -113,54 +117,6 @@
     [cell setWithChatMessage:chatMessage atIndex:indexPath.row];
     
     return cell;
-}
-
-#pragma mark - Keyboard handling
-
-// Subscribe to keyboard show/hide notifications.
-- (void)viewWillAppear:(BOOL)animated
-{
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self selector:@selector(keyboardWillShow:)
-     name:UIKeyboardWillShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self selector:@selector(keyboardWillHide:)
-     name:UIKeyboardWillHideNotification object:nil];
-}
-
-// Unsubscribe from keyboard show/hide notifications.
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [[NSNotificationCenter defaultCenter]
-     removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter]
-     removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-}
-
-// Setup keyboard handlers to slide the view containing the table view and
-// text field upwards when the keyboard shows, and downwards when it hides.
-- (void)keyboardWillShow:(NSNotification*)notification
-{
-    CGRect chatTextFieldFrame = CGRectMake(self.chatTextField.frame.origin.x,self.chatTextField.frame.origin.y-170,self.chatTextField.frame.size.width,self.chatTextField.frame.size.height);
-    [UIView animateWithDuration:0.3 animations:^{ self.chatTextField.frame = chatTextFieldFrame;}];
-    
-    CGRect chatTableViewFrame = CGRectMake(0,65,320,self.chatTableView.frame.size.height-170);
-    [UIView animateWithDuration:0.0 animations:^{ self.chatTableView.frame = chatTableViewFrame;}];
-    
-    if([NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0]){
-        [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-    }
-}
-
-- (void)keyboardWillHide:(NSNotification*)notification
-{
-    CGRect chatTextFieldFrame = CGRectMake(self.chatTextField.frame.origin.x,self.chatTextField.frame.origin.y+170,self.chatTextField.frame.size.width,self.chatTextField.frame.size.height);
-    [UIView animateWithDuration:0.3 animations:^{ self.chatTextField.frame = chatTextFieldFrame;}];
-    
-    CGRect chatTableViewFrame = CGRectMake(0,65,320,self.chatTableView.frame.size.height+170);
-    [UIView animateWithDuration:0.0 animations:^{ self.chatTableView.frame = chatTableViewFrame;}];
 }
 
 @end
