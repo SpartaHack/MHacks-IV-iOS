@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
 
-@interface MHChatRoomsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MHChatRoomsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) Firebase* firebase;
 @property (nonatomic, strong) NSMutableArray* chatRooms;

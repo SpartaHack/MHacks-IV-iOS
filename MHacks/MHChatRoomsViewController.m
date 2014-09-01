@@ -8,6 +8,8 @@
 
 #import "MHChatRoomsViewController.h"
 #import "MHChatViewController.h"
+#import "MHUserData.h"
+#import "MHLoginViewController.h"
 
 #define kFirechatMessagesBase @"https://mhacks-f2014.firebaseio.com/chat/messages/"
 #define kFirechatRooms @"https://mhacks-f2014.firebaseio.com/chat/rooms/"
@@ -102,5 +104,33 @@
     }
 }
 
+#pragma mark - Logging out
+
+- (IBAction)logoutPressed:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"For Realsies?"
+                          message:@"Do you really want to log out?"
+                          delegate:self
+                          cancelButtonTitle:@"Nah"
+                          otherButtonTitles:@"Yah", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        MHUserData *userData = [MHUserData sharedManager];
+        userData.userName = nil;
+        userData.userPhoto = nil;
+        
+        [PFUser logOut];
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        MHLoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+        
+        loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self presentViewController:loginViewController animated:YES completion:nil];
+    }
+}
 
 @end

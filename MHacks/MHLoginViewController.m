@@ -103,6 +103,8 @@
 
 - (IBAction)loginTwitter:(id)sender
 {
+    [SVProgressHUD showWithStatus:@"Logging in with Twitter..."];
+    
     MHKeysAccessor* keys = [MHKeysAccessor singleton];
     [PFTwitterUtils initializeWithConsumerKey:[keys getTwitterConsumerKey] consumerSecret:[keys getTwitterConsumerSecret]];
     
