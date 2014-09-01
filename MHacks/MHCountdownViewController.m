@@ -19,12 +19,12 @@
     
     self.clockHour = [[UIImageView alloc] initWithFrame:self.clockOutline.frame];
     self.clockHour.tintColor = self.clockOutline.tintColor;
-    self.clockHour.image = [[UIImage imageNamed:@"hour"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.clockHour.image = [[UIImage imageNamed:@"hourHand"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.view addSubview:self.clockHour];
     
     self.clockMinute = [[UIImageView alloc] initWithFrame:self.clockOutline.frame];
     self.clockMinute.tintColor = self.clockOutline.tintColor;
-    self.clockMinute.image = [[UIImage imageNamed:@"minute"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.clockMinute.image = [[UIImage imageNamed:@"minuteHand"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.view addSubview:self.clockMinute];
     
     formatter = [[NSDateFormatter alloc] init];

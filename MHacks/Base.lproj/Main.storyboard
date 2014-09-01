@@ -56,7 +56,7 @@
                                     <action selector="loginGuest:" destination="SiW-8W-CZh" eventType="touchUpInside" id="hlU-58-8gM"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MHacksLOGO-Borderless.png" translatesAutoresizingMaskIntoConstraints="NO" id="eIB-fE-HJs">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="largerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="eIB-fE-HJs">
                                 <rect key="frame" x="55" y="135" width="210" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -898,13 +898,13 @@
                                 <gestureRecognizers/>
                                 <items>
                                     <navigationItem title="Concierge" id="f8I-g2-piu">
-                                        <barButtonItem key="leftBarButtonItem" image="soda.png" id="KCz-Fi-lw4">
+                                        <barButtonItem key="leftBarButtonItem" image="drink" id="KCz-Fi-lw4">
                                             <color key="tintColor" red="0.9803922176361084" green="0.79607850313186646" blue="0.27058824896812439" alpha="1" colorSpace="deviceRGB"/>
                                             <connections>
                                                 <action selector="drinkButtonTapped:" destination="qgO-01-ho1" id="7PA-vK-U9D"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="burger.png" id="xKN-ax-aZO">
+                                        <barButtonItem key="rightBarButtonItem" image="burger" id="xKN-ax-aZO">
                                             <color key="tintColor" red="0.97647064924240112" green="0.80000007152557373" blue="0.31764706969261169" alpha="1" colorSpace="deviceRGB"/>
                                             <connections>
                                                 <action selector="foodButtonTapped:" destination="qgO-01-ho1" id="mbD-9r-pIK"/>
@@ -1025,12 +1025,12 @@
                                 <color key="tintColor" red="0.99215692281723022" green="0.82352948188781738" blue="0.27058824896812439" alpha="1" colorSpace="deviceRGB"/>
                                 <items>
                                     <navigationItem title="Updates" id="w3J-22-7qw">
-                                        <barButtonItem key="leftBarButtonItem" image="facebook.png" id="hb8-W7-D3W">
+                                        <barButtonItem key="leftBarButtonItem" image="facebook" id="hb8-W7-D3W">
                                             <connections>
                                                 <action selector="postToFacebookTapped:" destination="PfM-Go-FNe" id="Xbg-vY-lsH"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="twitter-img.png" id="GZ5-3e-YMF">
+                                        <barButtonItem key="rightBarButtonItem" image="twitter" id="GZ5-3e-YMF">
                                             <connections>
                                                 <action selector="postToTwitterTapped:" destination="PfM-Go-FNe" id="Es1-ap-KhO"/>
                                             </connections>
@@ -1075,80 +1075,6 @@
                 </navigationBar>
             </objects>
             <point key="canvasLocation" x="675" y="-586"/>
-        </scene>
-        <!--Guest Login View Controller-->
-        <scene sceneID="wAz-36-DsQ">
-            <objects>
-                <viewController storyboardIdentifier="guestVC" id="J9F-kv-YAZ" customClass="MHGuestLoginViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="OgY-Uh-3PN"/>
-                        <viewControllerLayoutGuide type="bottom" id="6aa-F6-O3G"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nDS-xr-AKh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWf-MJ-kQ1">
-                                <rect key="frame" x="60" y="152" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n6h-6F-wcg">
-                                <rect key="frame" x="60" y="152" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBN-Nq-k3j">
-                                <rect key="frame" x="133" y="412" width="54" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" image="btnCamera.png"/>
-                                <connections>
-                                    <action selector="snapImage:" destination="J9F-kv-YAZ" eventType="touchUpInside" id="8jh-Ac-2An"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FP0-Gl-xcp">
-                                <rect key="frame" x="37" y="48" width="247" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGC-3R-mon">
-                                <rect key="frame" x="36" y="494" width="247" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Go!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneTapped:" destination="J9F-kv-YAZ" eventType="touchUpInside" id="Pdw-dC-W3t"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to MHacks." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDE-z1-lNx">
-                                <rect key="frame" x="16" y="266" width="288" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Ttx-YE-1pP"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="captureImage" destination="n6h-6F-wcg" id="mUf-6H-AQF"/>
-                        <outlet property="doneOutlet" destination="cGC-3R-mon" id="kJs-gH-ymC"/>
-                        <outlet property="imagePreview" destination="NWf-MJ-kQ1" id="tAS-Ee-StB"/>
-                        <outlet property="imgBtn" destination="xBN-Nq-k3j" id="eKC-ss-VVB"/>
-                        <outlet property="nameField" destination="FP0-Gl-xcp" id="5df-Ot-JeF"/>
-                        <outlet property="statusLabel" destination="WDE-z1-lNx" id="nu9-j8-87w"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FbR-Cr-gKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1214" y="-551"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="zkg-NQ-fLh">
@@ -1355,7 +1281,7 @@
                                 <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="hQy-VO-Xkx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clockOutline" translatesAutoresizingMaskIntoConstraints="NO" id="hQy-VO-Xkx">
                                 <rect key="frame" x="13" y="9" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1488,18 +1414,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MHacksLOGO-Borderless.png" width="302" height="302"/>
-        <image name="btnCamera.png" width="77" height="77"/>
-        <image name="burger.png" width="34" height="34"/>
+        <image name="burger" width="34" height="34"/>
         <image name="chat.png" width="30" height="30"/>
-        <image name="circle.png" width="100" height="100"/>
-        <image name="facebook.png" width="32" height="32"/>
+        <image name="clockOutline" width="100" height="100"/>
+        <image name="drink" width="34" height="34"/>
+        <image name="facebook" width="32" height="32"/>
+        <image name="largerIcon" width="151" height="151"/>
         <image name="map" width="30" height="30"/>
         <image name="mentors" width="30" height="30"/>
         <image name="microphone" width="30" height="30"/>
-        <image name="soda.png" width="34" height="34"/>
         <image name="sofa" width="30" height="30"/>
-        <image name="twitter-img.png" width="39" height="30"/>
+        <image name="twitter" width="39" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

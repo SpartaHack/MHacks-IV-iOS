@@ -23,18 +23,18 @@
         self.leftContactIcon.hidden = NO;
         self.rightContactIcon.hidden = NO;
         
-        self.leftContactIcon.image = [UIImage imageNamed:@"smalltweet.png"];
-        self.rightContactIcon.image = [UIImage imageNamed:@"smallmail.png"];
+        self.leftContactIcon.image = [UIImage imageNamed:@"smalltweet"];
+        self.rightContactIcon.image = [UIImage imageNamed:@"smallmail"];
     } else if (canEmail) {
         self.leftContactIcon.hidden = YES;
         self.rightContactIcon.hidden = NO;
         
-        self.rightContactIcon.image = [UIImage imageNamed:@"smallmail.png"];
+        self.rightContactIcon.image = [UIImage imageNamed:@"smallmail"];
     } else if (canTwitter) {
         self.leftContactIcon.hidden = YES;
         self.rightContactIcon.hidden = NO;
         
-        self.rightContactIcon.image = [UIImage imageNamed:@"smalltweet.png"];
+        self.rightContactIcon.image = [UIImage imageNamed:@"smalltweet"];
     } else {
         self.leftContactIcon.hidden = YES;
         self.rightContactIcon.hidden = YES;
