@@ -112,6 +112,8 @@
 		FB5745A519B3C7C6009244CF /* hour@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5745A119B3C7C6009244CF /* hour@2x.png */; };
 		FB5745A619B3C7C6009244CF /* circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5745A219B3C7C6009244CF /* circle@2x.png */; };
 		FB5745AD19B3E466009244CF /* MHScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5745AC19B3E466009244CF /* MHScheduleTableViewCell.m */; };
+		FB5745B019B437AB009244CF /* smalltweet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5745AE19B437AB009244CF /* smalltweet@2x.png */; };
+		FB5745B119B437AB009244CF /* smallmail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5745AF19B437AB009244CF /* smallmail@2x.png */; };
 		FB99CA1219A66CE50099AF43 /* MHChatRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -277,6 +279,8 @@
 		FB5745A219B3C7C6009244CF /* circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle@2x.png"; sourceTree = "<group>"; };
 		FB5745AB19B3E466009244CF /* MHScheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHScheduleTableViewCell.h; sourceTree = "<group>"; };
 		FB5745AC19B3E466009244CF /* MHScheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHScheduleTableViewCell.m; sourceTree = "<group>"; };
+		FB5745AE19B437AB009244CF /* smalltweet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smalltweet@2x.png"; sourceTree = "<group>"; };
+		FB5745AF19B437AB009244CF /* smallmail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smallmail@2x.png"; sourceTree = "<group>"; };
 		FB99CA1019A66CE50099AF43 /* MHChatRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHChatRoomsViewController.h; sourceTree = "<group>"; };
 		FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHChatRoomsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -443,6 +447,8 @@
 			isa = PBXGroup;
 			children = (
 				E770467B18891A7700BE6FC4 /* Images.xcassets */,
+				FB5745AE19B437AB009244CF /* smalltweet@2x.png */,
+				FB5745AF19B437AB009244CF /* smallmail@2x.png */,
 				FB57459F19B3C7C6009244CF /* soda@2x.png */,
 				FB5745A019B3C7C6009244CF /* minute@2x.png */,
 				FB5745A119B3C7C6009244CF /* hour@2x.png */,
@@ -737,11 +743,13 @@
 				6CCB63D718A621BF004E80B4 /* hshacksLOGO.png in Resources */,
 				6CC6F0BF18B5FA7B0036ADD1 /* logout@2x.png in Resources */,
 				6CECDFEB18B96A4400421F80 /* HSHacksLaunch3.png in Resources */,
+				FB5745B019B437AB009244CF /* smalltweet@2x.png in Resources */,
 				E770467C18891A7700BE6FC4 /* Images.xcassets in Resources */,
 				6C9B48A018B75594008E81B7 /* btnRetake@2x.png in Resources */,
 				FB5745A519B3C7C6009244CF /* hour@2x.png in Resources */,
 				FB5745A419B3C7C6009244CF /* minute@2x.png in Resources */,
 				6CE2CB0D18B02047007AC3AA /* placeholderIcon.png in Resources */,
+				FB5745B119B437AB009244CF /* smallmail@2x.png in Resources */,
 				6C9B48A418B7F091008E81B7 /* twitter-img@2x.png in Resources */,
 				6CC6F0C018B5FA7B0036ADD1 /* share@2x.png in Resources */,
 				6C9B48AA18B7FBBC008E81B7 /* SVProgressHUD.bundle in Resources */,

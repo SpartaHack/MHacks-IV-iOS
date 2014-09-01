@@ -10,6 +10,13 @@
 #import "MHConciergeTableViewCell.h"
 #import <Social/Social.h>
 
+@interface MHConciergeViewController ()
+{
+    PFUser* sponsorUserToContact;
+    UIWebView* webView;
+}
+@end
+
 @implementation MHConciergeViewController
 
 - (void)viewDidLoad
@@ -77,21 +84,61 @@
 
 #pragma mark - UITableViewDelegate
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"ConciergeCell";
+    
+    MHConciergeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil) {
+        cell = [[MHConciergeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    PFObject* sponsorUser = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"title"]] objectAtIndex:indexPath.row];
+    [cell setWithUser:sponsorUser];
+    
+    return cell;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    PFObject* sponsorUser = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"title"]] objectAtIndex:indexPath.row];
-    if (sponsorUser[@"email"] == nil) {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"No Email"
-                              message:@"Looks like this person hasn't listed their email!"
-                              delegate:nil
-                              cancelButtonTitle:@"Aw come on"
-                              otherButtonTitles:nil];
-        [alert show];
-        return;
-    } else if (![MFMailComposeViewController canSendMail]) {
+    PFUser* sponsorUser = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"title"]] objectAtIndex:indexPath.row];
+    BOOL canEmail = (sponsorUser[@"email"] != nil);
+    BOOL canTwitter = (sponsorUser[@"twitterHandle"] != nil);
+    
+    if (canEmail && canTwitter) {
+        [self showContactActionSheetForUser:sponsorUser];
+    } else if (canEmail) {
+        [self emailUser:sponsorUser];
+    } else if (canTwitter) {
+        [self tweetUser:sponsorUser];
+    }
+}
+
+- (void)showContactActionSheetForUser:(PFUser*)sponsorUser
+{
+    sponsorUserToContact = sponsorUser;
+    UIActionSheet* contactSheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Contact %@", sponsorUser[@"name"]]
+                                                              delegate:self
+                                                     cancelButtonTitle:@"Nevermind"
+                                                destructiveButtonTitle:nil
+                                                     otherButtonTitles:@"Tweet", @"Email", nil];
+    [contactSheet showInView:[UIApplication sharedApplication].keyWindow];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [self tweetUser:sponsorUserToContact];
+    } else if (buttonIndex == 1) {
+        [self emailUser:sponsorUserToContact];
+    }
+}
+
+- (void)emailUser:(PFUser*)sponsorUser
+{
+    if (![MFMailComposeViewController canSendMail]) {
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle:@"Mail Not Set Up"
                               message:[NSString stringWithFormat:@"You can email %@ at %@", sponsorUser[@"name"], sponsorUser[@"email"]]
@@ -125,55 +172,29 @@
                               otherButtonTitles:nil];
         [alert show];
     }
-
+    
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tweetUser:(PFUser*)sponsorUser
 {
-    static NSString *simpleTableIdentifier = @"ConciergeCell";
-    
-    MHConciergeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if (cell == nil) {
-        cell = [[MHConciergeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    NSString* twitterHandle = sponsorUser[@"twitterHandle"];
+    if ([twitterHandle characterAtIndex:0] == '@') {
+        twitterHandle = [twitterHandle substringFromIndex:1];
     }
     
-    PFObject* sponsorUser = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"title"]] objectAtIndex:indexPath.row];
-    [cell setWithUser:sponsorUser];
-    
-    return cell;
+    NSString* tweetMessage = [NSString stringWithFormat:@"Hey @%@, ", twitterHandle];
+    [self showTweetSheetWithMessage:tweetMessage];
 }
 
-- (IBAction)postToFacebookTapped:(id)sender {
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
-        SLComposeViewController *composeController = [SLComposeViewController
-                                                      composeViewControllerForServiceType:SLServiceTypeFacebook];
-        
-        [composeController setInitialText:@"Check out the Mhacks hackathon!"];
-        //Post actual selfie?
-        [self presentViewController:composeController
-                           animated:YES completion:nil];
-    }
-    else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
-                                                        message:@"Looks like you don't have a Facebook account linked to this device."
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-}
-
-- (IBAction)postToTwitterTapped:(id)sender {
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-    {
+- (void)showTweetSheetWithMessage:(NSString*)message
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
-        NSString *message = [NSString stringWithFormat:@"Check out the @MHacks hackathon!"];
         [tweetSheet setInitialText:message];
         [self presentViewController:tweetSheet animated:YES completion:nil];
-        
-    }else{
+    } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
                                                         message:@"Looks like you don't have a Twitter account linked to this device."
                                                        delegate:self
@@ -182,4 +203,29 @@
         [alert show];
     }
 }
+
+# pragma mark - Food
+
+- (IBAction)drinkButtonTapped:(id)sender
+{
+    [self showTweetSheetWithMessage:@"Hey @mhacks, send beverages! I'm at "];
+}
+
+- (IBAction)foodButtonTapped:(id)sender
+{
+    [self showTweetSheetWithMessage:@"Hey @mhacks, send food! I'm at "];
+}
+
+- (IBAction)moreFood:(id)sender
+{
+    if (webView == nil) {
+        webView = [[UIWebView alloc] initWithFrame:CGRectMake(-10.0, -10.0f, 5.0f, 5.0f)];
+        webView.mediaPlaybackRequiresUserAction = NO;
+        [self.view addSubview:webView];
+    }
+    
+    static NSString *videoHTML = @"<!DOCTYPE html><html><head><style>body{margin:0px 0px 0px 0px;}</style></head> <body> <div id=\"player\"></div> <script> var tag = document.createElement('script'); tag.src = \"http://www.youtube.com/player_api\"; var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); var player; function onYouTubePlayerAPIReady() { player = new YT.Player('player', { width:'%0.0f', height:'%0.0f', videoId:'%@', events: { 'onReady': onPlayerReady, } }); } function onPlayerReady(event) { event.target.playVideo(); } </script> </body> </html>";
+    [webView loadHTMLString:[NSString stringWithFormat:videoHTML, webView.frame.size.width, webView.frame.size.height, @"ecc0nbg9m-8"] baseURL:[[NSBundle mainBundle] resourceURL]];
+}
+
 @end

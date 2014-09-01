@@ -10,15 +10,16 @@
 #import <Parse/Parse.h>
 #import <MessageUI/MessageUI.h>
 
-@interface MHConciergeViewController : UIViewController <MFMailComposeViewControllerDelegate>
+@interface MHConciergeViewController : UIViewController <MFMailComposeViewControllerDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) NSMutableDictionary* sponsorUsers;
 @property (strong, nonatomic) NSArray* sponsors;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-- (IBAction)postToFacebookTapped:(id)sender;
-- (IBAction)postToTwitterTapped:(id)sender;
+- (IBAction)drinkButtonTapped:(id)sender;
+- (IBAction)foodButtonTapped:(id)sender;
+- (IBAction)moreFood:(id)sender;
 
 @end
 
