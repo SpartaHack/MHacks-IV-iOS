@@ -10,6 +10,7 @@
 #import "MHChatViewController.h"
 #import "MHUserData.h"
 #import "MHLoginViewController.h"
+#import "MHChatRoomTableViewCell.h"
 
 #define kFirechatMessagesBase @"https://mhacks-f2014.firebaseio.com/chat/messages/"
 #define kFirechatRooms @"https://mhacks-f2014.firebaseio.com/chat/rooms/"
@@ -73,15 +74,13 @@
 - (UITableViewCell*)tableView:(UITableView*)table cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"RoomCell";
-    UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:CellIdentifier];
+    MHChatRoomTableViewCell *cell = [table dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell = [[MHChatRoomTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
     NSDictionary* chatRoom = [self.chatRooms objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = chatRoom[@"title"];
-    cell.detailTextLabel.text = chatRoom[@"details"];
+    [cell setWithChatRoom:chatRoom];
     
     return cell;
 }

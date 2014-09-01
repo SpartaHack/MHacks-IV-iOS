@@ -114,6 +114,7 @@
 		FB5745AD19B3E466009244CF /* MHScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5745AC19B3E466009244CF /* MHScheduleTableViewCell.m */; };
 		FB5745B019B437AB009244CF /* smalltweet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5745AE19B437AB009244CF /* smalltweet@2x.png */; };
 		FB5745B119B437AB009244CF /* smallmail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5745AF19B437AB009244CF /* smallmail@2x.png */; };
+		FB5745B419B4CE91009244CF /* MHChatRoomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5745B319B4CE91009244CF /* MHChatRoomTableViewCell.m */; };
 		FB99CA1219A66CE50099AF43 /* MHChatRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -281,6 +282,8 @@
 		FB5745AC19B3E466009244CF /* MHScheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHScheduleTableViewCell.m; sourceTree = "<group>"; };
 		FB5745AE19B437AB009244CF /* smalltweet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smalltweet@2x.png"; sourceTree = "<group>"; };
 		FB5745AF19B437AB009244CF /* smallmail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smallmail@2x.png"; sourceTree = "<group>"; };
+		FB5745B219B4CE91009244CF /* MHChatRoomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHChatRoomTableViewCell.h; sourceTree = "<group>"; };
+		FB5745B319B4CE91009244CF /* MHChatRoomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHChatRoomTableViewCell.m; sourceTree = "<group>"; };
 		FB99CA1019A66CE50099AF43 /* MHChatRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHChatRoomsViewController.h; sourceTree = "<group>"; };
 		FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHChatRoomsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -399,6 +402,8 @@
 			children = (
 				FB99CA1019A66CE50099AF43 /* MHChatRoomsViewController.h */,
 				FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */,
+				FB5745B219B4CE91009244CF /* MHChatRoomTableViewCell.h */,
+				FB5745B319B4CE91009244CF /* MHChatRoomTableViewCell.m */,
 				6CC2247918A4770A00262706 /* MHChatViewController.h */,
 				6CC2247A18A4770A00262706 /* MHChatViewController.m */,
 				FB57458619ADA2BD009244CF /* MHChatMessageTableViewCell.h */,
@@ -825,6 +830,7 @@
 				FB5745AD19B3E466009244CF /* MHScheduleTableViewCell.m in Sources */,
 				FB99CA1219A66CE50099AF43 /* MHChatRoomsViewController.m in Sources */,
 				6CE2CB0818B01F17007AC3AA /* UIImage+GIF.m in Sources */,
+				FB5745B419B4CE91009244CF /* MHChatRoomTableViewCell.m in Sources */,
 				6C9B48AB18B7FBBC008E81B7 /* SVProgressHUD.m in Sources */,
 				FB57458E19AFC3D4009244CF /* MHKeysAccessor.m in Sources */,
 				6CF15AC918B1FA3800AE5A04 /* MHScheduleViewController.m in Sources */,
