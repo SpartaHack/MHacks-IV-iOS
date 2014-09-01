@@ -67,6 +67,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Announcement"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"poster"];
+    query.limit = 1000;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             [arrayOfAnnouncements removeAllObjects];

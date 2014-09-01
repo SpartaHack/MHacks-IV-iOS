@@ -34,6 +34,7 @@
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query includeKey:@"sponsor"];
     [query orderByDescending:@"value"];
+    query.limit = 1000;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             [arrayOfAwards removeAllObjects];
