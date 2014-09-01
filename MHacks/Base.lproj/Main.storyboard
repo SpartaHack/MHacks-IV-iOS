@@ -817,13 +817,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="soda.png" id="KCz-Fi-lw4">
                                             <color key="tintColor" red="0.9803922176361084" green="0.79607850313186646" blue="0.27058824896812439" alpha="1" colorSpace="deviceRGB"/>
                                             <connections>
-                                                <action selector="postToFacebookTapped:" destination="qgO-01-ho1" id="cOA-jc-L9t"/>
+                                                <action selector="drinkButtonTapped:" destination="qgO-01-ho1" id="7PA-vK-U9D"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="burger.png" id="xKN-ax-aZO">
                                             <color key="tintColor" red="0.97647064924240112" green="0.80000007152557373" blue="0.31764706969261169" alpha="1" colorSpace="deviceRGB"/>
                                             <connections>
-                                                <action selector="postToTwitterTapped:" destination="qgO-01-ho1" id="D4c-Us-hCH"/>
+                                                <action selector="foodButtonTapped:" destination="qgO-01-ho1" id="mbD-9r-pIK"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

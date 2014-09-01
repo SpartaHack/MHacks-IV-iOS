@@ -144,36 +144,23 @@
     return cell;
 }
 
-- (IBAction)postToFacebookTapped:(id)sender {
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
-        SLComposeViewController *composeController = [SLComposeViewController
-                                                      composeViewControllerForServiceType:SLServiceTypeFacebook];
-        
-        [composeController setInitialText:@"Check out the Mhacks hackathon!"];
-        //Post actual selfie?
-        [self presentViewController:composeController
-                           animated:YES completion:nil];
-    }
-    else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
-                                                        message:@"Looks like you don't have a Facebook account linked to this device."
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
+- (IBAction)drinkButtonTapped:(id)sender {
+    [self showTweetSheetWithMessage:@"Hey @mhacks, send beverages! I'm at "];
 }
 
-- (IBAction)postToTwitterTapped:(id)sender {
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-    {
+- (IBAction)foodButtonTapped:(id)sender {
+    
+    [self showTweetSheetWithMessage:@"Hey @mhacks, send food! I'm at "];
+}
+
+- (void)showTweetSheetWithMessage:(NSString*)message
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
-        NSString *message = [NSString stringWithFormat:@"Check out the @MHacks hackathon!"];
         [tweetSheet setInitialText:message];
         [self presentViewController:tweetSheet animated:YES completion:nil];
-        
-    }else{
+    } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
                                                         message:@"Looks like you don't have a Twitter account linked to this device."
                                                        delegate:self
@@ -182,4 +169,5 @@
         [alert show];
     }
 }
+
 @end
