@@ -918,7 +918,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="burger" width="34" height="34"/>
+        <image name="burger" width="35" height="32"/>
         <image name="chat.png" width="30" height="30"/>
         <image name="clockOutline" width="100" height="100"/>
         <image name="drink" width="34" height="34"/>
@@ -928,7 +928,7 @@
         <image name="mentors" width="30" height="30"/>
         <image name="microphone" width="30" height="30"/>
         <image name="sofa" width="30" height="30"/>
-        <image name="twitter" width="39" height="30"/>
+        <image name="twitter" width="40" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

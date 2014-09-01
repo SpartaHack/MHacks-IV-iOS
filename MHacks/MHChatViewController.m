@@ -10,7 +10,6 @@
 #import "MHChatMessageTableViewCell.h"
 #import "MHUserData.h"
 #import <QuartzCore/QuartzCore.h>
-#import "DAKeyboardControl.h"
 
 @implementation MHChatViewController
 
@@ -53,16 +52,13 @@
         [self.chatTableView reloadData];
         [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatMessages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
     }];
-    
-    [self registerViewToMoveWithKeyboard:self.chatTableView];
-    [self registerViewToMoveWithKeyboard:self.chatTextField];
 }
 
 #pragma mark - Text field handling
 
 - (BOOL)textFieldShouldReturn:(UITextField*)textField
 {
-    [self dismissKeyboard];
+    [textField resignFirstResponder];
     
     if(self.name && self.photoURL) {
         NSString* message = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -117,6 +113,69 @@
     [cell setWithChatMessage:chatMessage atIndex:indexPath.row];
     
     return cell;
+}
+
+#pragma mark - Keyboard. Friggin keyboards.
+
+#pragma mark - Keyboard handling
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self selector:@selector(keyboardWillShow:)
+     name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self selector:@selector(keyboardWillHide:)
+     name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter]
+     removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWillShow:(NSNotification*)notification
+{
+    [self moveView:[notification userInfo] up:YES];
+}
+
+- (void)keyboardWillHide:(NSNotification*)notification
+{
+    [self moveView:[notification userInfo] up:NO];
+}
+
+- (void)moveView:(NSDictionary*)userInfo up:(BOOL)up
+{
+    CGRect keyboardEndFrame;
+    [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey]
+     getValue:&keyboardEndFrame];
+    
+    UIViewAnimationCurve animationCurve;
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey]
+     getValue:&animationCurve];
+    
+    NSTimeInterval animationDuration;
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey]
+     getValue:&animationDuration];
+    
+    // Get the correct keyboard size to we slide the right amount.
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+    
+    CGRect keyboardFrame = [self.view convertRect:keyboardEndFrame toView:nil];
+    CGFloat tabBarHeight = self.tabBarController.tabBar.frame.size.height;
+    int y = (keyboardFrame.size.height - tabBarHeight) * (up ? -1 : 1);
+    self.chatTableView.frame = CGRectOffset(self.chatTableView.frame, 0, y);
+    self.chatTextField.frame = CGRectOffset(self.chatTextField.frame, 0, y);
+    
+    [UIView commitAnimations];
 }
 
 @end

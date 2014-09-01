@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
-#import "MHKeyboardHelperViewController.h"
 
-@interface MHChatViewController : MHKeyboardHelperViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MHChatViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSString* firechatUrl;
 
