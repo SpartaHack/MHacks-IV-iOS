@@ -61,21 +61,29 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 - (void)canIHazParseDatas:(void(^)())block
 {
     //Step 2 download all da data againz!!!!
     PFQuery *query = [PFQuery queryWithClassName:@"Announcement"];
-    [query orderByDescending:@"pinned"];
+    [query orderByDescending:@"createdAt"];
     [query includeKey:@"poster"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             [arrayOfAnnouncements removeAllObjects];
-            [arrayOfAnnouncements addObjectsFromArray:objects];
+            
+            NSMutableArray* pinnedAnnouncements = [[NSMutableArray alloc] init];
+            NSMutableArray* unpinnedAnnouncements = [[NSMutableArray alloc] init];
+            
+            for (PFObject* announcement in objects) {
+                if ([announcement[@"pinned"] boolValue]) {
+                    [pinnedAnnouncements addObject:announcement];
+                } else {
+                    [unpinnedAnnouncements addObject:announcement];
+                }
+            }
+            
+            [arrayOfAnnouncements addObjectsFromArray:pinnedAnnouncements];
+            [arrayOfAnnouncements addObjectsFromArray:unpinnedAnnouncements];
         } else {
             UIAlertView *alert = [[UIAlertView alloc]
                                   initWithTitle:@"Whoops"
