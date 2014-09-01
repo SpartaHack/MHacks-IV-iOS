@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <MessageUI/MessageUI.h>
+#import "BOZPongRefreshControl.h"
+#import "UIColor+MHacksColors.h"
 
 @interface MHConciergeViewController : UIViewController <MFMailComposeViewControllerDelegate, UIActionSheetDelegate>
 
@@ -16,6 +18,7 @@
 @property (strong, nonatomic) NSArray* sponsors;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) BOZPongRefreshControl *pongRefreshControl;
 
 - (IBAction)drinkButtonTapped:(id)sender;
 - (IBAction)foodButtonTapped:(id)sender;

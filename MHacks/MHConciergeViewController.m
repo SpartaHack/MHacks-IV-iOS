@@ -64,7 +64,37 @@
         }
 
         [self.tableView reloadData];
+        block(nil,nil);
     }];
+}
+
+#pragma mark PONG PONG PONG
+
+- (void)viewDidLayoutSubviews
+{
+    self.pongRefreshControl = [BOZPongRefreshControl attachToTableView:self.tableView
+                                                     withRefreshTarget:self
+                                                      andRefreshAction:@selector(refreshTriggered)];
+    self.pongRefreshControl.backgroundColor = [UIColor datOrangeColor];
+	[super viewDidLayoutSubviews];
+}
+
+- (void)refreshTriggered
+{
+    //Go and load some data
+    [self canIHazParseDatas:^{
+        [self.pongRefreshControl finishedLoading];
+    }];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.pongRefreshControl scrollViewDidScroll];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self.pongRefreshControl scrollViewDidEndDragging];
 }
 
 #pragma mark - UITableViewDataSource

@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "BOZPongRefreshControl.h"
+#import "UIColor+MHacksColors.h"
 
 @interface MHAwardsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) BOZPongRefreshControl *pongRefreshControl;
 
 @end

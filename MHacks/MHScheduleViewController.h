@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "BOZPongRefreshControl.h"
+#import "UIColor+MHacksColors.h"
 
 @interface MHScheduleViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
@@ -15,5 +17,6 @@
 @property (nonatomic, retain) NSMutableDictionary *eventsByDay;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) BOZPongRefreshControl *pongRefreshControl;
 
 @end

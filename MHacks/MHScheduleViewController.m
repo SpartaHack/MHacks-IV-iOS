@@ -24,10 +24,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.separatorInset = UIEdgeInsetsZero;
-    self.tableView.userInteractionEnabled = YES;
-    self.tableView.bounces = YES;
 
+    [self canIHazParseDatas:^{}];
+}
+
+- (void)canIHazParseDatas:(void(^)())block
+{
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
     [query orderByAscending:@"time"];
     [query includeKey:@"host"];
@@ -66,7 +68,37 @@
         }
         
         [self.tableView reloadData];
+        block(nil,nil);
     }];
+}
+
+#pragma mark PONG PONG PONG
+
+- (void)viewDidLayoutSubviews
+{
+    self.pongRefreshControl = [BOZPongRefreshControl attachToTableView:self.tableView
+                                                     withRefreshTarget:self
+                                                      andRefreshAction:@selector(refreshTriggered)];
+    self.pongRefreshControl.backgroundColor = [UIColor datOrangeColor];
+	[super viewDidLayoutSubviews];
+}
+
+- (void)refreshTriggered
+{
+    //Go and load some data
+    [self canIHazParseDatas:^{
+        [self.pongRefreshControl finishedLoading];
+    }];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.pongRefreshControl scrollViewDidScroll];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self.pongRefreshControl scrollViewDidEndDragging];
 }
 
 #pragma mark - Tables on tables
@@ -81,7 +113,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [NSString stringWithFormat:@"   %@", [self.days objectAtIndex:section]];
+    return [self.days objectAtIndex:section];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

@@ -119,7 +119,7 @@
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8A0-4p-qC5">
-                                <rect key="frame" x="0.0" y="65" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -157,7 +157,7 @@
                             <constraint firstItem="eDF-oc-h5i" firstAttribute="top" secondItem="8A0-4p-qC5" secondAttribute="bottom" id="fWI-AD-Ctw"/>
                             <constraint firstItem="eDF-oc-h5i" firstAttribute="top" secondItem="ClZ-vn-Bxx" secondAttribute="bottom" id="hFR-vq-uOe"/>
                             <constraint firstItem="eDF-oc-h5i" firstAttribute="top" secondItem="U9g-Ry-AF7" secondAttribute="bottom" id="rjR-HH-LxD"/>
-                            <constraint firstItem="8A0-4p-qC5" firstAttribute="top" secondItem="PUH-ld-M5i" secondAttribute="bottom" constant="1" id="yb5-AD-8yw"/>
+                            <constraint firstItem="8A0-4p-qC5" firstAttribute="top" secondItem="PUH-ld-M5i" secondAttribute="bottom" id="yb5-AD-8yw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Guide" image="map" id="SMR-RC-3bh">
@@ -182,6 +182,7 @@
                     <tabBarItem key="tabBarItem" title="Chat" image="chat" id="BeI-g3-1gE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LaZ-Yr-Wof">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.99607843159999998" green="0.75686275960000005" blue="0.054901961239999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="zZ2-Ja-P8W" kind="relationship" relationship="rootViewController" id="Liv-fi-DOG"/>
@@ -1155,11 +1156,11 @@
                         <viewControllerLayoutGuide type="bottom" id="sMR-hx-WVO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PdJ-IW-Cgh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="hybrid" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QfL-7P-e0c">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                         </subviews>
@@ -1457,6 +1458,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.99607843159999998" green="0.75686275960000005" blue="0.054901961239999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="sof-tf-2RL" firstAttribute="top" secondItem="L2m-Ms-B0h" secondAttribute="bottom" constant="1" id="CJ2-x8-Q2u"/>
                             <constraint firstAttribute="trailing" secondItem="ovM-x3-0EE" secondAttribute="trailing" constant="6" id="DFg-qe-IPJ"/>

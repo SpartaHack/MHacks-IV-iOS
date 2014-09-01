@@ -16,7 +16,6 @@
 #define kDetailsObjectKey @"details"
 #define kTitleObjectKey @"title"
 
-
 @interface MHUpdatesViewController ()
 {
     NSMutableArray *arrayOfAnnouncements;
@@ -111,6 +110,14 @@
 	[super viewDidLayoutSubviews];
 }
 
+- (void)refreshTriggered
+{
+    //Go and load some data
+    [self canIHazParseDatas:^{
+        [self.pongRefreshControl finishedLoading];
+    }];
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self.pongRefreshControl scrollViewDidScroll];
@@ -138,7 +145,6 @@
     PFObject* announcement = [arrayOfAnnouncements objectAtIndex:section];
     return announcement[@"poster"][@"title"];
 }
-
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -183,16 +189,6 @@
     return cell;
 }
 
-#pragma mark Refresh View
-
-- (void)refreshTriggered
-{
-    //Go and load some data
-    [self canIHazParseDatas:^{
-        [self.pongRefreshControl finishedLoading];
-    }];
-}
-
 #pragma mark NavBar Buttons
 
 - (IBAction)postToFacebookTapped:(id)sender {
@@ -200,7 +196,7 @@
         SLComposeViewController *composeController = [SLComposeViewController
                                                       composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        [composeController setInitialText:@"Check out the Mhacks hackathon!"];
+        [composeController setInitialText:@"Check out the MHacks hackathon!"];
         //Post actual selfie?
         //[composeController addImage:postImage.image];
         [self presentViewController:composeController

@@ -30,11 +30,17 @@
 {
     [super viewDidLoad];
     
+    [self canIHazParseDatas:^{}];
+}
+
+- (void)canIHazParseDatas:(void(^)())block
+{
     PFQuery *query = [PFQuery queryWithClassName:@"Award"];
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query includeKey:@"sponsor"];
     [query orderByDescending:@"value"];
     query.limit = 1000;
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             [arrayOfAwards removeAllObjects];
@@ -48,14 +54,42 @@
                                   otherButtonTitles:nil];
             [alert show];
         }
-
+        
         [self.tableView reloadData];
+        block(nil,nil);
     }];
 }
 
-# pragma mark Table view funtimes
+#pragma mark PONG PONG PONG
 
-#pragma mark Table View Related Stuffs
+- (void)viewDidLayoutSubviews
+{
+    self.pongRefreshControl = [BOZPongRefreshControl attachToTableView:self.tableView
+                                                     withRefreshTarget:self
+                                                      andRefreshAction:@selector(refreshTriggered)];
+    self.pongRefreshControl.backgroundColor = [UIColor datOrangeColor];
+	[super viewDidLayoutSubviews];
+}
+
+- (void)refreshTriggered
+{
+    //Go and load some data
+    [self canIHazParseDatas:^{
+        [self.pongRefreshControl finishedLoading];
+    }];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.pongRefreshControl scrollViewDidScroll];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self.pongRefreshControl scrollViewDidEndDragging];
+}
+
+# pragma mark Table view funtimes
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
