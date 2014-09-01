@@ -1444,8 +1444,7 @@
     <resources>
         <image name="MHacksLOGO-Borderless.png" width="302" height="302"/>
         <image name="btnCamera.png" width="77" height="77"/>
-        <image name="burger.png" width="33" height="27"/>
-        <image name="calendar" width="30" height="30"/>
+        <image name="burger.png" width="34" height="34"/>
         <image name="chat" width="30" height="29"/>
         <image name="chat.png" width="30" height="30"/>
         <image name="circle.png" width="100" height="100"/>
