@@ -1141,43 +1141,74 @@
         <scene sceneID="ocE-W1-pcp">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="VSQ-7G-hOa" customClass="MHScheduleViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="rss-nF-HlM">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="58" sectionHeaderHeight="22" sectionFooterHeight="22" id="rss-nF-HlM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="404"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScheduleCell" rowHeight="50" id="T00-7F-Dxe">
-                                <rect key="frame" x="0.0" y="22" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T00-7F-Dxe" id="51B-81-e3E">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScheduleCell" id="VHV-YB-lwv" customClass="MHScheduleTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="58"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="71" tableViewCell="VHV-YB-lwv" id="Sca-WO-hJJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dinner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnS-lH-e1i">
-                                            <rect key="frame" x="16" y="4" width="232" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="175" translatesAutoresizingMaskIntoConstraints="NO" id="OSL-cD-Zr8">
+                                            <rect key="frame" x="20" y="10" width="175" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="3iC-Xp-vQh"/>
+                                                <constraint firstAttribute="width" constant="175" id="Dbg-vn-YSQ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="232" translatesAutoresizingMaskIntoConstraints="NO" id="avl-ue-Nrm">
-                                            <rect key="frame" x="16" y="25" width="232" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Sponsor | Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AM1-Em-Eld">
+                                            <rect key="frame" x="205" y="14" width="95" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="5nx-aR-oWT"/>
+                                                <constraint firstAttribute="width" constant="95" id="N4H-tu-hKd"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6:00 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgG-P5-n9i">
-                                            <rect key="frame" x="206" y="4" width="102" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="15" text="Details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="BH6-bc-BJr">
+                                            <rect key="frame" x="20" y="33" width="280" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BH6-bc-BJr" firstAttribute="top" secondItem="OSL-cD-Zr8" secondAttribute="bottom" constant="2" id="1jh-Bh-6HU"/>
+                                        <constraint firstItem="AM1-Em-Eld" firstAttribute="top" secondItem="Sca-WO-hJJ" secondAttribute="top" constant="14" id="3I2-zA-Jt7"/>
+                                        <constraint firstAttribute="bottom" secondItem="BH6-bc-BJr" secondAttribute="bottom" constant="9" id="GSp-aK-Bqr"/>
+                                        <constraint firstAttribute="trailing" secondItem="BH6-bc-BJr" secondAttribute="trailing" constant="20" id="TdV-Ym-tVN"/>
+                                        <constraint firstItem="OSL-cD-Zr8" firstAttribute="leading" secondItem="Sca-WO-hJJ" secondAttribute="leading" constant="20" id="V40-fL-NCz"/>
+                                        <constraint firstItem="BH6-bc-BJr" firstAttribute="leading" secondItem="Sca-WO-hJJ" secondAttribute="leading" constant="20" id="kYp-PN-PCB"/>
+                                        <constraint firstAttribute="trailing" secondItem="AM1-Em-Eld" secondAttribute="trailing" constant="20" id="nwz-S7-Gcp"/>
+                                        <constraint firstItem="OSL-cD-Zr8" firstAttribute="top" secondItem="Sca-WO-hJJ" secondAttribute="top" constant="10" id="ufV-9a-uuh"/>
+                                        <constraint firstItem="AM1-Em-Eld" firstAttribute="leading" secondItem="OSL-cD-Zr8" secondAttribute="trailing" constant="10" id="wLe-Xl-Fzf"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detailLabel" destination="BH6-bc-BJr" id="6M5-Rp-FGG"/>
+                                    <outlet property="timeAndSponsorLabel" destination="AM1-Em-Eld" id="Ms7-UM-uZ3"/>
+                                    <outlet property="titleLabel" destination="OSL-cD-Zr8" id="yX1-kl-UBZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VSQ-7G-hOa" id="mxd-gv-4eM"/>
+                            <outlet property="delegate" destination="VSQ-7G-hOa" id="GTN-mc-JIB"/>
+                        </connections>
                     </tableView>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="tableView" destination="rss-nF-HlM" id="AhE-OZ-pGU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgs-K0-L7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1336,7 +1367,7 @@
         <image name="circle.png" width="100" height="100"/>
         <image name="facebook.png" width="32" height="32"/>
         <image name="mentors" width="30" height="30"/>
-        <image name="soda.png" width="128" height="128"/>
+        <image name="soda.png" width="34" height="34"/>
         <image name="twitter-img.png" width="32" height="32"/>
         <image name="updates" width="30" height="30"/>
     </resources>

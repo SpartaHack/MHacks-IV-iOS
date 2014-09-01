@@ -9,14 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface MHScheduleViewController : PFQueryTableViewController
+@interface MHScheduleViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, retain) NSMutableDictionary *sections;
-@property (nonatomic, retain) NSMutableDictionary *sectionToDayMap;
-
-@property (nonatomic, retain) NSMutableArray *bodyArray;
-
-@property (nonatomic, retain) NSMutableDictionary *days;
+@property (nonatomic, retain) NSMutableArray *days;
+@property (nonatomic, retain) NSMutableDictionary *eventsByDay;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

@@ -12,7 +12,5 @@
 @interface MHAwardsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic) CGSize trueContentSize;
-@property (nonatomic, retain) NSMutableArray *detailsArray;
 
 @end

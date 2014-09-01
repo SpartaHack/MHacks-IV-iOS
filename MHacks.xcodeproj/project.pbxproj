@@ -111,6 +111,7 @@
 		FB5745A419B3C7C6009244CF /* minute@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5745A019B3C7C6009244CF /* minute@2x.png */; };
 		FB5745A519B3C7C6009244CF /* hour@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5745A119B3C7C6009244CF /* hour@2x.png */; };
 		FB5745A619B3C7C6009244CF /* circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB5745A219B3C7C6009244CF /* circle@2x.png */; };
+		FB5745AD19B3E466009244CF /* MHScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5745AC19B3E466009244CF /* MHScheduleTableViewCell.m */; };
 		FB99CA1219A66CE50099AF43 /* MHChatRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -274,6 +275,8 @@
 		FB5745A019B3C7C6009244CF /* minute@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minute@2x.png"; sourceTree = "<group>"; };
 		FB5745A119B3C7C6009244CF /* hour@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hour@2x.png"; sourceTree = "<group>"; };
 		FB5745A219B3C7C6009244CF /* circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle@2x.png"; sourceTree = "<group>"; };
+		FB5745AB19B3E466009244CF /* MHScheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHScheduleTableViewCell.h; sourceTree = "<group>"; };
+		FB5745AC19B3E466009244CF /* MHScheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHScheduleTableViewCell.m; sourceTree = "<group>"; };
 		FB99CA1019A66CE50099AF43 /* MHChatRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHChatRoomsViewController.h; sourceTree = "<group>"; };
 		FB99CA1119A66CE50099AF43 /* MHChatRoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHChatRoomsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -632,6 +635,8 @@
 			children = (
 				6CF15AC618B1FA3800AE5A04 /* MHScheduleViewController.h */,
 				6CF15AC718B1FA3800AE5A04 /* MHScheduleViewController.m */,
+				FB5745AB19B3E466009244CF /* MHScheduleTableViewCell.h */,
+				FB5745AC19B3E466009244CF /* MHScheduleTableViewCell.m */,
 				6CF15AE518B2309900AE5A04 /* MHCountdownViewController.h */,
 				6CF15AE618B2309A00AE5A04 /* MHCountdownViewController.m */,
 			);
@@ -809,6 +814,7 @@
 				E770466D18891A7700BE6FC4 /* main.m in Sources */,
 				6CC2247F18A4771600262706 /* MHGuideViewController.m in Sources */,
 				6CF15ADF18B1FE3000AE5A04 /* MHGuestLoginViewController.m in Sources */,
+				FB5745AD19B3E466009244CF /* MHScheduleTableViewCell.m in Sources */,
 				FB99CA1219A66CE50099AF43 /* MHChatRoomsViewController.m in Sources */,
 				6CE2CB0818B01F17007AC3AA /* UIImage+GIF.m in Sources */,
 				6C9B48AB18B7FBBC008E81B7 /* SVProgressHUD.m in Sources */,
