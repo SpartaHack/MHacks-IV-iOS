@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		021FCF3D19A154A200988AED /* BOZPongRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 021FCF3C19A154A200988AED /* BOZPongRefreshControl.m */; };
 		0264427519A1BFC200810388 /* Icons in Resources */ = {isa = PBXBuildFile; fileRef = 0264427419A1BFC200810388 /* Icons */; };
-		0264427719A1C15E00810388 /* MHacksLOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 0264427619A1C15E00810388 /* MHacksLOGO.png */; };
 		0264427919A1C1F000810388 /* MHacksLOGO-Borderless.png in Resources */ = {isa = PBXBuildFile; fileRef = 0264427819A1C1F000810388 /* MHacksLOGO-Borderless.png */; };
 		0759E22918B2198A00E67B23 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0759E22818B2198A00E67B23 /* Twitter.framework */; };
 		0759E34518B393F500E67B23 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0759E34418B393F500E67B23 /* Accounts.framework */; };
@@ -38,15 +37,12 @@
 		6CC6F0A518B571470036ADD1 /* UIView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F09F18B571470036ADD1 /* UIView+Utilities.m */; };
 		6CC6F0A618B571470036ADD1 /* UIViewController+EMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F0A118B571470036ADD1 /* UIViewController+EMAdditions.m */; };
 		6CC6F0AA18B571940036ADD1 /* UIImage+Dimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F0A918B571940036ADD1 /* UIImage+Dimensions.m */; };
-		6CC6F0BF18B5FA7B0036ADD1 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC6F0BD18B5FA7B0036ADD1 /* logout@2x.png */; };
-		6CC6F0C018B5FA7B0036ADD1 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC6F0BE18B5FA7B0036ADD1 /* share@2x.png */; };
 		6CC6F0C618B714DD0036ADD1 /* AVCamUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F0C518B714DD0036ADD1 /* AVCamUtilities.m */; };
 		6CC6F0CC18B740D80036ADD1 /* MLIMGURUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F0CB18B740D80036ADD1 /* MLIMGURUploader.m */; };
 		6CC6F0CE18B74FB80036ADD1 /* btnCamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC6F0CD18B74FB80036ADD1 /* btnCamera@2x.png */; };
 		6CC6F0D018B7520A0036ADD1 /* btnRestartSignature@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC6F0CF18B7520A0036ADD1 /* btnRestartSignature@2x.png */; };
 		6CCB63CE18A60324004E80B4 /* MHUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB63CD18A60324004E80B4 /* MHUserData.m */; };
 		6CCB63D318A613A7004E80B4 /* MHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB63D218A613A7004E80B4 /* MHLoginViewController.m */; };
-		6CCB63D718A621BF004E80B4 /* hshacksLOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCB63D618A621BF004E80B4 /* hshacksLOGO.png */; };
 		6CE2CAFE18B01F17007AC3AA /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2CAE218B01F17007AC3AA /* MKAnnotationView+WebCache.m */; };
 		6CE2CAFF18B01F17007AC3AA /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2CAE418B01F17007AC3AA /* NSData+ImageContentType.m */; };
 		6CE2CB0018B01F17007AC3AA /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2CAE618B01F17007AC3AA /* SDImageCache.m */; };
@@ -68,8 +64,6 @@
 		6CE2CB1818B03BC2007AC3AA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE2CB1718B03BC2007AC3AA /* MobileCoreServices.framework */; };
 		6CE2CB1A18B03BCC007AC3AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE2CB1918B03BCC007AC3AA /* QuartzCore.framework */; };
 		6CE3039918B8739200AA432A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE3039818B8739200AA432A /* ImageIO.framework */; };
-		6CECDFEB18B96A4400421F80 /* HSHacksLaunch3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CECDFE918B96A4400421F80 /* HSHacksLaunch3.png */; };
-		6CECDFEC18B96A4400421F80 /* HSHacksLaunch4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CECDFEA18B96A4400421F80 /* HSHacksLaunch4.png */; };
 		6CF15AB918B1E30800AE5A04 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1518891CB100033983 /* Security.framework */; };
 		6CF15AC318B1E4E200AE5A04 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF15AC018B1E4E200AE5A04 /* FacebookSDK.framework */; };
 		6CF15AC518B1E4E200AE5A04 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF15AC218B1E4E200AE5A04 /* Parse.framework */; };
@@ -77,7 +71,6 @@
 		6CF15AD618B1FACC00AE5A04 /* MHAwardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF15AD518B1FACC00AE5A04 /* MHAwardsViewController.m */; };
 		6CF15ADF18B1FE3000AE5A04 /* MHGuestLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF15ADE18B1FE3000AE5A04 /* MHGuestLoginViewController.m */; };
 		6CF15AE718B2309A00AE5A04 /* MHCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF15AE618B2309A00AE5A04 /* MHCountdownViewController.m */; };
-		E73B8D1C18B541F300CEB072 /* clock.gif in Resources */ = {isa = PBXBuildFile; fileRef = E73B8D1B18B541F300CEB072 /* clock.gif */; };
 		E770466118891A7700BE6FC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E770466018891A7700BE6FC4 /* Foundation.framework */; };
 		E770466318891A7700BE6FC4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E770466218891A7700BE6FC4 /* CoreGraphics.framework */; };
 		E770466518891A7700BE6FC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E770466418891A7700BE6FC4 /* UIKit.framework */; };
@@ -135,7 +128,6 @@
 		021FCF3B19A154A200988AED /* BOZPongRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOZPongRefreshControl.h; sourceTree = "<group>"; };
 		021FCF3C19A154A200988AED /* BOZPongRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOZPongRefreshControl.m; sourceTree = "<group>"; };
 		0264427419A1BFC200810388 /* Icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Icons; sourceTree = "<group>"; };
-		0264427619A1C15E00810388 /* MHacksLOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MHacksLOGO.png; sourceTree = "<group>"; };
 		0264427819A1C1F000810388 /* MHacksLOGO-Borderless.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MHacksLOGO-Borderless.png"; sourceTree = "<group>"; };
 		0759E22818B2198A00E67B23 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		0759E34418B393F500E67B23 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -174,8 +166,6 @@
 		6CC6F0A118B571470036ADD1 /* UIViewController+EMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+EMAdditions.m"; sourceTree = "<group>"; };
 		6CC6F0A818B571940036ADD1 /* UIImage+Dimensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Dimensions.h"; sourceTree = "<group>"; };
 		6CC6F0A918B571940036ADD1 /* UIImage+Dimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Dimensions.m"; sourceTree = "<group>"; };
-		6CC6F0BD18B5FA7B0036ADD1 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
-		6CC6F0BE18B5FA7B0036ADD1 /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
 		6CC6F0C418B714DD0036ADD1 /* AVCamUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamUtilities.h; sourceTree = "<group>"; };
 		6CC6F0C518B714DD0036ADD1 /* AVCamUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamUtilities.m; sourceTree = "<group>"; };
 		6CC6F0CA18B740D60036ADD1 /* MLIMGURUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLIMGURUploader.h; sourceTree = "<group>"; };
@@ -186,7 +176,6 @@
 		6CCB63CD18A60324004E80B4 /* MHUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHUserData.m; sourceTree = "<group>"; };
 		6CCB63D118A613A7004E80B4 /* MHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHLoginViewController.h; sourceTree = "<group>"; };
 		6CCB63D218A613A7004E80B4 /* MHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHLoginViewController.m; sourceTree = "<group>"; };
-		6CCB63D618A621BF004E80B4 /* hshacksLOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hshacksLOGO.png; sourceTree = "<group>"; };
 		6CE2CAE118B01F17007AC3AA /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		6CE2CAE218B01F17007AC3AA /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		6CE2CAE318B01F17007AC3AA /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -223,8 +212,6 @@
 		6CE2CB1718B03BC2007AC3AA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		6CE2CB1918B03BCC007AC3AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6CE3039818B8739200AA432A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		6CECDFE918B96A4400421F80 /* HSHacksLaunch3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HSHacksLaunch3.png; sourceTree = "<group>"; };
-		6CECDFEA18B96A4400421F80 /* HSHacksLaunch4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HSHacksLaunch4.png; sourceTree = "<group>"; };
 		6CF15AC018B1E4E200AE5A04 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		6CF15AC218B1E4E200AE5A04 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		6CF15AC618B1FA3800AE5A04 /* MHScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHScheduleViewController.h; sourceTree = "<group>"; };
@@ -235,7 +222,6 @@
 		6CF15ADE18B1FE3000AE5A04 /* MHGuestLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHGuestLoginViewController.m; sourceTree = "<group>"; };
 		6CF15AE518B2309900AE5A04 /* MHCountdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHCountdownViewController.h; sourceTree = "<group>"; };
 		6CF15AE618B2309A00AE5A04 /* MHCountdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHCountdownViewController.m; sourceTree = "<group>"; };
-		E73B8D1B18B541F300CEB072 /* clock.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = clock.gif; sourceTree = "<group>"; };
 		E770465D18891A7700BE6FC4 /* MHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E770466018891A7700BE6FC4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E770466218891A7700BE6FC4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -472,14 +458,7 @@
 				FB5745A119B3C7C6009244CF /* hour@2x.png */,
 				FB5745A219B3C7C6009244CF /* circle@2x.png */,
 				FB57459D19B3C68C009244CF /* burger@2x.png */,
-				6CECDFE918B96A4400421F80 /* HSHacksLaunch3.png */,
-				6CECDFEA18B96A4400421F80 /* HSHacksLaunch4.png */,
-				6CC6F0BD18B5FA7B0036ADD1 /* logout@2x.png */,
 				0264427819A1C1F000810388 /* MHacksLOGO-Borderless.png */,
-				6CC6F0BE18B5FA7B0036ADD1 /* share@2x.png */,
-				E73B8D1B18B541F300CEB072 /* clock.gif */,
-				6CCB63D618A621BF004E80B4 /* hshacksLOGO.png */,
-				0264427619A1C15E00810388 /* MHacksLOGO.png */,
 				6CE2CB0C18B02047007AC3AA /* placeholderIcon.png */,
 				6CC6F0CD18B74FB80036ADD1 /* btnCamera@2x.png */,
 				6CC6F0CF18B7520A0036ADD1 /* btnRestartSignature@2x.png */,
@@ -768,9 +747,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0264427519A1BFC200810388 /* Icons in Resources */,
-				6CCB63D718A621BF004E80B4 /* hshacksLOGO.png in Resources */,
-				6CC6F0BF18B5FA7B0036ADD1 /* logout@2x.png in Resources */,
-				6CECDFEB18B96A4400421F80 /* HSHacksLaunch3.png in Resources */,
 				FB5745B019B437AB009244CF /* smalltweet@2x.png in Resources */,
 				E770467C18891A7700BE6FC4 /* Images.xcassets in Resources */,
 				6C9B48A018B75594008E81B7 /* btnRetake@2x.png in Resources */,
@@ -779,15 +755,11 @@
 				6CE2CB0D18B02047007AC3AA /* placeholderIcon.png in Resources */,
 				FB5745B119B437AB009244CF /* smallmail@2x.png in Resources */,
 				6C9B48A418B7F091008E81B7 /* twitter-img@2x.png in Resources */,
-				6CC6F0C018B5FA7B0036ADD1 /* share@2x.png in Resources */,
 				6C9B48AA18B7FBBC008E81B7 /* SVProgressHUD.bundle in Resources */,
 				FB57459E19B3C68C009244CF /* burger@2x.png in Resources */,
 				6CC6F0CE18B74FB80036ADD1 /* btnCamera@2x.png in Resources */,
-				0264427719A1C15E00810388 /* MHacksLOGO.png in Resources */,
-				6CECDFEC18B96A4400421F80 /* HSHacksLaunch4.png in Resources */,
 				FB5745A619B3C7C6009244CF /* circle@2x.png in Resources */,
 				6CC6F0D018B7520A0036ADD1 /* btnRestartSignature@2x.png in Resources */,
-				E73B8D1C18B541F300CEB072 /* clock.gif in Resources */,
 				E770466B18891A7700BE6FC4 /* InfoPlist.strings in Resources */,
 				0264427919A1C1F000810388 /* MHacksLOGO-Borderless.png in Resources */,
 				6C9B48A318B7F091008E81B7 /* facebook@2x.png in Resources */,
