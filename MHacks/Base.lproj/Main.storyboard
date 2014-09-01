@@ -1453,7 +1453,7 @@
         <image name="mentors" width="30" height="30"/>
         <image name="microphone" width="30" height="30"/>
         <image name="soda.png" width="34" height="34"/>
-        <image name="twitter-img.png" width="32" height="32"/>
+        <image name="twitter-img.png" width="39" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
