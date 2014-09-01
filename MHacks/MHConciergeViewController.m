@@ -30,6 +30,7 @@
     PFQuery *query = [PFUser query];
     [query whereKeyExists:@"sponsor"];
     [query includeKey:@"sponsor"];
+    [query orderByAscending:@"name"];
     query.limit = 1000;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -161,7 +162,7 @@
     [self presentViewController:mailViewController animated:YES completion:NULL];
 }
 
-- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     if (result == MFMailComposeResultFailed) {
         UIAlertView *alert = [[UIAlertView alloc]
