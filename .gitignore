@@ -22,3 +22,5 @@ Pods
 
 # App keys
 MHacks/appKeys.plist
+
+MHacks/Base.lproj/Main.storyboard
