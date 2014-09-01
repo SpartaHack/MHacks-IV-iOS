@@ -7,6 +7,7 @@
 //
 
 #import "MHGuideViewController.h"
+#import "UIColor+MHacksColors.h"
 
 @implementation MHGuideViewController
 
@@ -22,7 +23,7 @@
     NSArray *itemArray = [NSArray arrayWithObjects: @"Schedule", @"Map", @"Awards",  nil];
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
     segmentedControl.frame = CGRectMake(55,25,210,30); //WAt
-    segmentedControl.tintColor = [UIColor colorWithRed:245.0/255.0 green:196.0/255.0 blue:76.0/255.0 alpha:1.00];
+    segmentedControl.tintColor = [UIColor datOrangeColor];
     [segmentedControl addTarget:self action:@selector(changeView:)
                   forControlEvents:UIControlEventValueChanged];
 

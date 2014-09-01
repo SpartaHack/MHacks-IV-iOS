@@ -39,7 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[UITabBar appearance] setTintColor:[UIColor datOrangeColor]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithWhite:0.10f alpha:1.0f]];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navigationBarDoubleTap:)];
     tap.numberOfTapsRequired = 3;
