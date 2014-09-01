@@ -1366,7 +1366,7 @@
     <resources>
         <image name="MHacksLOGO-Borderless.png" width="302" height="302"/>
         <image name="btnCamera.png" width="77" height="77"/>
-        <image name="burger.png" width="30" height="33"/>
+        <image name="burger.png" width="33" height="27"/>
         <image name="calendar" width="30" height="30"/>
         <image name="chat" width="30" height="29"/>
         <image name="chat.png" width="30" height="30"/>
@@ -1378,7 +1378,6 @@
         <image name="twitter-img.png" width="32" height="32"/>
         <image name="updates" width="30" height="30"/>
     </resources>
-    <color key="tintColor" red="0.94117653369903564" green="0.74901962280273438" blue="0.458823561668396" alpha="1" colorSpace="deviceRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

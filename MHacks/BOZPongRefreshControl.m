@@ -11,6 +11,8 @@
 
 #import "BOZPongRefreshControl.h"
 #import "MHUpdatesViewController.h"
+#import "UIColor+MHacksColors.h"
+
 
 #define REFRESH_CONTROL_HEIGHT 65.0f
 #define HALF_REFRESH_CONTROL_HEIGHT (REFRESH_CONTROL_HEIGHT / 2.0f)
@@ -205,22 +207,28 @@ typedef enum {
 
 - (void)resetColors:(MHUpdatesViewController*)viewController
 {
-    [viewController.bar setTintColor:[UIColor whiteColor]];
-    viewController.bar.barTintColor = [UIColor colorWithRed:0 green:0.429 blue:0.143 alpha:1];
-    viewController.bar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-    viewController.bar.topItem.title = @"GO GREEN GO WHITE";
-
-    
-    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0,320, 20)];
-    view.backgroundColor=[UIColor colorWithRed:0 green:0.429 blue:0.143 alpha:1];
-    [viewController.view addSubview:view];
-    [super setBackgroundColor:[UIColor colorWithRed:0 green:0.429 blue:0.143 alpha:.5]];
-    
-    _foregroundColor = [UIColor whiteColor];
-    
-    leftPaddleView.backgroundColor = [UIColor whiteColor];
-    rightPaddleView.backgroundColor = [UIColor whiteColor];
-    ballView.backgroundColor = [UIColor whiteColor];
+    if (viewController.bar.tintColor == [UIColor whiteColor]) {
+        //Back To Normal?
+        [viewController.bar setTintColor:[UIColor datOrangeColor]];
+        viewController.bar.barTintColor = [UIColor whiteColor];
+        viewController.bar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor blackColor]};
+        viewController.bar.topItem.title = @"Updates";
+        [super setBackgroundColor:[UIColor datOrangeColor]];
+        _foregroundColor = [UIColor whiteColor];
+        leftPaddleView.backgroundColor = [UIColor whiteColor];
+        rightPaddleView.backgroundColor = [UIColor whiteColor];
+        ballView.backgroundColor = [UIColor whiteColor];
+    }else{
+        [viewController.bar setTintColor:[UIColor whiteColor]];
+        viewController.bar.barTintColor = [UIColor colorWithRed:0 green:0.429 blue:0.143 alpha:1];
+        viewController.bar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+        viewController.bar.topItem.title = @"GO GREEN GO WHITE";
+        [super setBackgroundColor:[UIColor colorWithRed:0 green:0.429 blue:0.143 alpha:1]];
+        _foregroundColor = [UIColor whiteColor];
+        leftPaddleView.backgroundColor = [UIColor whiteColor];
+        rightPaddleView.backgroundColor = [UIColor whiteColor];
+        ballView.backgroundColor = [UIColor whiteColor];
+    }
 }
 
 #pragma mark - Listening to scroll delegate events
