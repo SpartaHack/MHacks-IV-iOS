@@ -30,7 +30,7 @@
     formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat: @"MM/dd/yyyy HH:mm:ss"];
     
-    MhacksBegin = [formatter dateFromString:@"09/05/2014 19:00:00"];
+    MhacksBegin = [formatter dateFromString:@"09/05/2014 18:00:00"];
     MhacksEnd = [formatter dateFromString:@"09/07/2014 16:00:00"];
     
     gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
