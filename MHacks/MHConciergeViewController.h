@@ -19,6 +19,7 @@
 
 - (IBAction)drinkButtonTapped:(id)sender;
 - (IBAction)foodButtonTapped:(id)sender;
+- (IBAction)moreFood:(id)sender;
 
 @end
 

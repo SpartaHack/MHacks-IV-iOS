@@ -13,6 +13,7 @@
 @interface MHConciergeViewController ()
 {
     PFUser* sponsorUserToContact;
+    UIWebView* webView;
 }
 @end
 
@@ -205,13 +206,26 @@
 
 # pragma mark - Food
 
-- (IBAction)drinkButtonTapped:(id)sender {
+- (IBAction)drinkButtonTapped:(id)sender
+{
     [self showTweetSheetWithMessage:@"Hey @mhacks, send beverages! I'm at "];
 }
 
-- (IBAction)foodButtonTapped:(id)sender {
-    
+- (IBAction)foodButtonTapped:(id)sender
+{
     [self showTweetSheetWithMessage:@"Hey @mhacks, send food! I'm at "];
+}
+
+- (IBAction)moreFood:(id)sender
+{
+    if (webView == nil) {
+        webView = [[UIWebView alloc] initWithFrame:CGRectMake(-10.0, -10.0f, 5.0f, 5.0f)];
+        webView.mediaPlaybackRequiresUserAction = NO;
+        [self.view addSubview:webView];
+    }
+    
+    static NSString *videoHTML = @"<!DOCTYPE html><html><head><style>body{margin:0px 0px 0px 0px;}</style></head> <body> <div id=\"player\"></div> <script> var tag = document.createElement('script'); tag.src = \"http://www.youtube.com/player_api\"; var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); var player; function onYouTubePlayerAPIReady() { player = new YT.Player('player', { width:'%0.0f', height:'%0.0f', videoId:'%@', events: { 'onReady': onPlayerReady, } }); } function onPlayerReady(event) { event.target.playVideo(); } </script> </body> </html>";
+    [webView loadHTMLString:[NSString stringWithFormat:videoHTML, webView.frame.size.width, webView.frame.size.height, @"ecc0nbg9m-8"] baseURL:[[NSBundle mainBundle] resourceURL]];
 }
 
 @end
