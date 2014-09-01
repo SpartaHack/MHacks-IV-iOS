@@ -20,6 +20,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.roomsTableView.hidden = YES;
         
     // Initialize array that will store chat messages.
     self.chatRooms = [[NSMutableArray alloc] init];
@@ -43,6 +45,7 @@
     
     [self.firebase observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         self.hasInitialDataBeenLoaded = YES;
+        self.roomsTableView.hidden = NO;
         
         [self.roomsTableView reloadData];
         [self.roomsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatRooms.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
