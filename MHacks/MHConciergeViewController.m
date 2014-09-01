@@ -122,16 +122,16 @@
                                                               delegate:self
                                                      cancelButtonTitle:@"Nevermind"
                                                 destructiveButtonTitle:nil
-                                                     otherButtonTitles:@"Email", @"Tweet", nil];
+                                                     otherButtonTitles:@"Tweet", @"Email", nil];
     [contactSheet showInView:[UIApplication sharedApplication].keyWindow];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0) {
-        [self emailUser:sponsorUserToContact];
-    } else if (buttonIndex == 1) {
         [self tweetUser:sponsorUserToContact];
+    } else if (buttonIndex == 1) {
+        [self emailUser:sponsorUserToContact];
     }
 }
 

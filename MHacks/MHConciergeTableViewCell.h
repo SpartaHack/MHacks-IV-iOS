@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *positionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *specialtyLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *leftContactIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *rightContactIcon;
 
 - (void)setWithUser:(PFObject*)user;
 

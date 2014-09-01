@@ -15,6 +15,30 @@
     self.nameLabel.text = user[@"name"];
     self.positionLabel.hidden = YES;
     self.specialtyLabel.text = user[@"specialty"];
+    
+    BOOL canEmail = (user[@"email"] != nil);
+    BOOL canTwitter = (user[@"twitterHandle"] != nil);
+    
+    if (canEmail && canTwitter) {
+        self.leftContactIcon.hidden = NO;
+        self.rightContactIcon.hidden = NO;
+        
+        self.leftContactIcon.image = [UIImage imageNamed:@"smalltweet.png"];
+        self.rightContactIcon.image = [UIImage imageNamed:@"smallmail.png"];
+    } else if (canEmail) {
+        self.leftContactIcon.hidden = YES;
+        self.rightContactIcon.hidden = NO;
+        
+        self.rightContactIcon.image = [UIImage imageNamed:@"smallmail.png"];
+    } else if (canTwitter) {
+        self.leftContactIcon.hidden = YES;
+        self.rightContactIcon.hidden = NO;
+        
+        self.rightContactIcon.image = [UIImage imageNamed:@"smalltweet.png"];
+    } else {
+        self.leftContactIcon.hidden = YES;
+        self.rightContactIcon.hidden = YES;
+    }
 }
 
 @end
