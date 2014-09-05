@@ -5,12 +5,10 @@ Official iOS App for MHacks IV, forked from HSHacks
 
 To build this, you'll need to make a file in .../MHacks-iOS/MHacks called appKeys.plist with the following fields:
 
-|Key Name|Value|
-----------------
-|parseAppId|Your Parse app ID|
-|parseClientKey|Your Parse client key|
-|twitterConsumerKey|Your Twitter consumer key|
-|twitterConsumerSecret|Your Twitter Consumer secret|
+* parseAppId
+* parseClientKey
+* twitterConsumerKey
+* twitterConsumerSecret
 
 
 TODO
