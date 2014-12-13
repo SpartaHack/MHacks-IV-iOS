@@ -196,7 +196,7 @@
         SLComposeViewController *composeController = [SLComposeViewController
                                                       composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        [composeController setInitialText:@"Check out the Sacks hackathon!"];
+        [composeController setInitialText:@"Check out SpartaHack hackathon!"];
         //Post actual selfie?
         //[composeController addImage:postImage.image];
         [self presentViewController:composeController
@@ -217,7 +217,7 @@
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
-        NSString *message = [NSString stringWithFormat:@"Check out the @Sacks hackathon!"];
+        NSString *message = [NSString stringWithFormat:@"Check out the @spartahack hackathon!"];
         [tweetSheet setInitialText:message];
         [self presentViewController:tweetSheet animated:YES completion:nil];
         

@@ -27,7 +27,7 @@
 
 - (void)canIHazParseDatas:(void(^)())block
 {
-    PFQuery *query = [PFUser query];
+    PFQuery *query = [PFQuery queryWithClassName:@"Concierge"];
     [query whereKeyExists:@"sponsor"];
     [query includeKey:@"sponsor"];
     [query orderByAscending:@"name"];
@@ -239,12 +239,12 @@
 
 - (IBAction)drinkButtonTapped:(id)sender
 {
-    [self showTweetSheetWithMessage:@"Hey @Sacks, send beverages! I'm at "];
+    [self showTweetSheetWithMessage:@"Hey @SpartaHack, send drinks! I'm at "];
 }
 
 - (IBAction)foodButtonTapped:(id)sender
 {
-    [self showTweetSheetWithMessage:@"Hey @Sacks, send food! I'm at "];
+    [self showTweetSheetWithMessage:@"Hey @SpartaHack, send food! I'm at "];
 }
 
 - (IBAction)moreFood:(id)sender

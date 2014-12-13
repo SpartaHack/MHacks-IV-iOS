@@ -164,23 +164,6 @@
             </objects>
             <point key="canvasLocation" x="675" y="1473"/>
         </scene>
-        <!--Lounge-->
-        <scene sceneID="Yrk-4E-alm">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="Ae4-dT-ihJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Lounge" image="sofa" id="BeI-g3-1gE">
-                        <inset key="imageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="1"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-1"/>
-                    </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="LaZ-Yr-Wof">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.99607843159999998" green="0.75686275960000005" blue="0.054901961239999998" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AS6-UN-KMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="675" y="796"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
             <objects>
@@ -674,117 +657,9 @@
             </objects>
             <point key="canvasLocation" x="1214" y="1451"/>
         </scene>
-        <!--Chat-->
-        <scene sceneID="IkJ-s5-PPA">
-            <objects>
-                <viewController id="qdn-1v-Mwm" customClass="SChatViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L2m-Ms-B0h"/>
-                        <viewControllerLayoutGuide type="bottom" id="pl0-1B-MIe"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HaO-lL-KRK">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ovM-x3-0EE">
-                                <rect key="frame" x="6" y="529" width="308" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="0c8-c3-xok"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="send"/>
-                                <connections>
-                                    <outlet property="delegate" destination="qdn-1v-Mwm" id="emN-GC-UjR"/>
-                                </connections>
-                            </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sof-tf-2RL">
-                                <rect key="frame" x="0.0" y="1" width="320" height="407"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="ChatCell" id="WjP-ag-AjU" customClass="SChatMessageTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WjP-ag-AjU" id="wJQ-gf-Hfn">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="xR7-JK-gPZ">
-                                                    <rect key="frame" x="10" y="4" width="40" height="39"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="39" id="XSj-gr-K1k"/>
-                                                        <constraint firstAttribute="width" constant="40" id="YDF-VI-QK4"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="21" text="This is a sample message" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="252" translatesAutoresizingMaskIntoConstraints="NO" id="SkT-Es-Wym">
-                                                    <rect key="frame" x="57" y="25" width="252" height="19"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Spencer Yen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecG-mq-hwm">
-                                                    <rect key="frame" x="57" y="4" width="252" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="z49-MS-iml"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="xR7-JK-gPZ" firstAttribute="top" secondItem="wJQ-gf-Hfn" secondAttribute="top" constant="4" id="3bg-a6-D1p"/>
-                                                <constraint firstItem="SkT-Es-Wym" firstAttribute="leading" secondItem="xR7-JK-gPZ" secondAttribute="trailing" constant="7" id="CUC-rz-AUM"/>
-                                                <constraint firstAttribute="trailing" secondItem="SkT-Es-Wym" secondAttribute="trailing" constant="11" id="Vmb-yB-5VG"/>
-                                                <constraint firstItem="ecG-mq-hwm" firstAttribute="leading" secondItem="xR7-JK-gPZ" secondAttribute="trailing" constant="7" id="W1e-6H-Gq4"/>
-                                                <constraint firstItem="SkT-Es-Wym" firstAttribute="top" secondItem="ecG-mq-hwm" secondAttribute="bottom" id="c6a-B7-wiJ"/>
-                                                <constraint firstAttribute="bottom" secondItem="SkT-Es-Wym" secondAttribute="bottom" constant="6" id="h2V-F4-DyG"/>
-                                                <constraint firstAttribute="trailing" secondItem="ecG-mq-hwm" secondAttribute="trailing" constant="11" id="hYe-Mu-J9X"/>
-                                                <constraint firstItem="ecG-mq-hwm" firstAttribute="top" secondItem="wJQ-gf-Hfn" secondAttribute="top" constant="4" id="xKZ-5t-yIi"/>
-                                                <constraint firstItem="xR7-JK-gPZ" firstAttribute="leading" secondItem="wJQ-gf-Hfn" secondAttribute="leading" constant="10" id="yyd-kl-Nik"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="messageLabel" destination="SkT-Es-Wym" id="gRc-aF-dYI"/>
-                                            <outlet property="nameLabel" destination="ecG-mq-hwm" id="QXS-f1-MVb"/>
-                                            <outlet property="profilePic" destination="xR7-JK-gPZ" id="NNI-WY-vMJ"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="qdn-1v-Mwm" id="zQQ-EH-YKJ"/>
-                                    <outlet property="delegate" destination="qdn-1v-Mwm" id="sxA-Fn-xyh"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.99607843159999998" green="0.75686275960000005" blue="0.054901961239999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="sof-tf-2RL" firstAttribute="top" secondItem="L2m-Ms-B0h" secondAttribute="bottom" constant="1" id="CJ2-x8-Q2u"/>
-                            <constraint firstAttribute="trailing" secondItem="ovM-x3-0EE" secondAttribute="trailing" constant="6" id="DFg-qe-IPJ"/>
-                            <constraint firstItem="ovM-x3-0EE" firstAttribute="leading" secondItem="HaO-lL-KRK" secondAttribute="leading" constant="6" id="VYM-4H-Nep"/>
-                            <constraint firstItem="sof-tf-2RL" firstAttribute="leading" secondItem="HaO-lL-KRK" secondAttribute="leading" id="Xu4-YW-W1I"/>
-                            <constraint firstItem="pl0-1B-MIe" firstAttribute="top" secondItem="ovM-x3-0EE" secondAttribute="bottom" constant="9" id="ckZ-ZU-Nab"/>
-                            <constraint firstAttribute="trailing" secondItem="sof-tf-2RL" secondAttribute="trailing" id="p1w-Bm-DNS"/>
-                            <constraint firstItem="ovM-x3-0EE" firstAttribute="top" secondItem="sof-tf-2RL" secondAttribute="bottom" constant="8" id="zXm-zk-wY3"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Chat" image="chat.png" id="ClT-Cs-Mdw">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
-                    </tabBarItem>
-                    <navigationItem key="navigationItem" title="Chat" id="JG7-An-YCU"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="chatTableView" destination="sof-tf-2RL" id="p0Z-Yu-aNp"/>
-                        <outlet property="chatTextField" destination="ovM-x3-0EE" id="BFu-wU-s28"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WMt-mb-Yly" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1685" y="796"/>
-        </scene>
     </scenes>
     <resources>
         <image name="burger" width="35" height="32"/>
-        <image name="chat.png" width="30" height="30"/>
         <image name="clockOutline" width="100" height="100"/>
         <image name="drink" width="34" height="34"/>
         <image name="facebook" width="32" height="32"/>
@@ -792,7 +667,6 @@
         <image name="map" width="30" height="30"/>
         <image name="mentors" width="30" height="30"/>
         <image name="microphone" width="30" height="30"/>
-        <image name="sofa" width="30" height="30"/>
         <image name="twitter" width="40" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

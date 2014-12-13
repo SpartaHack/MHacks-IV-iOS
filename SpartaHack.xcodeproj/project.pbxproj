@@ -20,8 +20,6 @@
 		6CC2247418A476D000262706 /* SUpdatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2247218A476D000262706 /* SUpdatesViewController.m */; };
 		6CC2247718A476FA00262706 /* SConciergeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2247618A476FA00262706 /* SConciergeViewController.m */; };
 		6CC2247818A476FA00262706 /* SConciergeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2247618A476FA00262706 /* SConciergeViewController.m */; };
-		6CC2247B18A4770A00262706 /* SChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2247A18A4770A00262706 /* SChatViewController.m */; };
-		6CC2247C18A4770A00262706 /* SChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2247A18A4770A00262706 /* SChatViewController.m */; };
 		6CC2247F18A4771600262706 /* SGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2247E18A4771600262706 /* SGuideViewController.m */; };
 		6CC2248018A4771600262706 /* SGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2247E18A4771600262706 /* SGuideViewController.m */; };
 		6CC6F0A218B571470036ADD1 /* UIView+NibLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6F09918B571470036ADD1 /* UIView+NibLoading.m */; };
@@ -65,7 +63,6 @@
 		E770466D18891A7700BE6FC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E770466C18891A7700BE6FC4 /* main.m */; };
 		E770467118891A7700BE6FC4 /* SAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E770467018891A7700BE6FC4 /* SAppDelegate.m */; };
 		E770467418891A7700BE6FC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E770467218891A7700BE6FC4 /* Main.storyboard */; };
-		E770467C18891A7700BE6FC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E770467B18891A7700BE6FC4 /* Images.xcassets */; };
 		E770468318891A7700BE6FC4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E770468218891A7700BE6FC4 /* XCTest.framework */; };
 		E770468418891A7700BE6FC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E770466018891A7700BE6FC4 /* Foundation.framework */; };
 		E770468518891A7700BE6FC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E770466418891A7700BE6FC4 /* UIKit.framework */; };
@@ -78,7 +75,9 @@
 		F523960F19A7F7FE00577B0A /* SUpdatesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F523960E19A7F7FE00577B0A /* SUpdatesTableViewCell.m */; };
 		F5ABB66419B272F7009793C8 /* SAwardsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ABB66319B272F7009793C8 /* SAwardsTableViewCell.m */; };
 		F5D361BB1A3CB71500238FC4 /* appKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5D361BA1A3CB71500238FC4 /* appKeys.plist */; };
-		FB57458819ADA2BD009244CF /* SChatMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458719ADA2BD009244CF /* SChatMessageTableViewCell.m */; };
+		F5D361BE1A3CBC2000238FC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5D361BD1A3CBC2000238FC4 /* Images.xcassets */; };
+		F5D361C11A3CBF2A00238FC4 /* Logo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D361BF1A3CBF2A00238FC4 /* Logo_1.png */; };
+		F5D361C21A3CBF2A00238FC4 /* Logo_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D361C01A3CBF2A00238FC4 /* Logo_2.png */; };
 		FB57458B19ADA5A3009244CF /* UIColor+SpartaHackColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458A19ADA5A3009244CF /* UIColor+SpartaHackColors.m */; };
 		FB57458E19AFC3D4009244CF /* SKeysAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458D19AFC3D4009244CF /* SKeysAccessor.m */; };
 		FB57459319B38C79009244CF /* SMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57459219B38C79009244CF /* SMapViewController.m */; };
@@ -87,9 +86,7 @@
 		FB57459919B3AFBF009244CF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB57459819B3AFBF009244CF /* Bolts.framework */; };
 		FB57459C19B3B6BC009244CF /* SConciergeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57459B19B3B6BC009244CF /* SConciergeTableViewCell.m */; };
 		FB5745AD19B3E466009244CF /* SScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5745AC19B3E466009244CF /* SScheduleTableViewCell.m */; };
-		FB5745B419B4CE91009244CF /* SChatRoomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5745B319B4CE91009244CF /* SChatRoomTableViewCell.m */; };
 		FB5745BE19B4FF20009244CF /* UIResponder+FirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5745BC19B4FF20009244CF /* UIResponder+FirstResponder.m */; };
-		FB99CA1219A66CE50099AF43 /* SChatRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB99CA1119A66CE50099AF43 /* SChatRoomsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,8 +116,6 @@
 		6CC2247218A476D000262706 /* SUpdatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SUpdatesViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		6CC2247518A476FA00262706 /* SConciergeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SConciergeViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		6CC2247618A476FA00262706 /* SConciergeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SConciergeViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		6CC2247918A4770A00262706 /* SChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SChatViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		6CC2247A18A4770A00262706 /* SChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SChatViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		6CC2247D18A4771600262706 /* SGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGuideViewController.h; sourceTree = "<group>"; };
 		6CC2247E18A4771600262706 /* SGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGuideViewController.m; sourceTree = "<group>"; };
 		6CC6F09818B571470036ADD1 /* UIView+NibLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NibLoading.h"; sourceTree = "<group>"; };
@@ -193,7 +188,6 @@
 		E770466F18891A7700BE6FC4 /* SAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		E770467018891A7700BE6FC4 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E770467318891A7700BE6FC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E770467B18891A7700BE6FC4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MHacks/Images.xcassets; sourceTree = "<group>"; };
 		E770468118891A7700BE6FC4 /* SpartaHackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpartaHackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E770468218891A7700BE6FC4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E770468A18891A7700BE6FC4 /* MHacksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MHacksTests-Info.plist"; sourceTree = "<group>"; };
@@ -209,8 +203,9 @@
 		F5ABB66219B272F7009793C8 /* SAwardsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SAwardsTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F5ABB66319B272F7009793C8 /* SAwardsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SAwardsTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F5D361BA1A3CB71500238FC4 /* appKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appKeys.plist; sourceTree = "<group>"; };
-		FB57458619ADA2BD009244CF /* SChatMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SChatMessageTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		FB57458719ADA2BD009244CF /* SChatMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SChatMessageTableViewCell.m; sourceTree = "<group>"; };
+		F5D361BD1A3CBC2000238FC4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F5D361BF1A3CBF2A00238FC4 /* Logo_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_1.png; sourceTree = "<group>"; };
+		F5D361C01A3CBF2A00238FC4 /* Logo_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_2.png; sourceTree = "<group>"; };
 		FB57458919ADA5A3009244CF /* UIColor+SpartaHackColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIColor+SpartaHackColors.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FB57458A19ADA5A3009244CF /* UIColor+SpartaHackColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIColor+SpartaHackColors.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FB57458C19AFC3D4009244CF /* SKeysAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SKeysAccessor.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -224,12 +219,8 @@
 		FB57459B19B3B6BC009244CF /* SConciergeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SConciergeTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FB5745AB19B3E466009244CF /* SScheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SScheduleTableViewCell.h; sourceTree = "<group>"; };
 		FB5745AC19B3E466009244CF /* SScheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SScheduleTableViewCell.m; sourceTree = "<group>"; };
-		FB5745B219B4CE91009244CF /* SChatRoomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SChatRoomTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		FB5745B319B4CE91009244CF /* SChatRoomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SChatRoomTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FB5745BC19B4FF20009244CF /* UIResponder+FirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIResponder+FirstResponder.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FB5745BD19B4FF20009244CF /* UIResponder+FirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIResponder+FirstResponder.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		FB99CA1019A66CE50099AF43 /* SChatRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SChatRoomsViewController.h; sourceTree = "<group>"; };
-		FB99CA1119A66CE50099AF43 /* SChatRoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SChatRoomsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,21 +334,6 @@
 			name = Concierge;
 			sourceTree = "<group>";
 		};
-		6CC6F0C318B5FB250036ADD1 /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				FB99CA1019A66CE50099AF43 /* SChatRoomsViewController.h */,
-				FB99CA1119A66CE50099AF43 /* SChatRoomsViewController.m */,
-				FB5745B219B4CE91009244CF /* SChatRoomTableViewCell.h */,
-				FB5745B319B4CE91009244CF /* SChatRoomTableViewCell.m */,
-				6CC2247918A4770A00262706 /* SChatViewController.h */,
-				6CC2247A18A4770A00262706 /* SChatViewController.m */,
-				FB57458619ADA2BD009244CF /* SChatMessageTableViewCell.h */,
-				FB57458719ADA2BD009244CF /* SChatMessageTableViewCell.m */,
-			);
-			name = Chat;
-			sourceTree = "<group>";
-		};
 		6CE2CAE018B01F17007AC3AA /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,7 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				E770466618891A7700BE6FC4 /* SpartaHack */,
-				E770467B18891A7700BE6FC4 /* Images.xcassets */,
+				F5D361BD1A3CBC2000238FC4 /* Images.xcassets */,
 				E770468818891A7700BE6FC4 /* SpartaHackTests */,
 				E770465F18891A7700BE6FC4 /* Frameworks */,
 				E770465E18891A7700BE6FC4 /* Products */,
@@ -475,7 +451,6 @@
 				6CF15AE018B1FE4300AE5A04 /* Login */,
 				6CC6F0C118B5FAEF0036ADD1 /* Updates */,
 				6CC6F0C218B5FB190036ADD1 /* Concierge */,
-				6CC6F0C318B5FB250036ADD1 /* Chat */,
 				6CF15AE118B1FE5A00AE5A04 /* Guide */,
 				FB5745AA19B3E401009244CF /* Schedule */,
 				FB5745A919B3E3FB009244CF /* Map */,
@@ -492,6 +467,8 @@
 		E770466718891A7700BE6FC4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F5D361BF1A3CBF2A00238FC4 /* Logo_1.png */,
+				F5D361C01A3CBF2A00238FC4 /* Logo_2.png */,
 				E770466818891A7700BE6FC4 /* SpartaHack-Info.plist */,
 				E770466918891A7700BE6FC4 /* InfoPlist.strings */,
 				E770466C18891A7700BE6FC4 /* main.m */,
@@ -653,8 +630,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E770467C18891A7700BE6FC4 /* Images.xcassets in Resources */,
+				F5D361C11A3CBF2A00238FC4 /* Logo_1.png in Resources */,
 				6C9B48AA18B7FBBC008E81B7 /* SVProgressHUD.bundle in Resources */,
+				F5D361C21A3CBF2A00238FC4 /* Logo_2.png in Resources */,
+				F5D361BE1A3CBC2000238FC4 /* Images.xcassets in Resources */,
 				E770466B18891A7700BE6FC4 /* InfoPlist.strings in Resources */,
 				E770467418891A7700BE6FC4 /* Main.storyboard in Resources */,
 				F5D361BB1A3CB71500238FC4 /* appKeys.plist in Resources */,
@@ -701,7 +680,6 @@
 				FB57459319B38C79009244CF /* SMapViewController.m in Sources */,
 				F523960F19A7F7FE00577B0A /* SUpdatesTableViewCell.m in Sources */,
 				6CCB63CE18A60324004E80B4 /* SUserData.m in Sources */,
-				6CC2247B18A4770A00262706 /* SChatViewController.m in Sources */,
 				021FCF3D19A154A200988AED /* BOZPongRefreshControl.m in Sources */,
 				6CE2CB0918B01F17007AC3AA /* UIImage+MultiFormat.m in Sources */,
 				6CC2247718A476FA00262706 /* SConciergeViewController.m in Sources */,
@@ -710,15 +688,12 @@
 				E770466D18891A7700BE6FC4 /* main.m in Sources */,
 				6CC2247F18A4771600262706 /* SGuideViewController.m in Sources */,
 				FB5745AD19B3E466009244CF /* SScheduleTableViewCell.m in Sources */,
-				FB99CA1219A66CE50099AF43 /* SChatRoomsViewController.m in Sources */,
 				6CE2CB0818B01F17007AC3AA /* UIImage+GIF.m in Sources */,
-				FB5745B419B4CE91009244CF /* SChatRoomTableViewCell.m in Sources */,
 				6C9B48AB18B7FBBC008E81B7 /* SVProgressHUD.m in Sources */,
 				FB57458E19AFC3D4009244CF /* SKeysAccessor.m in Sources */,
 				6CF15AC918B1FA3800AE5A04 /* SScheduleViewController.m in Sources */,
 				6CE2CB0318B01F17007AC3AA /* SDWebImageDownloader.m in Sources */,
 				6CE2CAFE18B01F17007AC3AA /* MKAnnotationView+WebCache.m in Sources */,
-				FB57458819ADA2BD009244CF /* SChatMessageTableViewCell.m in Sources */,
 				FB5745BE19B4FF20009244CF /* UIResponder+FirstResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -730,7 +705,6 @@
 				E770468F18891A7700BE6FC4 /* SpartaHackTests.m in Sources */,
 				6CC2247818A476FA00262706 /* SConciergeViewController.m in Sources */,
 				6CC2248018A4771600262706 /* SGuideViewController.m in Sources */,
-				6CC2247C18A4770A00262706 /* SChatViewController.m in Sources */,
 				6CC2247418A476D000262706 /* SUpdatesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
