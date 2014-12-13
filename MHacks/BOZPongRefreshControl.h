@@ -10,7 +10,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MHUpdatesViewController.h"
+#import "SUpdatesViewController.h"
 
 @interface BOZPongRefreshControl : UIView <UIScrollViewDelegate>
 

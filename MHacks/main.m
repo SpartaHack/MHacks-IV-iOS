@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import "MHAppDelegate.h"
+#import "SAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([MHAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([SAppDelegate class]));
     }
 }
 

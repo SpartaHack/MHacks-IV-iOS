@@ -161,13 +161,13 @@
 
 - (void)setFinished:(BOOL)finished {
     [self willChangeValueForKey:@"isFinished"];
-    _finished = finished;
+    finished = finished;
     [self didChangeValueForKey:@"isFinished"];
 }
 
 - (void)setExecuting:(BOOL)executing {
     [self willChangeValueForKey:@"isExecuting"];
-    _executing = executing;
+    executing = executing;
     [self didChangeValueForKey:@"isExecuting"];
 }
 

@@ -10,8 +10,8 @@
 //
 
 #import "BOZPongRefreshControl.h"
-#import "MHUpdatesViewController.h"
-#import "UIColor+MHacksColors.h"
+#import "SUpdatesViewController.h"
+#import "UIColor+SpartaHackColors.h"
 
 
 #define REFRESH_CONTROL_HEIGHT 65.0f
@@ -205,7 +205,7 @@ typedef enum {
     ballView.backgroundColor = foregroundColor;
 }
 
-- (void)resetColors:(MHUpdatesViewController*)viewController
+- (void)resetColors:(SUpdatesViewController*)viewController
 {
     if (viewController.bar.tintColor == [UIColor whiteColor]) {
         //Back To Normal?
