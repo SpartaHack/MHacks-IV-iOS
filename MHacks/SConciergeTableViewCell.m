@@ -12,12 +12,13 @@
 
 - (void)setWithUser:(PFObject*)user
 {
-    self.nameLabel.text = user[@"name"];
-    self.positionLabel.hidden = YES;
-    self.specialtyLabel.text = user[@"specialty"];
+    self.nameLabel.text = user[@"Sponsor"][@"Name"];
+//    NSLog(@"Name? %@",user[@"Sponsor"][@"Name"]);
+    self.positionLabel.hidden = NO;
+    self.specialtyLabel.text = user[@"Sponsor"][@"Specialty"];
     
-    BOOL canEmail = (user[@"email"] != nil);
-    BOOL canTwitter = (user[@"twitterHandle"] != nil);
+    BOOL canEmail = (user[@"Sponsor"][@"email"] != nil);
+    BOOL canTwitter = (user[@"Sponsor"][@"Twitter"] != nil);
     
     if (canEmail && canTwitter) {
         self.leftContactIcon.hidden = NO;

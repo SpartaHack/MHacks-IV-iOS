@@ -27,23 +27,22 @@
 
 - (void)canIHazParseDatas:(void(^)())block
 {
-    PFQuery *query = [PFQuery queryWithClassName:@"Concierge"];
-    [query whereKeyExists:@"sponsor"];
-    [query includeKey:@"sponsor"];
-    [query orderByAscending:@"name"];
-    query.limit = 1000;
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    PFQuery *sponsorQuery = [PFQuery queryWithClassName:@"Concierge"];
+    [sponsorQuery includeKey:@"Sponsor"];
+    [sponsorQuery orderByAscending:@"Name"];
+    sponsorQuery.limit = 1000;
+    [sponsorQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             NSMutableArray* unsortedSponsors = [[NSMutableArray alloc] init];
             self.sponsorUsers = [[NSMutableDictionary alloc] init];
             
             for (PFObject* sponsorUser in objects) {
-                PFObject* sponsor = sponsorUser[@"sponsor"];
-                
-                NSMutableArray* usersInSponsor = [self.sponsorUsers objectForKey:sponsor[@"title"]];
+                PFObject* sponsor = sponsorUser[@"Sponsor"];
+
+                NSMutableArray* usersInSponsor = [self.sponsorUsers objectForKey:sponsor[@"Title"]];
                 if (usersInSponsor == nil) {
                     usersInSponsor = [[NSMutableArray alloc] init];
-                    [self.sponsorUsers setObject:usersInSponsor forKey:sponsor[@"title"]];
+                    [self.sponsorUsers setObject:usersInSponsor forKey:sponsor[@"Title"]];
                     [unsortedSponsors addObject:sponsor];
                 }
                 
@@ -105,12 +104,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:section][@"title"]] count];
+    return [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:section][@"Title"]] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self.sponsors objectAtIndex:section][@"title"];
+    return [self.sponsors objectAtIndex:section][@"Title"];
 }
 
 #pragma mark - UITableViewDelegate
@@ -124,9 +123,9 @@
         cell = [[SConciergeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    PFObject* sponsorUser = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"title"]] objectAtIndex:indexPath.row];
+    PFObject* sponsorUser = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"Title"]] objectAtIndex:indexPath.row];
     [cell setWithUser:sponsorUser];
-    
+
     return cell;
 }
 
@@ -134,9 +133,9 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    PFUser* sponsorUser = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"title"]] objectAtIndex:indexPath.row];
-    BOOL canEmail = (sponsorUser[@"email"] != nil);
-    BOOL canTwitter = (sponsorUser[@"twitterHandle"] != nil);
+    PFUser* sponsorUser = [[self.sponsorUsers objectForKey:[self.sponsors objectAtIndex:indexPath.section][@"Title"]] objectAtIndex:indexPath.row];
+    BOOL canEmail = (sponsorUser[@"Sponsor"][@"email"] != nil);
+    BOOL canTwitter = (sponsorUser[@"Sponsor"][@"Twitter"] != nil);
     
     if (canEmail && canTwitter) {
         [self showContactActionSheetForUser:sponsorUser];
@@ -150,7 +149,7 @@
 - (void)showContactActionSheetForUser:(PFUser*)sponsorUser
 {
     sponsorUserToContact = sponsorUser;
-    UIActionSheet* contactSheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Contact %@", sponsorUser[@"name"]]
+    UIActionSheet* contactSheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"Contact %@", sponsorUser[@"Sponsor"][@"Name"]]
                                                               delegate:self
                                                      cancelButtonTitle:@"Nevermind"
                                                 destructiveButtonTitle:nil
@@ -172,7 +171,7 @@
     if (![MFMailComposeViewController canSendMail]) {
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle:@"Mail Not Set Up"
-                              message:[NSString stringWithFormat:@"You can email %@ at %@", sponsorUser[@"name"], sponsorUser[@"email"]]
+                              message:[NSString stringWithFormat:@"You can email %@ at %@", sponsorUser[@"Sponsor"][@"Name"], sponsorUser[@"Sponsor"][@"email"]]
                               delegate:nil
                               cancelButtonTitle:@"Alright"
                               otherButtonTitles:nil];
@@ -180,12 +179,12 @@
         return;
     }
     
-    NSString *messageBody = [NSString stringWithFormat:@"Hey %@,", sponsorUser[@"name"]];
-    NSArray *recipients = [NSArray arrayWithObject:sponsorUser[@"email"]];
+    NSString *messageBody = [NSString stringWithFormat:@"Hey %@,", sponsorUser[@"Sponsor"][@"Name"]];
+    NSArray *recipients = [NSArray arrayWithObject:sponsorUser[@"Sponsor"][@"email"]];
     
     MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
     mailViewController.mailComposeDelegate = self;
-    [mailViewController setSubject:@"Sacks Help"];
+    [mailViewController setSubject:@"SpartaHack Help"];
     [mailViewController setMessageBody:messageBody isHTML:NO];
     [mailViewController setToRecipients:recipients];
     
@@ -209,7 +208,7 @@
 
 - (void)tweetUser:(PFUser*)sponsorUser
 {
-    NSString* twitterHandle = sponsorUser[@"twitterHandle"];
+    NSString* twitterHandle = sponsorUser[@"Sponsor"][@"Twitter"];
     if ([twitterHandle characterAtIndex:0] == '@') {
         twitterHandle = [twitterHandle substringFromIndex:1];
     }
