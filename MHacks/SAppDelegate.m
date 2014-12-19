@@ -21,10 +21,10 @@
                   clientKey:[keys getParseConsumerKey]];
     
     // Register for push notifications
-    [application registerForRemoteNotificationTypes:
-     UIRemoteNotificationTypeBadge |
-     UIRemoteNotificationTypeAlert |
-     UIRemoteNotificationTypeSound];
+//    [application registerForRemoteNotificationTypes:
+//     UIRemoteNotificationTypeBadge |
+//     UIRemoteNotificationTypeAlert |
+//     UIRemoteNotificationTypeSound];
     
     return YES;
 }

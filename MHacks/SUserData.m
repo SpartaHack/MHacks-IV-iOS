@@ -45,7 +45,7 @@
 
 #pragma mark - isLoggedIn
 
-static NSString* kIsLoggedInKey = @"isLoggedIn";
+static NSString* kIsLoggedInKey = @"LoggedIn";
 
 - (void)setIsLoggedIn:(BOOL)isLoggedIn
 {

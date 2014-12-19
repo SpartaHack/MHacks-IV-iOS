@@ -30,10 +30,10 @@
     formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat: @"MM/dd/yyyy HH:mm:ss"];
     
-    SacksBegin = [formatter dateFromString:@"09/05/2014 18:00:00"];
-    SacksEnd = [formatter dateFromString:@"09/07/2014 16:00:00"];
+    SacksBegin = [formatter dateFromString:@"03/27/2015 18:00:00"];
+    SacksEnd = [formatter dateFromString:@"03/29/2015 16:00:00"];
     
-    gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
     [self countdownDisplay:nil];
     [NSTimer scheduledTimerWithTimeInterval:1.0
@@ -67,10 +67,10 @@
 {
     today = [NSDate date];
     [self checkDate];
-    NSUInteger unitFlags = NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit;
+    NSUInteger unitFlags = NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond;
     
     if (hasEnded) {
-        self.countdown.text = @"We hope you enjoyed Sacks!";
+        self.countdown.text = @"We hope you enjoyed SpartaHack!";
     } else {
         NSDateComponents *dateComponents = nil;
         

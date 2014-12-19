@@ -7,15 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01FE1A17A3F4820CE044FD01 /* libPods-SpartaHack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4348662D5595405F6A1CA1F3 /* libPods-SpartaHack.a */; };
 		021FCF3D19A154A200988AED /* BOZPongRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 021FCF3C19A154A200988AED /* BOZPongRefreshControl.m */; };
 		0759E22918B2198A00E67B23 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0759E22818B2198A00E67B23 /* Twitter.framework */; };
-		0759E34518B393F500E67B23 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0759E34418B393F500E67B23 /* Accounts.framework */; };
 		6C9B48AA18B7FBBC008E81B7 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6C9B48A718B7FBBC008E81B7 /* SVProgressHUD.bundle */; };
 		6C9B48AB18B7FBBC008E81B7 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9B48A918B7FBBC008E81B7 /* SVProgressHUD.m */; };
-		6CB10F2F18C6CD69009082EA /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB10F2E18C6CD68009082EA /* Firebase.framework */; };
 		6CB6738B18B08D5E00719CEB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB6738A18B08D5E00719CEB /* MessageUI.framework */; };
 		6CB6738D18B08F6A00719CEB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB6738C18B08F6A00719CEB /* CoreTelephony.framework */; };
-		6CB6738F18B093C300719CEB /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB6738E18B093C300719CEB /* Social.framework */; };
 		6CC2247318A476D000262706 /* SUpdatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2247218A476D000262706 /* SUpdatesViewController.m */; };
 		6CC2247418A476D000262706 /* SUpdatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2247218A476D000262706 /* SUpdatesViewController.m */; };
 		6CC2247718A476FA00262706 /* SConciergeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC2247618A476FA00262706 /* SConciergeViewController.m */; };
@@ -44,35 +42,34 @@
 		6CE2CB0918B01F17007AC3AA /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2CAF918B01F17007AC3AA /* UIImage+MultiFormat.m */; };
 		6CE2CB0A18B01F17007AC3AA /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2CAFB18B01F17007AC3AA /* UIImage+WebP.m */; };
 		6CE2CB0B18B01F17007AC3AA /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2CAFD18B01F17007AC3AA /* UIImageView+WebCache.m */; };
-		6CE2CB1218B03B97007AC3AA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE2CB1118B03B97007AC3AA /* AudioToolbox.framework */; };
-		6CE2CB1418B03BAB007AC3AA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE2CB1318B03BAB007AC3AA /* CoreLocation.framework */; };
-		6CE2CB1618B03BB7007AC3AA /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE2CB1518B03BB7007AC3AA /* libz.1.1.3.dylib */; };
-		6CE2CB1818B03BC2007AC3AA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE2CB1718B03BC2007AC3AA /* MobileCoreServices.framework */; };
-		6CE2CB1A18B03BCC007AC3AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE2CB1918B03BCC007AC3AA /* QuartzCore.framework */; };
 		6CE3039918B8739200AA432A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE3039818B8739200AA432A /* ImageIO.framework */; };
-		6CF15AB918B1E30800AE5A04 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1518891CB100033983 /* Security.framework */; };
-		6CF15AC318B1E4E200AE5A04 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF15AC018B1E4E200AE5A04 /* FacebookSDK.framework */; };
-		6CF15AC518B1E4E200AE5A04 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF15AC218B1E4E200AE5A04 /* Parse.framework */; };
 		6CF15AC918B1FA3800AE5A04 /* SScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF15AC718B1FA3800AE5A04 /* SScheduleViewController.m */; };
 		6CF15AD618B1FACC00AE5A04 /* SAwardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF15AD518B1FACC00AE5A04 /* SAwardsViewController.m */; };
 		6CF15AE718B2309A00AE5A04 /* SCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF15AE618B2309A00AE5A04 /* SCountdownViewController.m */; };
 		E770466118891A7700BE6FC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E770466018891A7700BE6FC4 /* Foundation.framework */; };
-		E770466318891A7700BE6FC4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E770466218891A7700BE6FC4 /* CoreGraphics.framework */; };
 		E770466518891A7700BE6FC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E770466418891A7700BE6FC4 /* UIKit.framework */; };
 		E770466B18891A7700BE6FC4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E770466918891A7700BE6FC4 /* InfoPlist.strings */; };
 		E770466D18891A7700BE6FC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E770466C18891A7700BE6FC4 /* main.m */; };
 		E770467118891A7700BE6FC4 /* SAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E770467018891A7700BE6FC4 /* SAppDelegate.m */; };
-		E770467418891A7700BE6FC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E770467218891A7700BE6FC4 /* Main.storyboard */; };
-		E770468318891A7700BE6FC4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E770468218891A7700BE6FC4 /* XCTest.framework */; };
 		E770468418891A7700BE6FC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E770466018891A7700BE6FC4 /* Foundation.framework */; };
 		E770468518891A7700BE6FC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E770466418891A7700BE6FC4 /* UIKit.framework */; };
 		E770468D18891A7700BE6FC4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E770468B18891A7700BE6FC4 /* InfoPlist.strings */; };
 		E770468F18891A7700BE6FC4 /* SpartaHackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E770468E18891A7700BE6FC4 /* SpartaHackTests.m */; };
 		E783EC1018891C9C00033983 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC0F18891C9C00033983 /* libicucore.dylib */; };
 		E783EC1218891CA500033983 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1118891CA500033983 /* libc++.dylib */; };
-		E783EC1418891CAA00033983 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1318891CAA00033983 /* CFNetwork.framework */; };
-		E783EC1818891CBB00033983 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1718891CBB00033983 /* SystemConfiguration.framework */; };
+		F522D5441A438FCC00B96EF8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE2CB1118B03B97007AC3AA /* AudioToolbox.framework */; };
+		F522D5451A438FD200B96EF8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1318891CAA00033983 /* CFNetwork.framework */; };
+		F522D5461A438FD900B96EF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E770466218891A7700BE6FC4 /* CoreGraphics.framework */; };
+		F522D5471A438FDF00B96EF8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE2CB1718B03BC2007AC3AA /* MobileCoreServices.framework */; };
+		F522D5481A438FE700B96EF8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE2CB1918B03BCC007AC3AA /* QuartzCore.framework */; };
+		F522D5491A438FF200B96EF8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1518891CB100033983 /* Security.framework */; };
+		F522D54B1A43900500B96EF8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E783EC1718891CBB00033983 /* SystemConfiguration.framework */; };
+		F522D54C1A43901300B96EF8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F522D5401A438E6600B96EF8 /* libz.dylib */; };
+		F522D54D1A43901E00B96EF8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F522D5421A438E7000B96EF8 /* libsqlite3.dylib */; };
 		F523960F19A7F7FE00577B0A /* SUpdatesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F523960E19A7F7FE00577B0A /* SUpdatesTableViewCell.m */; };
+		F52DB4681A43C23B003A39C7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB6738E18B093C300719CEB /* Social.framework */; };
+		F52DB4691A43C242003A39C7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0759E34418B393F500E67B23 /* Accounts.framework */; };
+		F52DB46E1A43C853003A39C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E770467218891A7700BE6FC4 /* Main.storyboard */; };
 		F5ABB66419B272F7009793C8 /* SAwardsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ABB66319B272F7009793C8 /* SAwardsTableViewCell.m */; };
 		F5D361BB1A3CB71500238FC4 /* appKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5D361BA1A3CB71500238FC4 /* appKeys.plist */; };
 		F5D361BE1A3CBC2000238FC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5D361BD1A3CBC2000238FC4 /* Images.xcassets */; };
@@ -82,8 +79,6 @@
 		FB57458E19AFC3D4009244CF /* SKeysAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458D19AFC3D4009244CF /* SKeysAccessor.m */; };
 		FB57459319B38C79009244CF /* SMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57459219B38C79009244CF /* SMapViewController.m */; };
 		FB57459519B38D73009244CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB57459419B38D73009244CF /* MapKit.framework */; };
-		FB57459719B3AF21009244CF /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB57459619B3AF21009244CF /* ParseFacebookUtils.framework */; };
-		FB57459919B3AFBF009244CF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB57459819B3AFBF009244CF /* Bolts.framework */; };
 		FB57459C19B3B6BC009244CF /* SConciergeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57459B19B3B6BC009244CF /* SConciergeTableViewCell.m */; };
 		FB5745AD19B3E466009244CF /* SScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5745AC19B3E466009244CF /* SScheduleTableViewCell.m */; };
 		FB5745BE19B4FF20009244CF /* UIResponder+FirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5745BC19B4FF20009244CF /* UIResponder+FirstResponder.m */; };
@@ -104,11 +99,13 @@
 		021FCF3C19A154A200988AED /* BOZPongRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BOZPongRefreshControl.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0759E22818B2198A00E67B23 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		0759E34418B393F500E67B23 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		2281A35F901EE2E50AAD8F9A /* Pods-SpartaHack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartaHack.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpartaHack/Pods-SpartaHack.release.xcconfig"; sourceTree = "<group>"; };
+		4348662D5595405F6A1CA1F3 /* libPods-SpartaHack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpartaHack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68DB5FE3A51E0D3D0703D79C /* Pods-SpartaHack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartaHack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpartaHack/Pods-SpartaHack.debug.xcconfig"; sourceTree = "<group>"; };
 		6C9B48A618B7FBBC008E81B7 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
 		6C9B48A718B7FBBC008E81B7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		6C9B48A818B7FBBC008E81B7 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		6C9B48A918B7FBBC008E81B7 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		6CB10F2E18C6CD68009082EA /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		6CB6738A18B08D5E00719CEB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6CB6738C18B08F6A00719CEB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		6CB6738E18B093C300719CEB /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -169,8 +166,6 @@
 		6CE2CB1718B03BC2007AC3AA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		6CE2CB1918B03BCC007AC3AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6CE3039818B8739200AA432A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		6CF15AC018B1E4E200AE5A04 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		6CF15AC218B1E4E200AE5A04 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		6CF15AC618B1FA3800AE5A04 /* SScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SScheduleViewController.h; sourceTree = "<group>"; };
 		6CF15AC718B1FA3800AE5A04 /* SScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SScheduleViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		6CF15AD418B1FACC00AE5A04 /* SAwardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SAwardsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -189,7 +184,6 @@
 		E770467018891A7700BE6FC4 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E770467318891A7700BE6FC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E770468118891A7700BE6FC4 /* SpartaHackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpartaHackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E770468218891A7700BE6FC4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E770468A18891A7700BE6FC4 /* MHacksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MHacksTests-Info.plist"; sourceTree = "<group>"; };
 		E770468C18891A7700BE6FC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E770468E18891A7700BE6FC4 /* SpartaHackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SpartaHackTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -198,6 +192,8 @@
 		E783EC1318891CAA00033983 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E783EC1518891CB100033983 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E783EC1718891CBB00033983 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F522D5401A438E6600B96EF8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F522D5421A438E7000B96EF8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F523960D19A7F7FE00577B0A /* SUpdatesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SUpdatesTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F523960E19A7F7FE00577B0A /* SUpdatesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SUpdatesTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F5ABB66219B272F7009793C8 /* SAwardsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SAwardsTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -213,8 +209,6 @@
 		FB57459119B38C79009244CF /* SMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SMapViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FB57459219B38C79009244CF /* SMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SMapViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FB57459419B38D73009244CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		FB57459619B3AF21009244CF /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		FB57459819B3AFBF009244CF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		FB57459A19B3B6BC009244CF /* SConciergeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SConciergeTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FB57459B19B3B6BC009244CF /* SConciergeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SConciergeTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FB5745AB19B3E466009244CF /* SScheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SScheduleTableViewCell.h; sourceTree = "<group>"; };
@@ -228,31 +222,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB57459919B3AFBF009244CF /* Bolts.framework in Frameworks */,
+				F522D54B1A43900500B96EF8 /* SystemConfiguration.framework in Frameworks */,
+				F522D5491A438FF200B96EF8 /* Security.framework in Frameworks */,
+				F522D5481A438FE700B96EF8 /* QuartzCore.framework in Frameworks */,
+				F522D5471A438FDF00B96EF8 /* MobileCoreServices.framework in Frameworks */,
+				F522D5461A438FD900B96EF8 /* CoreGraphics.framework in Frameworks */,
+				F522D5451A438FD200B96EF8 /* CFNetwork.framework in Frameworks */,
+				F522D5441A438FCC00B96EF8 /* AudioToolbox.framework in Frameworks */,
 				FB57459519B38D73009244CF /* MapKit.framework in Frameworks */,
 				6CE3039918B8739200AA432A /* ImageIO.framework in Frameworks */,
-				0759E34518B393F500E67B23 /* Accounts.framework in Frameworks */,
 				0759E22918B2198A00E67B23 /* Twitter.framework in Frameworks */,
-				6CB6738F18B093C300719CEB /* Social.framework in Frameworks */,
-				6CF15AC318B1E4E200AE5A04 /* FacebookSDK.framework in Frameworks */,
-				6CF15AC518B1E4E200AE5A04 /* Parse.framework in Frameworks */,
-				6CF15AB918B1E30800AE5A04 /* Security.framework in Frameworks */,
 				6CB6738D18B08F6A00719CEB /* CoreTelephony.framework in Frameworks */,
 				6CB6738B18B08D5E00719CEB /* MessageUI.framework in Frameworks */,
-				6CE2CB1A18B03BCC007AC3AA /* QuartzCore.framework in Frameworks */,
-				6CE2CB1818B03BC2007AC3AA /* MobileCoreServices.framework in Frameworks */,
-				6CE2CB1618B03BB7007AC3AA /* libz.1.1.3.dylib in Frameworks */,
-				6CE2CB1418B03BAB007AC3AA /* CoreLocation.framework in Frameworks */,
-				FB57459719B3AF21009244CF /* ParseFacebookUtils.framework in Frameworks */,
-				6CE2CB1218B03B97007AC3AA /* AudioToolbox.framework in Frameworks */,
-				E783EC1818891CBB00033983 /* SystemConfiguration.framework in Frameworks */,
-				6CB10F2F18C6CD69009082EA /* Firebase.framework in Frameworks */,
-				E783EC1418891CAA00033983 /* CFNetwork.framework in Frameworks */,
-				E783EC1218891CA500033983 /* libc++.dylib in Frameworks */,
-				E783EC1018891C9C00033983 /* libicucore.dylib in Frameworks */,
-				E770466318891A7700BE6FC4 /* CoreGraphics.framework in Frameworks */,
+				F52DB4691A43C242003A39C7 /* Accounts.framework in Frameworks */,
+				F52DB4681A43C23B003A39C7 /* Social.framework in Frameworks */,
 				E770466518891A7700BE6FC4 /* UIKit.framework in Frameworks */,
 				E770466118891A7700BE6FC4 /* Foundation.framework in Frameworks */,
+				01FE1A17A3F4820CE044FD01 /* libPods-SpartaHack.a in Frameworks */,
+				E783EC1218891CA500033983 /* libc++.dylib in Frameworks */,
+				E783EC1018891C9C00033983 /* libicucore.dylib in Frameworks */,
+				F522D54D1A43901E00B96EF8 /* libsqlite3.dylib in Frameworks */,
+				F522D54C1A43901300B96EF8 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +250,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E770468318891A7700BE6FC4 /* XCTest.framework in Frameworks */,
 				E770468518891A7700BE6FC4 /* UIKit.framework in Frameworks */,
 				E770468418891A7700BE6FC4 /* Foundation.framework in Frameworks */,
 			);
@@ -388,6 +377,15 @@
 			name = Guide;
 			sourceTree = "<group>";
 		};
+		706BD22A7DB64D346D7CADFC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68DB5FE3A51E0D3D0703D79C /* Pods-SpartaHack.debug.xcconfig */,
+				2281A35F901EE2E50AAD8F9A /* Pods-SpartaHack.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E770465418891A7700BE6FC4 = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +394,7 @@
 				E770468818891A7700BE6FC4 /* SpartaHackTests */,
 				E770465F18891A7700BE6FC4 /* Frameworks */,
 				E770465E18891A7700BE6FC4 /* Products */,
+				706BD22A7DB64D346D7CADFC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -411,15 +410,12 @@
 		E770465F18891A7700BE6FC4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FB57459819B3AFBF009244CF /* Bolts.framework */,
-				FB57459619B3AF21009244CF /* ParseFacebookUtils.framework */,
+				F522D5421A438E7000B96EF8 /* libsqlite3.dylib */,
+				F522D5401A438E6600B96EF8 /* libz.dylib */,
 				FB57459419B38D73009244CF /* MapKit.framework */,
-				6CB10F2E18C6CD68009082EA /* Firebase.framework */,
 				6CE3039818B8739200AA432A /* ImageIO.framework */,
 				0759E34418B393F500E67B23 /* Accounts.framework */,
 				0759E22818B2198A00E67B23 /* Twitter.framework */,
-				6CF15AC018B1E4E200AE5A04 /* FacebookSDK.framework */,
-				6CF15AC218B1E4E200AE5A04 /* Parse.framework */,
 				6CB6738E18B093C300719CEB /* Social.framework */,
 				6CB6738C18B08F6A00719CEB /* CoreTelephony.framework */,
 				6CB6738A18B08D5E00719CEB /* MessageUI.framework */,
@@ -436,7 +432,7 @@
 				E770466018891A7700BE6FC4 /* Foundation.framework */,
 				E770466218891A7700BE6FC4 /* CoreGraphics.framework */,
 				E770466418891A7700BE6FC4 /* UIKit.framework */,
-				E770468218891A7700BE6FC4 /* XCTest.framework */,
+				4348662D5595405F6A1CA1F3 /* libPods-SpartaHack.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -557,9 +553,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E770469218891A7700BE6FC4 /* Build configuration list for PBXNativeTarget "SpartaHack" */;
 			buildPhases = (
+				A6AE027F8724A8B93EE9851E /* Check Pods Manifest.lock */,
 				E770465918891A7700BE6FC4 /* Sources */,
 				E770465A18891A7700BE6FC4 /* Frameworks */,
 				E770465B18891A7700BE6FC4 /* Resources */,
+				5307ED6CA584BCD7DB9F796F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -600,6 +598,14 @@
 				TargetAttributes = {
 					E770465C18891A7700BE6FC4 = {
 						DevelopmentTeam = V6R9L68573;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					E770468018891A7700BE6FC4 = {
 						TestTargetID = E770465C18891A7700BE6FC4;
@@ -630,12 +636,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F52DB46E1A43C853003A39C7 /* Main.storyboard in Resources */,
 				F5D361C11A3CBF2A00238FC4 /* Logo_1.png in Resources */,
 				6C9B48AA18B7FBBC008E81B7 /* SVProgressHUD.bundle in Resources */,
 				F5D361C21A3CBF2A00238FC4 /* Logo_2.png in Resources */,
 				F5D361BE1A3CBC2000238FC4 /* Images.xcassets in Resources */,
 				E770466B18891A7700BE6FC4 /* InfoPlist.strings in Resources */,
-				E770467418891A7700BE6FC4 /* Main.storyboard in Resources */,
 				F5D361BB1A3CB71500238FC4 /* appKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +655,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5307ED6CA584BCD7DB9F796F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpartaHack/Pods-SpartaHack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6AE027F8724A8B93EE9851E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E770465918891A7700BE6FC4 /* Sources */ = {
@@ -763,8 +802,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -780,7 +819,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -803,8 +842,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -814,7 +853,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -824,20 +863,18 @@
 		};
 		E770469318891A7700BE6FC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68DB5FE3A51E0D3D0703D79C /* Pods-SpartaHack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"./**",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHacks/SpartaHack-Prefix.pch";
 				INFOPLIST_FILE = "MHacks/SpartaHack-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = SpartaHack;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -846,20 +883,18 @@
 		};
 		E770469418891A7700BE6FC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2281A35F901EE2E50AAD8F9A /* Pods-SpartaHack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"./**",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHacks/SpartaHack-Prefix.pch";
 				INFOPLIST_FILE = "MHacks/SpartaHack-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = SpartaHack;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -869,7 +904,7 @@
 		E770469618891A7700BE6FC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HSHacks.app/HSHacks";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -883,7 +918,8 @@
 				);
 				INFOPLIST_FILE = "HSHacksTests/HSHacksTests-Info.plist";
 				PRODUCT_NAME = SpartaHackTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				PROVISIONING_PROFILE = "5d8561a7-91a4-40f1-85d5-24416c630ded";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpartaHack.app/SpartaHack";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -891,7 +927,7 @@
 		E770469718891A7700BE6FC4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HSHacks.app/HSHacks";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -901,7 +937,8 @@
 				GCC_PREFIX_HEADER = "HSHacks/HSHacks-Prefix.pch";
 				INFOPLIST_FILE = "HSHacksTests/HSHacksTests-Info.plist";
 				PRODUCT_NAME = SpartaHackTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				PROVISIONING_PROFILE = "5d8561a7-91a4-40f1-85d5-24416c630ded";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpartaHack.app/SpartaHack";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

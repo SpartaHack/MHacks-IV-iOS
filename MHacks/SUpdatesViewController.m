@@ -40,23 +40,17 @@
 {
     [super viewDidLoad];
     [[UITabBar appearance] setTintColor:[UIColor colorWithWhite:0.10f alpha:1.0f]];
-    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navigationBarDoubleTap:)];
     tap.numberOfTapsRequired = 3;
     [self.bar addGestureRecognizer:tap];
-    [self canIHazParseDatas:^{}];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
--(void)viewDidAppear:(BOOL)animated{
+- (void)viewDidAppear:(BOOL)animated{
+    NSLog(@"Data? %d",[[SUserData sharedManager] isLoggedIn]);
     if(![[SUserData sharedManager] isLoggedIn]){
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        SLoginViewController *loginVC = (SLoginViewController*)[storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
-        [self presentViewController:loginVC animated:NO completion:nil];
+        [self performSegueWithIdentifier:@"login" sender:nil];
+    }else{
+        [self canIHazParseDatas:^{}];
     }
 }
 
@@ -96,6 +90,7 @@
         //Step 4 tell the table view to redraw everything like the good little table it better be...... :P
         [self.tableView reloadData];
         block(nil,nil);
+        NSLog(@"Heyyyyy");
     }];
 }
 
@@ -107,6 +102,7 @@
                                                      withRefreshTarget:self
                                                       andRefreshAction:@selector(refreshTriggered)];
     self.pongRefreshControl.backgroundColor = [UIColor datOrangeColor];
+    
 	[super viewDidLayoutSubviews];
 }
 
