@@ -29,7 +29,7 @@
     self.titleLabel.text = event[@"Title"];
     self.detailLabel.text = event[@"Details"];
     
-    NSString* timeString = [[SScheduleTableViewCell timeFormatter] stringFromDate:event[@"time"]];
+    NSString* timeString = [[SScheduleTableViewCell timeFormatter] stringFromDate:event[@"Time"]];
     self.timeAndSponsorLabel.text = [NSString stringWithFormat:@"%@ | %@", event[@"host"][@"title"], timeString];
 }
 

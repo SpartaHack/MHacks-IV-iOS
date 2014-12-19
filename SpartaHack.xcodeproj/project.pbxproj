@@ -876,7 +876,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = SpartaHack;
-				PROVISIONING_PROFILE = "5d8561a7-91a4-40f1-85d5-24416c630ded";
+				PROVISIONING_PROFILE = "ad577110-2a14-4239-b9c4-dc83ad6f4515";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -896,7 +896,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = SpartaHack;
-				PROVISIONING_PROFILE = "5d8561a7-91a4-40f1-85d5-24416c630ded";
+				PROVISIONING_PROFILE = "ad577110-2a14-4239-b9c4-dc83ad6f4515";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
