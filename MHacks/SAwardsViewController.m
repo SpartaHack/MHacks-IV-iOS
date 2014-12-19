@@ -38,7 +38,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Award"];
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query includeKey:@"sponsor"];
-    [query orderByDescending:@"value"];
+    [query orderByDescending:@"Value"];
     query.limit = 1000;
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

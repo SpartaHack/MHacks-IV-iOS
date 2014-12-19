@@ -15,7 +15,7 @@
 {
     [super viewDidLoad];
     
-    self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(42.290767548454689, -83.715561526486382), MKCoordinateSpanMake(0.0065224869222362258, 0.0065011960313228201));
+    self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(42.7275025, -84.4818457), MKCoordinateSpanMake(0.0065224869222362258, 0.0065011960313228201));
     
     PFQuery* query = [PFQuery queryWithClassName:@"Venue"];
     query.limit = 1000;

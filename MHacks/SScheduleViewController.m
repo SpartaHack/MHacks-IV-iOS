@@ -31,8 +31,8 @@
 - (void)canIHazParseDatas:(void(^)())block
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
-    [query orderByAscending:@"time"];
-    [query includeKey:@"host"];
+    [query orderByAscending:@"Time"];
+    //[query includeKey:@"host"];
     query.limit = 1000;
     
     [query findObjectsInBackgroundWithBlock:^(NSArray* objects, NSError* error) {
@@ -45,7 +45,7 @@
             [dayFormatter setDateFormat:@"EEEE, MMMM dd"];
             
             for (PFObject *event in objects) {
-                NSDate *time = [event objectForKey:@"time"];
+                NSDate *time = [event objectForKey:@"Time"];
                 NSString *day = [dayFormatter stringFromDate:time];
                 
                 NSMutableArray *eventsInDay = [self.eventsByDay objectForKey:day];

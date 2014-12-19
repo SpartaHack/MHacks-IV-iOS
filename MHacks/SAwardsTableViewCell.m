@@ -12,8 +12,8 @@
 
 - (void)setWithAward:(PFObject*)award
 {
-    self.prizeMoneyLabel.text = award[@"prize"];
-    self.companyLabel.text = award[@"sponsor"][@"title"];
+    self.prizeMoneyLabel.text = award[@"Value"];
+    self.companyLabel.text = award[@"Title"];
     self.detailLabel.text = award[@"details"];
 }
 

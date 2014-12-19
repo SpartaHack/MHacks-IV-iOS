@@ -134,7 +134,7 @@
                 if (error == nil) {
                     SUserData* userData = [SUserData sharedManager];
                     userData.isLoggedIn = YES;
-                    userData.userName = [PFTwitterUtils twitter].screenName;
+                    userData.userName = twitterData[@"name"];
                     userData.userPhoto = twitterData[@"profile_image_url"];
                     
                     [self doneWithLogin];

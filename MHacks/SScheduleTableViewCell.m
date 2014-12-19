@@ -26,8 +26,8 @@
 
 - (void)setWithEvent:(PFObject*)event
 {
-    self.titleLabel.text = event[@"title"];
-    self.detailLabel.text = event[@"details"];
+    self.titleLabel.text = event[@"Title"];
+    self.detailLabel.text = event[@"Details"];
     
     NSString* timeString = [[SScheduleTableViewCell timeFormatter] stringFromDate:event[@"time"]];
     self.timeAndSponsorLabel.text = [NSString stringWithFormat:@"%@ | %@", event[@"host"][@"title"], timeString];
