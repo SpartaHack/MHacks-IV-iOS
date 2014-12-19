@@ -110,6 +110,8 @@
     
     [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
         if (!user) {
+            [SVProgressHUD dismiss];
+            NSLog(@"Error %@",[error localizedDescription]);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error"
                                                             message:@"Twitter login failed"
                                                            delegate:nil
@@ -146,6 +148,8 @@
                                                   cancelButtonTitle:nil
                                                   otherButtonTitles:@"OK", nil];
             [alert show];
+            [SVProgressHUD dismiss];
+
         }
     }];
 }
@@ -162,6 +166,7 @@
     [PFFacebookUtils initializeFacebook];
     [PFFacebookUtils logInWithPermissions:permissions block:^(PFUser *user, NSError *error) {
         if (!user) {
+            [SVProgressHUD dismiss];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error"
                                                             message:@"Facebook login failed"
                                                            delegate:nil
@@ -177,10 +182,7 @@
 - (void)getFacebookData
 {
     if (FBSession.activeSession.isOpen) {
-        [[FBRequest requestForMe] startWithCompletionHandler:
-         ^(FBRequestConnection *connection,
-           NSDictionary<FBGraphUser> *user,
-           NSError *error) {
+        [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection,NSDictionary<FBGraphUser> *user, NSError *error) {
              if (!error) {
                  SUserData *userData = [SUserData sharedManager];
                  userData.isLoggedIn = YES;
@@ -189,12 +191,14 @@
 
                  [self doneWithLogin];
              } else {
+                 [SVProgressHUD dismiss];
                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error"
                                                                  message:@"Facebook login failed"
                                                                 delegate:nil
                                                        cancelButtonTitle:nil
                                                        otherButtonTitles:@"OK", nil];
                  [alert show];
+                 
              }
          }];
     }

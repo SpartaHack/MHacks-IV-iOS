@@ -29,16 +29,16 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb256148041228646</string>
+				<string>fb683775691735435</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>FacebookAppID</key>
-	<string>567361250010506</string>
+	<string>683775691735435</string>
 	<key>FacebookDisplayName</key>
-	<string>Sacks</string>
+	<string>SpartaHack</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>

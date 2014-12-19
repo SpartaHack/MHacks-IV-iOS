@@ -46,7 +46,6 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    NSLog(@"Data? %d",[[SUserData sharedManager] isLoggedIn]);
     if(![[SUserData sharedManager] isLoggedIn]){
         [self performSegueWithIdentifier:@"login" sender:nil];
     }else{
