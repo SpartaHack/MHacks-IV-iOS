@@ -31,8 +31,8 @@
 - (void)canIHazParseDatas:(void(^)())block
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query includeKey:@"Sponsor"];
     [query orderByAscending:@"Time"];
-    //[query includeKey:@"host"];
     query.limit = 1000;
     
     [query findObjectsInBackgroundWithBlock:^(NSArray* objects, NSError* error) {

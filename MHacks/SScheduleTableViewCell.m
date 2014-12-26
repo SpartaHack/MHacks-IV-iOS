@@ -30,7 +30,8 @@
     self.detailLabel.text = event[@"Details"];
     
     NSString* timeString = [[SScheduleTableViewCell timeFormatter] stringFromDate:event[@"Time"]];
-    self.timeAndSponsorLabel.text = [NSString stringWithFormat:@"%@ | %@", event[@"host"][@"title"], timeString];
+    PFUser *sponsor = event[@"Sponsor"];
+    self.timeAndSponsorLabel.text = [NSString stringWithFormat:@"%@ | %@", sponsor[@"Title"], timeString];
 }
 
 @end
