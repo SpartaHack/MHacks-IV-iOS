@@ -821,7 +821,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "5d8561a7-91a4-40f1-85d5-24416c630ded";
+				PROVISIONING_PROFILE = "e85583f0-7adf-44d1-929c-1fe046e94944";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -855,7 +855,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "5d8561a7-91a4-40f1-85d5-24416c630ded";
+				PROVISIONING_PROFILE = "e85583f0-7adf-44d1-929c-1fe046e94944";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -867,8 +867,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHacks/SpartaHack-Prefix.pch";
@@ -876,7 +876,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = SpartaHack;
-				PROVISIONING_PROFILE = "ad577110-2a14-4239-b9c4-dc83ad6f4515";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -887,8 +887,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher McGrath (V8A7AEHBEA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHacks/SpartaHack-Prefix.pch";
@@ -896,7 +896,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = SpartaHack;
-				PROVISIONING_PROFILE = "ad577110-2a14-4239-b9c4-dc83ad6f4515";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

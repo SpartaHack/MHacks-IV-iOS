@@ -1,7 +1,7 @@
-MHacks-iOS
+SpartaHack-iOS
 ===========
 
-Official iOS App for MHacks IV, forked from HSHacks
+Official iOS App for SpartaHack, forked from MHacks-IV forked from HShacks
 
 To build this, you'll need to make a file in .../MHacks-iOS/MHacks called appKeys.plist with the following fields:
 
@@ -11,13 +11,10 @@ To build this, you'll need to make a file in .../MHacks-iOS/MHacks called appKey
 * twitterConsumerSecret
 
 
-TODO
+How to build
 ----
+* You need to have cocoapods installed, and build the project with the following pods: 
 
-* Cleaning across the board
-* Some way to refresh the map
-* Geofences on the venues
-* Chat rooms view controller to handle other types of Firebase callbacks
-* Change how the login controller is handled, it should be the root controller
-* Change how the schedule handles long event titles
-* Make it so the chat controller doesn't need the chat rooms to be populated first
++ 'Parse', '~> 1.6.0'
++ 'Facebook-iOS-SDK', '~> 3.21.1'
++ 'ParseFacebookUtils', '~> 1.6.0'
