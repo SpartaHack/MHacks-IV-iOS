@@ -63,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="pDj-A3-GtC"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -672,7 +672,7 @@
         <image name="clockOutline" width="100" height="100"/>
         <image name="drink" width="34" height="34"/>
         <image name="facebook" width="32" height="32"/>
-        <image name="largerIcon" width="151" height="151"/>
+        <image name="largerIcon" width="64" height="64"/>
         <image name="map" width="30" height="30"/>
         <image name="mentors" width="30" height="30"/>
         <image name="microphone" width="30" height="30"/>

@@ -202,8 +202,8 @@
 		F58F55AE1A7DE23100AAE1BD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		F5ABB66219B272F7009793C8 /* SAwardsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SAwardsTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F5ABB66319B272F7009793C8 /* SAwardsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SAwardsTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		F5C80E321AA769C100A7B0DD /* Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo@2x.png"; sourceTree = "<group>"; };
-		F5C80E331AA769C100A7B0DD /* Logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo@3x.png"; sourceTree = "<group>"; };
+		F5C80E321AA769C100A7B0DD /* Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Logo@2x.png"; path = "MHacks/Logo@2x.png"; sourceTree = "<group>"; };
+		F5C80E331AA769C100A7B0DD /* Logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Logo@3x.png"; path = "MHacks/Logo@3x.png"; sourceTree = "<group>"; };
 		F5D361BA1A3CB71500238FC4 /* appKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appKeys.plist; sourceTree = "<group>"; };
 		F5D361BD1A3CBC2000238FC4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FB57458919ADA5A3009244CF /* UIColor+SpartaHackColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIColor+SpartaHackColors.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -397,6 +397,7 @@
 			children = (
 				E770466618891A7700BE6FC4 /* SpartaHack */,
 				F5D361BD1A3CBC2000238FC4 /* Images.xcassets */,
+				F5C80E361AA76B0500A7B0DD /* Images  */,
 				E770468818891A7700BE6FC4 /* SpartaHackTests */,
 				E770465F18891A7700BE6FC4 /* Frameworks */,
 				E770465E18891A7700BE6FC4 /* Products */,
@@ -452,8 +453,6 @@
 				E770467018891A7700BE6FC4 /* SAppDelegate.m */,
 				E770467218891A7700BE6FC4 /* Main.storyboard */,
 				F5D361BA1A3CB71500238FC4 /* appKeys.plist */,
-				F5C80E321AA769C100A7B0DD /* Logo@2x.png */,
-				F5C80E331AA769C100A7B0DD /* Logo@3x.png */,
 				6CF15AE018B1FE4300AE5A04 /* Login */,
 				6CC6F0C118B5FAEF0036ADD1 /* Updates */,
 				6CC6F0C218B5FB190036ADD1 /* Concierge */,
@@ -508,6 +507,15 @@
 				021FCF3719A14C2900988AED /* PongToRefresh */,
 			);
 			name = ThirdPartyLibraries;
+			sourceTree = "<group>";
+		};
+		F5C80E361AA76B0500A7B0DD /* Images  */ = {
+			isa = PBXGroup;
+			children = (
+				F5C80E321AA769C100A7B0DD /* Logo@2x.png */,
+				F5C80E331AA769C100A7B0DD /* Logo@3x.png */,
+			);
+			name = "Images ";
 			sourceTree = "<group>";
 		};
 		FB5745A819B3E3F4009244CF /* Awards */ = {
