@@ -70,11 +70,13 @@
 		F52DB4681A43C23B003A39C7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB6738E18B093C300719CEB /* Social.framework */; };
 		F52DB4691A43C242003A39C7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0759E34418B393F500E67B23 /* Accounts.framework */; };
 		F52DB46E1A43C853003A39C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E770467218891A7700BE6FC4 /* Main.storyboard */; };
+		F58F55AF1A7DE23100AAE1BD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58F55AD1A7DE23100AAE1BD /* Crashlytics.framework */; };
+		F58F55B01A7DE23100AAE1BD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58F55AE1A7DE23100AAE1BD /* Fabric.framework */; };
 		F5ABB66419B272F7009793C8 /* SAwardsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ABB66319B272F7009793C8 /* SAwardsTableViewCell.m */; };
+		F5C80E341AA769C100A7B0DD /* Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5C80E321AA769C100A7B0DD /* Logo@2x.png */; };
+		F5C80E351AA769C100A7B0DD /* Logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5C80E331AA769C100A7B0DD /* Logo@3x.png */; };
 		F5D361BB1A3CB71500238FC4 /* appKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5D361BA1A3CB71500238FC4 /* appKeys.plist */; };
 		F5D361BE1A3CBC2000238FC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5D361BD1A3CBC2000238FC4 /* Images.xcassets */; };
-		F5D361C11A3CBF2A00238FC4 /* Logo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D361BF1A3CBF2A00238FC4 /* Logo_1.png */; };
-		F5D361C21A3CBF2A00238FC4 /* Logo_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D361C01A3CBF2A00238FC4 /* Logo_2.png */; };
 		FB57458B19ADA5A3009244CF /* UIColor+SpartaHackColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458A19ADA5A3009244CF /* UIColor+SpartaHackColors.m */; };
 		FB57458E19AFC3D4009244CF /* SKeysAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57458D19AFC3D4009244CF /* SKeysAccessor.m */; };
 		FB57459319B38C79009244CF /* SMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57459219B38C79009244CF /* SMapViewController.m */; };
@@ -196,12 +198,14 @@
 		F522D5421A438E7000B96EF8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F523960D19A7F7FE00577B0A /* SUpdatesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SUpdatesTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F523960E19A7F7FE00577B0A /* SUpdatesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SUpdatesTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		F58F55AD1A7DE23100AAE1BD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		F58F55AE1A7DE23100AAE1BD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		F5ABB66219B272F7009793C8 /* SAwardsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SAwardsTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F5ABB66319B272F7009793C8 /* SAwardsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SAwardsTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		F5C80E321AA769C100A7B0DD /* Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo@2x.png"; sourceTree = "<group>"; };
+		F5C80E331AA769C100A7B0DD /* Logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo@3x.png"; sourceTree = "<group>"; };
 		F5D361BA1A3CB71500238FC4 /* appKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appKeys.plist; sourceTree = "<group>"; };
 		F5D361BD1A3CBC2000238FC4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F5D361BF1A3CBF2A00238FC4 /* Logo_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_1.png; sourceTree = "<group>"; };
-		F5D361C01A3CBF2A00238FC4 /* Logo_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_2.png; sourceTree = "<group>"; };
 		FB57458919ADA5A3009244CF /* UIColor+SpartaHackColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIColor+SpartaHackColors.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FB57458A19ADA5A3009244CF /* UIColor+SpartaHackColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIColor+SpartaHackColors.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FB57458C19AFC3D4009244CF /* SKeysAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SKeysAccessor.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -222,6 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F58F55B01A7DE23100AAE1BD /* Fabric.framework in Frameworks */,
 				F522D54B1A43900500B96EF8 /* SystemConfiguration.framework in Frameworks */,
 				F522D5491A438FF200B96EF8 /* Security.framework in Frameworks */,
 				F522D5481A438FE700B96EF8 /* QuartzCore.framework in Frameworks */,
@@ -232,6 +237,7 @@
 				FB57459519B38D73009244CF /* MapKit.framework in Frameworks */,
 				6CE3039918B8739200AA432A /* ImageIO.framework in Frameworks */,
 				0759E22918B2198A00E67B23 /* Twitter.framework in Frameworks */,
+				F58F55AF1A7DE23100AAE1BD /* Crashlytics.framework in Frameworks */,
 				6CB6738D18B08F6A00719CEB /* CoreTelephony.framework in Frameworks */,
 				6CB6738B18B08D5E00719CEB /* MessageUI.framework in Frameworks */,
 				F52DB4691A43C242003A39C7 /* Accounts.framework in Frameworks */,
@@ -394,6 +400,8 @@
 				E770468818891A7700BE6FC4 /* SpartaHackTests */,
 				E770465F18891A7700BE6FC4 /* Frameworks */,
 				E770465E18891A7700BE6FC4 /* Products */,
+				F58F55AD1A7DE23100AAE1BD /* Crashlytics.framework */,
+				F58F55AE1A7DE23100AAE1BD /* Fabric.framework */,
 				706BD22A7DB64D346D7CADFC /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -444,6 +452,8 @@
 				E770467018891A7700BE6FC4 /* SAppDelegate.m */,
 				E770467218891A7700BE6FC4 /* Main.storyboard */,
 				F5D361BA1A3CB71500238FC4 /* appKeys.plist */,
+				F5C80E321AA769C100A7B0DD /* Logo@2x.png */,
+				F5C80E331AA769C100A7B0DD /* Logo@3x.png */,
 				6CF15AE018B1FE4300AE5A04 /* Login */,
 				6CC6F0C118B5FAEF0036ADD1 /* Updates */,
 				6CC6F0C218B5FB190036ADD1 /* Concierge */,
@@ -463,8 +473,6 @@
 		E770466718891A7700BE6FC4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F5D361BF1A3CBF2A00238FC4 /* Logo_1.png */,
-				F5D361C01A3CBF2A00238FC4 /* Logo_2.png */,
 				E770466818891A7700BE6FC4 /* SpartaHack-Info.plist */,
 				E770466918891A7700BE6FC4 /* InfoPlist.strings */,
 				E770466C18891A7700BE6FC4 /* main.m */,
@@ -558,6 +566,7 @@
 				E770465A18891A7700BE6FC4 /* Frameworks */,
 				E770465B18891A7700BE6FC4 /* Resources */,
 				5307ED6CA584BCD7DB9F796F /* Copy Pods Resources */,
+				F58F55AC1A7DE1F900AAE1BD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -637,9 +646,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F52DB46E1A43C853003A39C7 /* Main.storyboard in Resources */,
-				F5D361C11A3CBF2A00238FC4 /* Logo_1.png in Resources */,
+				F5C80E351AA769C100A7B0DD /* Logo@3x.png in Resources */,
+				F5C80E341AA769C100A7B0DD /* Logo@2x.png in Resources */,
 				6C9B48AA18B7FBBC008E81B7 /* SVProgressHUD.bundle in Resources */,
-				F5D361C21A3CBF2A00238FC4 /* Logo_2.png in Resources */,
 				F5D361BE1A3CBC2000238FC4 /* Images.xcassets in Resources */,
 				E770466B18891A7700BE6FC4 /* InfoPlist.strings in Resources */,
 				F5D361BB1A3CB71500238FC4 /* appKeys.plist in Resources */,
@@ -686,6 +695,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		F58F55AC1A7DE1F900AAE1BD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 1171f6bc5110ae54b386e90907c33c51dfb879ba 565d3fe9d00b57578fb35270acf3d9a7233c5f5afc252986ab0cc16555c5a603";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -869,11 +891,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHacks/SpartaHack-Prefix.pch";
 				INFOPLIST_FILE = "MHacks/SpartaHack-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = SpartaHack;
 				PROVISIONING_PROFILE = "";
@@ -889,11 +914,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHacks/SpartaHack-Prefix.pch";
 				INFOPLIST_FILE = "MHacks/SpartaHack-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = SpartaHack;
 				PROVISIONING_PROFILE = "";

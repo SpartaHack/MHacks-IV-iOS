@@ -20,6 +20,8 @@
     [Parse setApplicationId:[keys getParseAppId]
                   clientKey:[keys getParseConsumerKey]];
     
+    [Fabric with:@[CrashlyticsKit]];
+    
     // Register for push notifications
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |

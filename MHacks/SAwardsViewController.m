@@ -36,7 +36,7 @@
 - (void)canIHazParseDatas:(void(^)())block
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Award"];
-    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    //query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query includeKey:@"sponsor"];
     [query orderByDescending:@"Value"];
     query.limit = 1000;
@@ -48,7 +48,7 @@
         } else {
             UIAlertView *alert = [[UIAlertView alloc]
                                   initWithTitle:@"D'oh!"
-                                  message:@"Couldn't get the awards!"
+                                  message:[NSString stringWithFormat:@"%@",[error localizedFailureReason]]
                                   delegate:nil
                                   cancelButtonTitle:@"Ugh"
                                   otherButtonTitles:nil];
