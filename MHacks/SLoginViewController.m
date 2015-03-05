@@ -28,7 +28,7 @@
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     if (screenSize.height > 480.0f) {
         logoDestFrame = CGRectMake(self.logo.frame.origin.x + 30,
-                                   self.logo.frame.origin.y - 90 + 30,
+                                   self.logo.frame.origin.y - 120 ,
                                    self.logo.frame.size.width - 60,
                                    self.logo.frame.size.height - 60);
         twitterButtonDestFrame = CGRectMake(self.twitterButton.frame.origin.x,

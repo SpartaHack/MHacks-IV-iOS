@@ -22,7 +22,7 @@
     
     NSArray *itemArray = [NSArray arrayWithObjects: @"Schedule", @"Map", @"Awards",  nil];
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
-    segmentedControl.frame = CGRectMake(55,25,210,30); //WAt
+    segmentedControl.frame = CGRectMake((self.view.frame.size.width/2 - segmentedControl.frame.size.width/2),25,210,30); //WAt
     segmentedControl.tintColor = [UIColor datOrangeColor];
     [segmentedControl addTarget:self action:@selector(changeView:)
                   forControlEvents:UIControlEventValueChanged];

@@ -70,6 +70,10 @@
 		F52DB4681A43C23B003A39C7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB6738E18B093C300719CEB /* Social.framework */; };
 		F52DB4691A43C242003A39C7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0759E34418B393F500E67B23 /* Accounts.framework */; };
 		F52DB46E1A43C853003A39C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E770467218891A7700BE6FC4 /* Main.storyboard */; };
+		F5486AD51AA8E2A70079F750 /* launchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5486AD31AA8E2A70079F750 /* launchImage@2x.png */; };
+		F5486AD61AA8E2A70079F750 /* launchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5486AD41AA8E2A70079F750 /* launchImage@3x.png */; };
+		F5486AD81AA8E3D00079F750 /* launchImage@2x 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F5486AD71AA8E3D00079F750 /* launchImage@2x 2.png */; };
+		F5486ADA1AA8EC950079F750 /* Logo_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = F5486AD91AA8EC950079F750 /* Logo_clear.png */; };
 		F58F55AF1A7DE23100AAE1BD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58F55AD1A7DE23100AAE1BD /* Crashlytics.framework */; };
 		F58F55B01A7DE23100AAE1BD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58F55AE1A7DE23100AAE1BD /* Fabric.framework */; };
 		F5ABB66419B272F7009793C8 /* SAwardsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ABB66319B272F7009793C8 /* SAwardsTableViewCell.m */; };
@@ -198,6 +202,10 @@
 		F522D5421A438E7000B96EF8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F523960D19A7F7FE00577B0A /* SUpdatesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SUpdatesTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F523960E19A7F7FE00577B0A /* SUpdatesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SUpdatesTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		F5486AD31AA8E2A70079F750 /* launchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@2x.png"; sourceTree = "<group>"; };
+		F5486AD41AA8E2A70079F750 /* launchImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@3x.png"; sourceTree = "<group>"; };
+		F5486AD71AA8E3D00079F750 /* launchImage@2x 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@2x 2.png"; sourceTree = "<group>"; };
+		F5486AD91AA8EC950079F750 /* Logo_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_clear.png; sourceTree = "<group>"; };
 		F58F55AD1A7DE23100AAE1BD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		F58F55AE1A7DE23100AAE1BD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		F5ABB66219B272F7009793C8 /* SAwardsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SAwardsTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -512,6 +520,10 @@
 		F5C80E361AA76B0500A7B0DD /* Images  */ = {
 			isa = PBXGroup;
 			children = (
+				F5486AD71AA8E3D00079F750 /* launchImage@2x 2.png */,
+				F5486AD31AA8E2A70079F750 /* launchImage@2x.png */,
+				F5486AD41AA8E2A70079F750 /* launchImage@3x.png */,
+				F5486AD91AA8EC950079F750 /* Logo_clear.png */,
 				F5C80E321AA769C100A7B0DD /* Logo@2x.png */,
 				F5C80E331AA769C100A7B0DD /* Logo@3x.png */,
 			);
@@ -654,10 +666,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F52DB46E1A43C853003A39C7 /* Main.storyboard in Resources */,
+				F5486AD81AA8E3D00079F750 /* launchImage@2x 2.png in Resources */,
 				F5C80E351AA769C100A7B0DD /* Logo@3x.png in Resources */,
+				F5486AD61AA8E2A70079F750 /* launchImage@3x.png in Resources */,
 				F5C80E341AA769C100A7B0DD /* Logo@2x.png in Resources */,
+				F5486ADA1AA8EC950079F750 /* Logo_clear.png in Resources */,
 				6C9B48AA18B7FBBC008E81B7 /* SVProgressHUD.bundle in Resources */,
 				F5D361BE1A3CBC2000238FC4 /* Images.xcassets in Resources */,
+				F5486AD51AA8E2A70079F750 /* launchImage@2x.png in Resources */,
 				E770466B18891A7700BE6FC4 /* InfoPlist.strings in Resources */,
 				F5D361BB1A3CB71500238FC4 /* appKeys.plist in Resources */,
 			);
@@ -896,7 +912,7 @@
 			baseConfigurationReference = 68DB5FE3A51E0D3D0703D79C /* Pods-SpartaHack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -910,6 +926,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = SpartaHack;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -919,7 +936,7 @@
 			baseConfigurationReference = 2281A35F901EE2E50AAD8F9A /* Pods-SpartaHack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -933,6 +950,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = SpartaHack;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
