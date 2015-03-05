@@ -15,6 +15,6 @@ How to build
 ----
 * You need to have cocoapods installed, and build the project with the following pods: 
 
-+ 'Parse', '~> 1.6.0'
-+ 'Facebook-iOS-SDK', '~> 3.21.1'
-+ 'ParseFacebookUtils', '~> 1.6.0'
++ 'Parse'
++ 'Facebook-iOS-SDK'
++ 'ParseFacebookUtils'
