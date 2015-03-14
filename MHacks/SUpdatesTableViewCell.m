@@ -17,4 +17,6 @@
     self.pinnedLabel.hidden = ![announcement[@"pinned"] boolValue];
 }
 
+
+
 @end

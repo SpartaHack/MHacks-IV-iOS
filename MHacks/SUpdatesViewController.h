@@ -16,6 +16,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *bar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *facebookNavButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *twitterNavButton;
 
 - (IBAction)postToFacebookTapped:(id)sender;
 - (IBAction)postToTwitterTapped:(id)sender;

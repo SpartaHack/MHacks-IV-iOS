@@ -23,6 +23,9 @@
 {
     [super viewDidLoad];
     [self canIHazParseDatas:^{}];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                           NSFontAttributeName: [UIFont fontWithName:@"phantom-light" size:28]}];
 }
 
 - (void)canIHazParseDatas:(void(^)())block
@@ -74,7 +77,8 @@
     self.pongRefreshControl = [BOZPongRefreshControl attachToTableView:self.tableView
                                                      withRefreshTarget:self
                                                       andRefreshAction:@selector(refreshTriggered)];
-    self.pongRefreshControl.backgroundColor = [UIColor datOrangeColor];
+    self.pongRefreshControl.backgroundColor = [UIColor p2Color];
+    self.pongRefreshControl.foregroundColor = [UIColor p3Color];
 	[super viewDidLayoutSubviews];
 }
 
@@ -232,6 +236,10 @@
                                               otherButtonTitles:nil];
         [alert show];
     }
+}
+
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 # pragma mark - Food

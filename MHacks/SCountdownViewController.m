@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 hshacks.com. All rights reserved.
 //  Alex Yeh too pro!!!!!!!!!
 //
+//  Modified extensively by Christopher McGrath. SPARTAHACK 
+//
 
 #import "SCountdownViewController.h"
 

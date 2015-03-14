@@ -209,11 +209,11 @@ typedef enum {
 {
     if (viewController.bar.tintColor == [UIColor whiteColor]) {
         //Back To Normal?
-        [viewController.bar setTintColor:[UIColor datOrangeColor]];
+        [viewController.bar setTintColor:[UIColor datPrimaryColor]];
         viewController.bar.barTintColor = [UIColor whiteColor];
         viewController.bar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor blackColor]};
         viewController.bar.topItem.title = @"Updates";
-        [super setBackgroundColor:[UIColor datOrangeColor]];
+        [super setBackgroundColor:[UIColor datPrimaryColor]];
         _foregroundColor = [UIColor whiteColor];
         leftPaddleView.backgroundColor = [UIColor whiteColor];
         rightPaddleView.backgroundColor = [UIColor whiteColor];

@@ -32,6 +32,8 @@
     self = [super initWithCoder:aCoder];
     if (self) {
         arrayOfAnnouncements = [NSMutableArray new];
+        
+        //define some colors
     }
     return self;
 }
@@ -39,13 +41,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[UITabBar appearance] setTintColor:[UIColor colorWithWhite:0.10f alpha:1.0f]];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navigationBarDoubleTap:)];
-    tap.numberOfTapsRequired = 3;
-    [self.bar addGestureRecognizer:tap];
+//    [[UITabBar appearance] setTintColor:[UIColor colorWithWhite:0.10f alpha:1.0f]];
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navigationBarDoubleTap:)];
+//    tap.numberOfTapsRequired = 3;
+//    [self.bar addGestureRecognizer:tap];
+
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                           NSFontAttributeName: [UIFont fontWithName:@"phantom-light" size:28]}];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated{
+
     if(![[SUserData sharedManager] isLoggedIn]){
         [self performSegueWithIdentifier:@"login" sender:nil];
     }else{
@@ -89,7 +96,7 @@
         //Step 4 tell the table view to redraw everything like the good little table it better be...... :P
         [self.tableView reloadData];
         block(nil,nil);
-        NSLog(@"Heyyyyy");
+        //NSLog(@"Heyyyyy");
     }];
 }
 
@@ -100,7 +107,8 @@
     self.pongRefreshControl = [BOZPongRefreshControl attachToTableView:self.tableView
                                                      withRefreshTarget:self
                                                       andRefreshAction:@selector(refreshTriggered)];
-    self.pongRefreshControl.backgroundColor = [UIColor datOrangeColor];
+    self.pongRefreshControl.backgroundColor = [UIColor p2Color];
+    self.pongRefreshControl.foregroundColor = [UIColor p3Color];
     
 	[super viewDidLayoutSubviews];
 }
@@ -177,7 +185,6 @@
 {
     static NSString *cellIdentifier = @"UpdateCell";
     SUpdatesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    
     PFObject* announcement = [arrayOfAnnouncements objectAtIndex:indexPath.section];
     [cell setWithAnnouncement:announcement];
     
@@ -224,6 +231,10 @@
                                               otherButtonTitles:nil];
         [alert show];
     }
+}
+
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)navigationBarDoubleTap:(UIGestureRecognizer*)recognizer {

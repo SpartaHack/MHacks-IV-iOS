@@ -67,7 +67,8 @@
     self.pongRefreshControl = [BOZPongRefreshControl attachToTableView:self.tableView
                                                      withRefreshTarget:self
                                                       andRefreshAction:@selector(refreshTriggered)];
-    self.pongRefreshControl.backgroundColor = [UIColor datOrangeColor];
+    self.pongRefreshControl.backgroundColor = [UIColor p2Color];
+    self.pongRefreshControl.foregroundColor = [UIColor p3Color];
 	[super viewDidLayoutSubviews];
 }
 

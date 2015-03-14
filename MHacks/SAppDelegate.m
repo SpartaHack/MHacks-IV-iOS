@@ -17,6 +17,8 @@
 {
     SKeysAccessor* keys = [SKeysAccessor singleton];
     
+    
+    
     [Parse setApplicationId:[keys getParseAppId]
                   clientKey:[keys getParseConsumerKey]];
     
@@ -30,6 +32,9 @@
                                                                              categories:nil];
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
+    
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    [self.window setBackgroundColor:[UIColor whiteColor]];
     
     return YES;
 }

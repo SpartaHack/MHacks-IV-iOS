@@ -15,6 +15,9 @@
 {
     [super viewDidLoad];
     
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                           NSFontAttributeName: [UIFont fontWithName:@"phantom-light" size:28]}];
+    
     //Wat.
     UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
     scroll.contentSize = CGSizeMake(320, 44);
@@ -23,7 +26,7 @@
     NSArray *itemArray = [NSArray arrayWithObjects: @"Schedule", @"Map", @"Awards",  nil];
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
     segmentedControl.frame = CGRectMake((self.view.frame.size.width/2 - segmentedControl.frame.size.width/2),25,210,30); //WAt
-    segmentedControl.tintColor = [UIColor datOrangeColor];
+    segmentedControl.tintColor = [UIColor segColor];
     [segmentedControl addTarget:self action:@selector(changeView:)
                   forControlEvents:UIControlEventValueChanged];
 
@@ -72,6 +75,10 @@
         [self.view bringSubviewToFront:self.awardsContainer];
         
     }
+}
+
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 @end

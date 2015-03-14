@@ -10,7 +10,12 @@
 
 @interface UIColor (SacksColors)
 
-+ (UIColor*)datOrangeColor;
++ (UIColor*)datPrimaryColor;
++ (UIColor*)navIconTintColor;
++ (UIColor*)p1Color;
++ (UIColor*)p2Color;
++ (UIColor*)p3Color;
++ (UIColor*)segColor;
 
 + (UIColor*)chatMessageCellEvenBackgroundColor;
 + (UIColor*)chatMessageCellOddBackgroundColor;

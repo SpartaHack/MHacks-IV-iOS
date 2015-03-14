@@ -70,6 +70,8 @@
 		F52DB4681A43C23B003A39C7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB6738E18B093C300719CEB /* Social.framework */; };
 		F52DB4691A43C242003A39C7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0759E34418B393F500E67B23 /* Accounts.framework */; };
 		F52DB46E1A43C853003A39C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E770467218891A7700BE6FC4 /* Main.storyboard */; };
+		F53432DD1AB3EADC00E64D1D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F53432DC1AB3EADC00E64D1D /* Lato-Regular.ttf */; };
+		F53432DF1AB3EAE600E64D1D /* phantom-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F53432DE1AB3EAE600E64D1D /* phantom-light.otf */; };
 		F5486AD51AA8E2A70079F750 /* launchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5486AD31AA8E2A70079F750 /* launchImage@2x.png */; };
 		F5486AD61AA8E2A70079F750 /* launchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5486AD41AA8E2A70079F750 /* launchImage@3x.png */; };
 		F5486AD81AA8E3D00079F750 /* launchImage@2x 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F5486AD71AA8E3D00079F750 /* launchImage@2x 2.png */; };
@@ -202,6 +204,8 @@
 		F522D5421A438E7000B96EF8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F523960D19A7F7FE00577B0A /* SUpdatesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SUpdatesTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F523960E19A7F7FE00577B0A /* SUpdatesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SUpdatesTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		F53432DC1AB3EADC00E64D1D /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		F53432DE1AB3EAE600E64D1D /* phantom-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "phantom-light.otf"; sourceTree = "<group>"; };
 		F5486AD31AA8E2A70079F750 /* launchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@2x.png"; sourceTree = "<group>"; };
 		F5486AD41AA8E2A70079F750 /* launchImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@3x.png"; sourceTree = "<group>"; };
 		F5486AD71AA8E3D00079F750 /* launchImage@2x 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@2x 2.png"; sourceTree = "<group>"; };
@@ -480,6 +484,8 @@
 		E770466718891A7700BE6FC4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F53432DC1AB3EADC00E64D1D /* Lato-Regular.ttf */,
+				F53432DE1AB3EAE600E64D1D /* phantom-light.otf */,
 				E770466818891A7700BE6FC4 /* SpartaHack-Info.plist */,
 				E770466918891A7700BE6FC4 /* InfoPlist.strings */,
 				E770466C18891A7700BE6FC4 /* main.m */,
@@ -667,11 +673,13 @@
 			files = (
 				F52DB46E1A43C853003A39C7 /* Main.storyboard in Resources */,
 				F5486AD81AA8E3D00079F750 /* launchImage@2x 2.png in Resources */,
+				F53432DF1AB3EAE600E64D1D /* phantom-light.otf in Resources */,
 				F5C80E351AA769C100A7B0DD /* Logo@3x.png in Resources */,
 				F5486AD61AA8E2A70079F750 /* launchImage@3x.png in Resources */,
 				F5C80E341AA769C100A7B0DD /* Logo@2x.png in Resources */,
 				F5486ADA1AA8EC950079F750 /* Logo_clear.png in Resources */,
 				6C9B48AA18B7FBBC008E81B7 /* SVProgressHUD.bundle in Resources */,
+				F53432DD1AB3EADC00E64D1D /* Lato-Regular.ttf in Resources */,
 				F5D361BE1A3CBC2000238FC4 /* Images.xcassets in Resources */,
 				F5486AD51AA8E2A70079F750 /* launchImage@2x.png in Resources */,
 				E770466B18891A7700BE6FC4 /* InfoPlist.strings in Resources */,
