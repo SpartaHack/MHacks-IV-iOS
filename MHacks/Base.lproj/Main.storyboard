@@ -529,20 +529,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QfL-7P-e0c">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTC-AI-3fS">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
-                            </mapView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="QfL-7P-e0c" secondAttribute="trailing" constant="-16" id="1A8-us-w53"/>
-                            <constraint firstItem="QfL-7P-e0c" firstAttribute="leading" secondItem="PdJ-IW-Cgh" secondAttribute="leadingMargin" constant="-16" id="9wj-WR-ryc"/>
-                            <constraint firstItem="sMR-hx-WVO" firstAttribute="top" secondItem="QfL-7P-e0c" secondAttribute="bottom" id="JJ0-RG-eGw"/>
-                            <constraint firstItem="QfL-7P-e0c" firstAttribute="top" secondItem="GwL-Nd-y5z" secondAttribute="bottom" id="u8G-5r-m3g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cTC-AI-3fS" secondAttribute="trailing" constant="-16" id="6eu-RO-RBV"/>
+                            <constraint firstItem="cTC-AI-3fS" firstAttribute="leading" secondItem="PdJ-IW-Cgh" secondAttribute="leadingMargin" constant="-16" id="ZdY-gI-1T5"/>
+                            <constraint firstItem="sMR-hx-WVO" firstAttribute="top" secondItem="cTC-AI-3fS" secondAttribute="bottom" id="en0-Sf-WSO"/>
+                            <constraint firstItem="cTC-AI-3fS" firstAttribute="top" secondItem="GwL-Nd-y5z" secondAttribute="bottom" id="lpJ-PV-9TB"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="QfL-7P-e0c" id="ccj-ff-34L"/>
+                        <outlet property="mapWebView" destination="cTC-AI-3fS" id="P9E-55-LCE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1QQ-sI-T6G" userLabel="First Responder" sceneMemberID="firstResponder"/>

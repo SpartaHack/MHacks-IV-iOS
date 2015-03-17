@@ -15,30 +15,11 @@
 {
     [super viewDidLoad];
     
-    self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(42.7275025, -84.4818457), MKCoordinateSpanMake(0.0065224869222362258, 0.0065011960313228201));
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"hacker-floor-plan" ofType:@"pdf"];
+    NSURL *targetURL = [NSURL fileURLWithPath:path];
+    NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+    [self.mapWebView loadRequest:request];
     
-    PFQuery* query = [PFQuery queryWithClassName:@"Venue"];
-    query.limit = 1000;
-    [query findObjectsInBackgroundWithBlock:^(NSArray* objects, NSError* error) {
-        if (!error) {
-            for (PFObject* venue in objects) {
-                PFGeoPoint* center = venue[@"location"];
-                MKPointAnnotation* annotation = [[MKPointAnnotation alloc] init];
-                annotation.coordinate = CLLocationCoordinate2DMake(center.latitude, center.longitude);
-                annotation.title = venue[@"title"];
-                annotation.subtitle = venue[@"details"];
-                [self.mapView addAnnotation:annotation];
-            }
-        } else {
-            UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle:@"Darn"
-                                  message:@"Couldn't get the venues!"
-                                  delegate:nil
-                                  cancelButtonTitle:@"Seriously?"
-                                  otherButtonTitles:nil];
-            [alert show];
-        }
-    }];
 }
 
 @end

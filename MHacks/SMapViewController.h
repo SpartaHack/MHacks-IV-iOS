@@ -11,6 +11,6 @@
 
 @interface SMapViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIWebView *mapWebView;
 
 @end

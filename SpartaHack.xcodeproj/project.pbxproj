@@ -78,6 +78,7 @@
 		F5486ADA1AA8EC950079F750 /* Logo_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = F5486AD91AA8EC950079F750 /* Logo_clear.png */; };
 		F58F55AF1A7DE23100AAE1BD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58F55AD1A7DE23100AAE1BD /* Crashlytics.framework */; };
 		F58F55B01A7DE23100AAE1BD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58F55AE1A7DE23100AAE1BD /* Fabric.framework */; };
+		F5ABADB81AB8DCCA00A12841 /* hacker-floor-plan.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F5ABADB71AB8DCCA00A12841 /* hacker-floor-plan.pdf */; };
 		F5ABB66419B272F7009793C8 /* SAwardsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ABB66319B272F7009793C8 /* SAwardsTableViewCell.m */; };
 		F5C80E341AA769C100A7B0DD /* Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5C80E321AA769C100A7B0DD /* Logo@2x.png */; };
 		F5C80E351AA769C100A7B0DD /* Logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5C80E331AA769C100A7B0DD /* Logo@3x.png */; };
@@ -212,6 +213,7 @@
 		F5486AD91AA8EC950079F750 /* Logo_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_clear.png; sourceTree = "<group>"; };
 		F58F55AD1A7DE23100AAE1BD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		F58F55AE1A7DE23100AAE1BD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		F5ABADB71AB8DCCA00A12841 /* hacker-floor-plan.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "hacker-floor-plan.pdf"; sourceTree = "<group>"; };
 		F5ABB66219B272F7009793C8 /* SAwardsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SAwardsTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F5ABB66319B272F7009793C8 /* SAwardsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SAwardsTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F5C80E321AA769C100A7B0DD /* Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Logo@2x.png"; path = "MHacks/Logo@2x.png"; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 		E770466718891A7700BE6FC4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F5ABADB71AB8DCCA00A12841 /* hacker-floor-plan.pdf */,
 				F53432DC1AB3EADC00E64D1D /* Lato-Regular.ttf */,
 				F53432DE1AB3EAE600E64D1D /* phantom-light.otf */,
 				E770466818891A7700BE6FC4 /* SpartaHack-Info.plist */,
@@ -677,6 +680,7 @@
 				F5C80E351AA769C100A7B0DD /* Logo@3x.png in Resources */,
 				F5486AD61AA8E2A70079F750 /* launchImage@3x.png in Resources */,
 				F5C80E341AA769C100A7B0DD /* Logo@2x.png in Resources */,
+				F5ABADB81AB8DCCA00A12841 /* hacker-floor-plan.pdf in Resources */,
 				F5486ADA1AA8EC950079F750 /* Logo_clear.png in Resources */,
 				6C9B48AA18B7FBBC008E81B7 /* SVProgressHUD.bundle in Resources */,
 				F53432DD1AB3EADC00E64D1D /* Lato-Regular.ttf in Resources */,
