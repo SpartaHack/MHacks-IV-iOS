@@ -15,7 +15,7 @@
 {
     [super viewDidLoad];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"hacker-floor-plan" ofType:@"pdf"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"ios-map" ofType:@"pdf"];
     NSURL *targetURL = [NSURL fileURLWithPath:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
     [self.mapWebView loadRequest:request];
