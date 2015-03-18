@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface SMapViewController : UIViewController
+@interface SMapViewController : UIViewController <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *mapWebView;
+@property (weak, nonatomic) IBOutlet UILabel *mapText;
 
 @end

@@ -19,6 +19,7 @@
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -529,20 +530,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTC-AI-3fS">
+                            <webView multipleTouchEnabled="YES" contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTC-AI-3fS">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Map :)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAm-vm-Uwu">
+                                <rect key="frame" x="246" y="233" width="109" height="21"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="cTC-AI-3fS" secondAttribute="trailing" constant="-16" id="6eu-RO-RBV"/>
+                            <constraint firstAttribute="centerY" secondItem="aAm-vm-Uwu" secondAttribute="centerY" id="Iao-Qj-0nT"/>
                             <constraint firstItem="cTC-AI-3fS" firstAttribute="leading" secondItem="PdJ-IW-Cgh" secondAttribute="leadingMargin" constant="-16" id="ZdY-gI-1T5"/>
                             <constraint firstItem="sMR-hx-WVO" firstAttribute="top" secondItem="cTC-AI-3fS" secondAttribute="bottom" id="en0-Sf-WSO"/>
+                            <constraint firstAttribute="centerX" secondItem="aAm-vm-Uwu" secondAttribute="centerX" constant="-0.5" id="jH7-I2-umd"/>
                             <constraint firstItem="cTC-AI-3fS" firstAttribute="top" secondItem="GwL-Nd-y5z" secondAttribute="bottom" id="lpJ-PV-9TB"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mapText" destination="aAm-vm-Uwu" id="yyu-40-faN"/>
                         <outlet property="mapWebView" destination="cTC-AI-3fS" id="P9E-55-LCE"/>
                     </connections>
                 </viewController>
